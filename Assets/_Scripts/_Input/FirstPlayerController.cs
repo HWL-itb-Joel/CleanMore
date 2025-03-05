@@ -25,7 +25,7 @@ public class FirstPlayerController : NetworkBehaviour
     [SerializeField] private float sprintStepInterval = 0.3f;
     [SerializeField] private float velocityThreshold = 2.0f;
 
-    [Header("Look Sensitivity")]
+    [Header("Input Map")]
     [SerializeField] private InputActionAsset PlayerInputs;
 
     private int lastPlayedIndex = -1;
@@ -77,7 +77,6 @@ public class FirstPlayerController : NetworkBehaviour
         sprintAction.Disable();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isLocalPlayer)
@@ -88,12 +87,16 @@ public class FirstPlayerController : NetworkBehaviour
         }
     }
 
+    #region playerMovement
+
     void HandleMovement()
     {
         float speedMultipier = sprintAction.ReadValue<float>() > 0 ? sprintMultiplier : 1f;
 
-        float verticalSpeed = moveInput.y * walkSpeed * speedMultipier;
-        float horizontalSpeed = moveInput.x * walkSpeed * speedMultipier;
+        float inputY = moveInput.y > 0 ? moveInput.y * speedMultipier : moveInput.y;
+
+        float verticalSpeed = inputY * walkSpeed;
+        float horizontalSpeed = moveInput.x * walkSpeed;
 
         Vector3 horizontalMovement = new Vector3 (horizontalSpeed, 0, verticalSpeed);
         horizontalMovement = transform.rotation * horizontalMovement;
@@ -166,4 +169,5 @@ public class FirstPlayerController : NetworkBehaviour
         footstepSource.clip = footsteoSounds[randomIndex];
         footstepSource.Play();
     }
+    #endregion
 }

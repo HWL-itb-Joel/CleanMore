@@ -31,23 +31,28 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ChangeScene(int sceneNumber)
     {
-        int waitTime = Random.Range(2, 4);
+        AsyncOperation loadAsync = null;
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
-
-        yield return new WaitForSeconds(waitTime);
 
         if (sceneNumber == 0)
         {
-            SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
+            loadAsync = SceneManager.LoadSceneAsync(sceneNumber, LoadSceneMode.Additive);
+            loadAsync.priority = -1;
         }
         else if (sceneNumber == 2)
         {
-            SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
+            loadAsync = SceneManager.LoadSceneAsync(sceneNumber, LoadSceneMode.Additive);
+            loadAsync.priority = -1;
             steamLobby.HostLobby();
         }
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-        yield return new WaitForSeconds(4);
+
+        yield return new WaitWhile(() => !loadAsync.isDone);
 
         SceneManager.UnloadSceneAsync(1);
+    }
+
+    public void OpenMatches()
+    {
+        SteamFriends.ActivateGameOverlay("Friends");
     }
 }
