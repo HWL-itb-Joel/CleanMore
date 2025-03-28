@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -9,40 +10,60 @@ using UnityEditor;
 
 public class Enemys : MonoBehaviour
 {
+    [Header("General Settings")]
+    public ZombieState currentState = ZombieState.patrolling;
     public ZombieAttackType attackType;
-    public ZombieState state;
-    public float alertDistance;
-    public float followDistance;
-    public float attackDistance;
 
-    public Transform target;
+    [Header("Detection & Attack")]
+    public float detectionRange = 10f;
+    public float attackRange = 2f;
+    public float patrolSpeed = 2f;
+    public float chaseSpeed = 4f;
+    public float patrolRadius = 10f;
+    private bool isPatrolling;
+
+    [Space]
+
+    public float attackSpeed;
+
+    private NavMeshAgent agent;
+    private Vector3 patrolCenter;
+    private Vector3 patrolTarget;
+    private Transform targetPlayer = null;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        patrolCenter = transform.position;
+        SetNewPatrolTarget();
+    }
 
     private void LateUpdate()
     {
         CheckState();
+        Debug.Log(currentState);
     }
 
     private void CheckState()
     {
-        switch (state)
+        switch (currentState)
         {
-            case ZombieState.idle:
-                IdleState();
-                break;
             case ZombieState.patrolling:
-                PatrolState();
+                CheckForPlayers();
+                if (isPatrolling) break;
+                StartCoroutine(Patrol());
                 break;
             case ZombieState.alert:
-                AlertState();
+                MoveToSound();
+                CheckForPlayers();
                 break;
             case ZombieState.following:
-                FollowingState();
+                FollowPlayer();
                 break;
             case ZombieState.attacking:
-                AttackState();
+                Attack();
                 break;
             case ZombieState.dead:
-                DeadState();
                 break;
             default:
                 break;
@@ -53,81 +74,165 @@ public class Enemys : MonoBehaviour
     {
         switch (newState)
         {
-            case ZombieState.idle:
-                IdleState();
-                break;
             case ZombieState.patrolling:
-                PatrolState();
+                CheckForPlayers();
+                StartCoroutine(Patrol());
                 break;
             case ZombieState.alert:
-                AlertState();
+                MoveToSound();
+                CheckForPlayers();
                 break;
             case ZombieState.following:
-                FollowingState();
+                FollowPlayer();
                 break;
             case ZombieState.attacking:
-                AttackState();
+                Attack();
                 break;
             case ZombieState.dead:
-                DeadState();
                 break;
             default:
                 break;
         }
-        state = newState;
+        currentState = newState;
     }
 
-    public virtual void IdleState()
+    void CheckForPlayers()
     {
+        Collider[] playersInRange = Physics.OverlapSphere(transform.position, detectionRange);
+        foreach (Collider col in playersInRange)
+        {
+            if (col.CompareTag("Player"))
+            {
+                Debug.Log("Jugador Detectado");
+                if (targetPlayer == null)
+                {
+                    targetPlayer = col.transform; // Guarda al primer jugador detectado
+                }
 
+                if (Vector3.Distance(transform.position, targetPlayer.position) <= attackRange)
+                {
+                    ChangeState(ZombieState.attacking);
+                }
+                else if (Vector3.Distance(transform.position, targetPlayer.position) <= detectionRange)
+                {
+                    ChangeState(ZombieState.following);
+                }
+                return;
+            }
+        }
+
+        if (targetPlayer != null) // Si el jugador sale del rango
+        {
+            targetPlayer = null;
+            ChangeState(ZombieState.patrolling);
+        }
     }
 
-    public virtual void PatrolState()
+    void FollowPlayer()
     {
+        if (targetPlayer == null) return;
 
+        agent.speed = chaseSpeed;
+        agent.SetDestination(targetPlayer.position);
+
+        if (Vector3.Distance(transform.position, targetPlayer.position) > detectionRange)
+        {
+            targetPlayer = null;
+            ChangeState(ZombieState.patrolling);
+        }
+        else if (Vector3.Distance(transform.position, targetPlayer.position) <= attackRange)
+        {
+            ChangeState(ZombieState.attacking);
+        }
     }
 
-    public virtual void AlertState()
+    void Attack()
     {
+        agent.isStopped = true;
+        Debug.Log("¡Atacando a " + targetPlayer.name + "!");
 
+        float distance = Vector3.Distance(transform.position, targetPlayer.position);
+        if (distance > attackRange)
+        {
+            agent.isStopped = false;
+            ChangeState(ZombieState.following);
+        }
     }
 
-    public virtual void FollowingState()
+    IEnumerator Patrol()
     {
+        isPatrolling = true;
+        SetNewPatrolTarget();
+        float patrolWaitTime = Random.Range(1, 4);
+        agent.speed = patrolSpeed;
+        Debug.Log("EMPIEZA PATRULLA");
 
+        agent.SetDestination(patrolTarget);
+
+        yield return new WaitWhile(() => Vector3.Distance(transform.position, patrolTarget) > 1);
+        
+        yield return new WaitForSeconds(patrolWaitTime);
+        Debug.Log("Fin de patrulla");
+        StartCoroutine(Patrol());
     }
 
-    public virtual void AttackState()
+    void SetNewPatrolTarget()
     {
-
+        Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
+        randomDirection += patrolCenter;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, NavMesh.AllAreas))
+        {
+            patrolTarget = hit.position;
+        }
     }
 
-    public virtual void DeadState()
+    public void AlertFromSound(Vector3 soundPosition)
     {
-
+        if (currentState == ZombieState.patrolling)
+        {
+            patrolTarget = soundPosition;
+            ChangeState(ZombieState.alert);
+        }
     }
 
+    void MoveToSound()
+    {
+        agent.SetDestination(patrolTarget);
+
+        if (Vector3.Distance(transform.position, patrolTarget) < 2f)
+        {
+            ChangeState(ZombieState.patrolling);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        CheckForPlayers();
+    }
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.yellow;
-        Handles.DrawWireDisc(transform.position, Vector3.up, alertDistance);
-        Handles.color = Color.blue;
-        Handles.DrawWireDisc(transform.position, Vector3.up, followDistance);
         Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position, Vector3.up, attackDistance);
+        Handles.DrawWireDisc(transform.position, Vector3.up, attackRange);
+        Handles.color = Color.green;
+        Handles.DrawWireDisc(transform.position, Vector3.up, detectionRange);
+        Handles.color = Color.blue;
+        Handles.DrawWireDisc(transform.position, Vector3.up, patrolRadius);
     }
 #endif
+
+
 }
 
 public enum ZombieState
 {
-    idle,
     patrolling,
     alert,
     following,
     attacking,
-    dead
+    dead,
+    searching
 }
 
 public enum ZombieAttackType

@@ -16,10 +16,19 @@ MonoBehaviour:
   weaponType: 0
   prefab: {fileID: 2538686807373999617, guid: 863cf8b7c6c39493f85dc79fb2b318cb, type: 3}
   feedback: {fileID: 3767975676577083156, guid: 9112da23f8ff14e948c14f55e07f67d3, type: 3}
-  fireRate: 0.1
   rateType: 0
+  heatThreshold: 0
+  currentHeat: 0
+  overheatCooldown: 0
+  isOverheated: 0
+  baseCoolingRate: 0
+  maxCoolingRate: 0
+  coolingAccelerationTime: 0
+  coolingMultiplier: 0
+  isCooling: 0
+  fireRate: 0.1
   bulletsByShot: 1
-  sprayBullets: 1
+  sprayBullets: 0
   sprayIndicator: 2
   bulletsFireRate: 0
   maxDistance: 30
@@ -33,12 +42,3 @@ MonoBehaviour:
   alternativeSprayIndicator: 0
   alternativeDamage: 0
   alternativeFireRate: 0
-  heatThreshold: 0
-  currentHeat: 0
-  overheatCooldown: 0
-  isOverheated: 0
-  baseCoolingRate: 0
-  maxCoolingRate: 0
-  coolingAccelerationTime: 0
-  coolingMultiplier: 0
-  isCooling: 0

@@ -274,6 +274,8 @@ public class GunController : MonoBehaviour
             sprayIndicator = Vector2.zero;
         }
 
+        Debug.Log(Camera.main.transform.forward);
+
         Vector3 dir = (Camera.main.transform.forward * 180) + sprayIndicator;
         if (Physics.Raycast(Camera.main.transform.position, dir, out hit, weaponInfo.maxDistance))
         {
