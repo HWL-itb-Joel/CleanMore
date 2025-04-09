@@ -29,6 +29,7 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        patrolCenter = transform.position;
     }
 
     void Update()
@@ -181,14 +182,12 @@ public class EnemyBase : MonoBehaviour
         SetNewPatrolTarget();
         float patrolWaitTime = Random.Range(1, 4);
         agent.speed = searchTime;
-        Debug.Log("EMPIEZA PATRULLA");
 
         agent.SetDestination(patrolTarget);
 
         yield return new WaitWhile(() => Vector3.Distance(transform.position, patrolTarget) > 1);
 
         yield return new WaitForSeconds(patrolWaitTime);
-        Debug.Log("Fin de patrulla");
         StartCoroutine(Patrol());
     }
 
