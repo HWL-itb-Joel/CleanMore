@@ -10,6 +10,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     [SerializeField] private float walkSpeed = 3.0f;
     [SerializeField] private float sprintMultiplier = 2.0f;
     Vector3 currentMovement = Vector3.zero;
+    Vector3 fallingMovement = Vector3.zero;
     Vector3 velocity = Vector3.zero;
 
     [Header("Jump Parameters")]
@@ -62,13 +63,15 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     private void Update()
     {
         if (!isLocalPlayer) return;
-        HandleGravityAndJumping();
         HandleMovement();
+        
+        Debug.Log(currentMovement);
     }
 
     void HandleMovement()
     {
         float speedMultipier = sprintAction.ReadValue<float>() > 0 ? sprintMultiplier : 1f;
+        
 
         float inputY = moveInput.y > 0 ? moveInput.y * speedMultipier : moveInput.y;
 
@@ -78,34 +81,30 @@ public class MultiplayerFPSMovement : NetworkBehaviour
         Vector3 horizontalMovement = new Vector3(horizontalSpeed, 0, verticalSpeed);
 
         currentMovement = transform.rotation * horizontalMovement;
-
         controller.Move(currentMovement * Time.deltaTime);
+
+        HandleGravityAndJumping();
 
         isMoving = moveInput.y != 0 || moveInput.x != 0;
     }
 
     void HandleGravityAndJumping()
     {
-        Physics.OverlapSphere(Feet.transform.position, CheckRadius, GroundMask);
-        Debug.Log("isgrounded" + controller.isGrounded);
+        bool grounded = Physics.CheckSphere(Feet.transform.position, CheckRadius, GroundMask);
 
-        if (controller.isGrounded)
+        if (grounded && fallingMovement.y <= 0)
         {
-            currentMovement.y = -0.5f;
-            Debug.Log("ispressed" + jumpAction.IsPressed());
-            Debug.Log("canjumo " + canJump);
-            if (jumpAction.IsPressed() && canJump)
-            {
-                canJump = false;
-                Debug.Log("jum");
-                currentMovement.y = jumpForce;
-            }
+            fallingMovement.y = -2;
         }
-        else
+
+        fallingMovement.y -= gravity * Time.deltaTime;
+
+        if (grounded && jumpAction.triggered)
         {
-            currentMovement.y -= gravity * Time.deltaTime;
-            canJump = true;
+            fallingMovement.y = Mathf.Sqrt(jumpForce * -2 * -gravity);
         }
+
+        controller.Move(fallingMovement * Time.deltaTime);
     }
 
     private void OnDrawGizmos()

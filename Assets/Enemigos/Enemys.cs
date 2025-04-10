@@ -103,7 +103,6 @@ public class Enemys : MonoBehaviour
         {
             if (col.CompareTag("Player"))
             {
-                Debug.Log("Jugador Detectado");
                 if (targetPlayer == null)
                 {
                     targetPlayer = col.transform; // Guarda al primer jugador detectado
@@ -150,6 +149,8 @@ public class Enemys : MonoBehaviour
     {
         agent.isStopped = true;
         Debug.Log("¡Atacando a " + targetPlayer.name + "!");
+        targetPlayer.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth);
+        playerHealth.GetDamage(5);
 
         float distance = Vector3.Distance(transform.position, targetPlayer.position);
         if (distance > attackRange)
@@ -165,14 +166,12 @@ public class Enemys : MonoBehaviour
         SetNewPatrolTarget();
         float patrolWaitTime = Random.Range(1, 4);
         agent.speed = patrolSpeed;
-        Debug.Log("EMPIEZA PATRULLA");
 
         agent.SetDestination(patrolTarget);
 
         yield return new WaitWhile(() => Vector3.Distance(transform.position, patrolTarget) > 1);
         
         yield return new WaitForSeconds(patrolWaitTime);
-        Debug.Log("Fin de patrulla");
         StartCoroutine(Patrol());
     }
 
