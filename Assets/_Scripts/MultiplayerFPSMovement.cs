@@ -34,6 +34,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     void Awake()
     {
+        if (!isLocalPlayer) return;
         controller = GetComponent<CharacterController>();
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;

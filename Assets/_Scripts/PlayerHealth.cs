@@ -21,8 +21,8 @@ public class PlayerHealth : NetworkBehaviour
     [Server]
     public void GetDamage(float damage_)
     {
+        if (!isLocalPlayer) return;
         healthValue -= damage_;
-        
     }
 
     void HealthValueChanged(float oldValue, float newValue)

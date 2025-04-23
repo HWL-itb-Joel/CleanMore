@@ -21,9 +21,12 @@ public class MultiplayerFPSLook : NetworkBehaviour
 
     private void Awake()
     {
+        if (!isLocalPlayer) return;
         lookAction = PlayerInputs.FindActionMap("OnGround").FindAction("Look");
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnEnable()
@@ -38,13 +41,14 @@ public class MultiplayerFPSLook : NetworkBehaviour
 
     private void Update()
     {
-        if (!isLocalPlayer) return;
         HandleRotation();
     }
 
     void HandleRotation()
     {
         float mouseXRotation = lookInput.x * mouseSensitivity;
+
+        Debug.Log(mouseXRotation);
 
         verticalRotation -= lookInput.y * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);

@@ -21,6 +21,7 @@ public class Enemys : MonoBehaviour
     public float chaseSpeed = 4f;
     public float patrolRadius = 10f;
     private bool isPatrolling;
+    private bool isAttacking;
 
     [Space]
 
@@ -61,7 +62,8 @@ public class Enemys : MonoBehaviour
                 FollowPlayer();
                 break;
             case ZombieState.attacking:
-                Attack();
+                if (isAttacking) break;
+                StartCoroutine(Attack());
                 break;
             case ZombieState.dead:
                 break;
@@ -86,7 +88,7 @@ public class Enemys : MonoBehaviour
                 FollowPlayer();
                 break;
             case ZombieState.attacking:
-                Attack();
+                StartCoroutine(Attack());
                 break;
             case ZombieState.dead:
                 break;
@@ -145,19 +147,25 @@ public class Enemys : MonoBehaviour
         }
     }
 
-    void Attack()
+    IEnumerator Attack()
     {
         agent.isStopped = true;
+        isAttacking = true;
         Debug.Log("¡Atacando a " + targetPlayer.name + "!");
         targetPlayer.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth);
         playerHealth.GetDamage(5);
+
+        yield return new WaitForSeconds(1f);
 
         float distance = Vector3.Distance(transform.position, targetPlayer.position);
         if (distance > attackRange)
         {
             agent.isStopped = false;
             ChangeState(ZombieState.following);
+            isAttacking = false;
+            yield return null;
         }
+        isAttacking = false;
     }
 
     IEnumerator Patrol()
