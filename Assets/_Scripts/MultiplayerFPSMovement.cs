@@ -34,10 +34,6 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     void Awake()
     {
-        if (!isLocalPlayer) return;
-        controller = GetComponent<CharacterController>();
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
         moveAction = PlayerInputs.FindActionMap("OnGround").FindAction("Move");
         jumpAction = PlayerInputs.FindActionMap("OnGround").FindAction("Jump");
         sprintAction = PlayerInputs.FindActionMap("OnGround").FindAction("Sprint");
@@ -45,6 +41,11 @@ public class MultiplayerFPSMovement : NetworkBehaviour
         moveAction.performed += context => moveInput = context.ReadValue<Vector2>();
         moveAction.canceled += context => moveInput = Vector2.zero;
         canJump = false;
+        controller = GetComponent<CharacterController>();
+        
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        
     }
 
     private void OnEnable()

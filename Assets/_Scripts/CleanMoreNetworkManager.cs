@@ -85,11 +85,11 @@ public class CleanMoreNetworkManager : NetworkManager
 
         if (NetworkServer.active && NetworkClient.isConnected)
         {
-            NetworkManager.singleton.StopHost();
+            singleton.StopHost();
         }
         else
         {
-            NetworkManager.singleton.StopClient();
+            singleton.StopClient();
         }
     }
 
@@ -113,7 +113,7 @@ public class CleanMoreNetworkManager : NetworkManager
             return;
         }
 
-        NetworkManager.singleton.StartHost();
+        singleton.StartHost();
 
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "HostIP", SteamUser.GetSteamID().ToString());
     }
@@ -129,8 +129,8 @@ public class CleanMoreNetworkManager : NetworkManager
 
         string HostIP = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "HostIP");
 
-        NetworkManager.singleton.networkAddress = HostIP;
-        NetworkManager.singleton.StartClient();
+        singleton.networkAddress = HostIP;
+        singleton.StartClient();
     }
     #endregion
 }

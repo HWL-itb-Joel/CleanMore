@@ -9,7 +9,8 @@ public class MultiplayerFPSLook : NetworkBehaviour
 {
     [Header("Look Sensitivity")]
     [SerializeField] private float mouseSensitivity = 2.0f;
-    [SerializeField] private float upDownRange = 80.0f;
+    [SerializeField] private float upRange = 80.0f;
+    [SerializeField] private float downRange = 50.0f;
     private float verticalRotation;
 
     [Header("Input Map")]
@@ -21,7 +22,6 @@ public class MultiplayerFPSLook : NetworkBehaviour
 
     private void Awake()
     {
-        if (!isLocalPlayer) return;
         lookAction = PlayerInputs.FindActionMap("OnGround").FindAction("Look");
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
@@ -41,6 +41,7 @@ public class MultiplayerFPSLook : NetworkBehaviour
 
     private void Update()
     {
+        if (!isLocalPlayer) return;
         HandleRotation();
     }
 
@@ -51,7 +52,7 @@ public class MultiplayerFPSLook : NetworkBehaviour
         Debug.Log(mouseXRotation);
 
         verticalRotation -= lookInput.y * mouseSensitivity;
-        verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
+        verticalRotation = Mathf.Clamp(verticalRotation, -upRange, downRange);
 
         transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
         player.transform.Rotate(0, mouseXRotation, 0);

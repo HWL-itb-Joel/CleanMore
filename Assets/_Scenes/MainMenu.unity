@@ -2632,7 +2632,7 @@ PrefabInstance:
     - target: {fileID: 3018393981842123690, guid: a1456291b017148058aeb4586809ad23, type: 3}
       propertyPath: transport
       value: 
-      objectReference: {fileID: 1948676574}
+      objectReference: {fileID: 1948676577}
     - target: {fileID: 3018393981842123690, guid: a1456291b017148058aeb4586809ad23, type: 3}
       propertyPath: landingPage
       value: 
@@ -2737,17 +2737,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1948676577}
   m_SourcePrefab: {fileID: 100100000, guid: a1456291b017148058aeb4586809ad23, type: 3}
---- !u!114 &1948676574 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5313259520262662539, guid: a1456291b017148058aeb4586809ad23, type: 3}
-  m_PrefabInstance: {fileID: 1948676573}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198013553}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1948676575 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3018393981842123690, guid: a1456291b017148058aeb4586809ad23, type: 3}
