@@ -48,13 +48,14 @@ public class GunController : MonoBehaviour
     public float smoothSpeed = 6f;
 
     private Vector3 initialPosition;
-
+    private Quaternion camRotation;
     [Header("Sway Settings")]
     public bool randomizeRecoil;
     public Vector2 randomRecoilConstrains;
 
     private void Awake()
     {
+        camRotation = GetComponentInParent<Transform>().rotation;
         weaponInfo = primaryWeapon;
         primaryObject = Instantiate(primaryWeapon.prefab, gameObject.transform);
         primaryObject.SetActive(true);
@@ -106,6 +107,7 @@ public class GunController : MonoBehaviour
 
     private void Update()
     {
+        transform.rotation = Quaternion.Euler(camRotation.x -90, camRotation.y, 0);
         DetermineRotation();
         if (fireAction.IsPressed())
         {

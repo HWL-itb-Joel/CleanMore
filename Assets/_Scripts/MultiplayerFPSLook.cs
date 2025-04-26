@@ -49,8 +49,6 @@ public class MultiplayerFPSLook : NetworkBehaviour
     {
         float mouseXRotation = lookInput.x * mouseSensitivity;
 
-        Debug.Log(mouseXRotation);
-
         verticalRotation -= lookInput.y * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -upRange, downRange);
 

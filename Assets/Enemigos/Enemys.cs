@@ -31,9 +31,11 @@ public class Enemys : MonoBehaviour
     private Vector3 patrolCenter;
     private Vector3 patrolTarget;
     private Transform targetPlayer = null;
+    private Animator animator;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         patrolCenter = transform.position;
         SetNewPatrolTarget();
@@ -77,6 +79,7 @@ public class Enemys : MonoBehaviour
         switch (newState)
         {
             case ZombieState.patrolling:
+                animator.SetBool("FollowPlayer", false);
                 CheckForPlayers();
                 StartCoroutine(Patrol());
                 break;
@@ -85,9 +88,12 @@ public class Enemys : MonoBehaviour
                 CheckForPlayers();
                 break;
             case ZombieState.following:
+
                 FollowPlayer();
                 break;
             case ZombieState.attacking:
+                animator.SetBool("Walking", true);
+                animator.SetBool("FollowPlayer", true);
                 StartCoroutine(Attack());
                 break;
             case ZombieState.dead:
@@ -131,7 +137,13 @@ public class Enemys : MonoBehaviour
 
     void FollowPlayer()
     {
-        if (targetPlayer == null) return;
+        if (targetPlayer == null) 
+        {
+            animator.SetBool("FollowPlayer", false);
+            return;
+        }
+
+        animator.SetBool("FollowPlayer", true);
 
         agent.speed = chaseSpeed;
         agent.SetDestination(targetPlayer.position);
@@ -149,6 +161,7 @@ public class Enemys : MonoBehaviour
 
     IEnumerator Attack()
     {
+        animator.SetBool("Walking", false);
         agent.isStopped = true;
         isAttacking = true;
         Debug.Log("¡Atacando a " + targetPlayer.name + "!");
@@ -170,6 +183,7 @@ public class Enemys : MonoBehaviour
 
     IEnumerator Patrol()
     {
+        animator.SetBool("Walking", true);
         isPatrolling = true;
         SetNewPatrolTarget();
         float patrolWaitTime = Random.Range(1, 4);
@@ -178,7 +192,9 @@ public class Enemys : MonoBehaviour
         agent.SetDestination(patrolTarget);
 
         yield return new WaitWhile(() => Vector3.Distance(transform.position, patrolTarget) > 1);
-        
+
+        animator.SetBool("Walking", false);
+
         yield return new WaitForSeconds(patrolWaitTime);
         StartCoroutine(Patrol());
     }

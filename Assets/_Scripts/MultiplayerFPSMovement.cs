@@ -28,6 +28,10 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     private InputAction sprintAction;
     private Vector2 moveInput;
 
+    [Header("Animations")]
+    [SerializeField] Animator animator;
+    float LegsY;
+
 
     CharacterController controller = null;
     bool isMoving;
@@ -66,19 +70,31 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
         HandleMovement();
-        
-        Debug.Log(currentMovement);
     }
 
     void HandleMovement()
     {
         float speedMultipier = sprintAction.ReadValue<float>() > 0 ? sprintMultiplier : 1f;
         
-
         float inputY = moveInput.y > 0 ? moveInput.y * speedMultipier : moveInput.y;
+        
+        if (moveInput.y != 0)
+        {
+            if (sprintAction.ReadValue<float>() != 0)
+            {
+                LegsY = 1f;
+            }
+            else
+            {
+                LegsY = 0.5f;
+            }
+        }
+        else { LegsY = 0f; }
+        animator.SetFloat("LegsY", LegsY);
 
         float verticalSpeed = inputY * walkSpeed;
         float horizontalSpeed = moveInput.x * walkSpeed;
+        animator.SetFloat("LegsX", moveInput.x);
 
         Vector3 horizontalMovement = new Vector3(horizontalSpeed, 0, verticalSpeed);
 
