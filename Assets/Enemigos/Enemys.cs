@@ -186,7 +186,7 @@ public class Enemys : MonoBehaviour
         animator.SetBool("Walking", true);
         isPatrolling = true;
         SetNewPatrolTarget();
-        float patrolWaitTime = Random.Range(1, 4);
+        float patrolWaitTime = Random.Range(4, 10);
         agent.speed = patrolSpeed;
 
         agent.SetDestination(patrolTarget);

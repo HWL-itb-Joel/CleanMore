@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Mirror;
 
-
 public class MultiplayerFPSLook : NetworkBehaviour
 {
     [Header("Look Sensitivity")]
@@ -19,12 +18,21 @@ public class MultiplayerFPSLook : NetworkBehaviour
     private Vector2 lookInput;
 
     [SerializeField] GameObject player;
+    [SerializeField] Animator animator;
+
+    [Header("Camera References")]
+    [SerializeField] private Transform cameraTransform; // Tu cámara
+    [SerializeField] private Transform thirdPersonPivot; // Un objeto detrás o encima del jugador
+
+    public bool firstPersonEnabled = true;
+    private float thirdPersonDistance = 5f;
 
     private void Awake()
     {
         lookAction = PlayerInputs.FindActionMap("OnGround").FindAction("Look");
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -42,17 +50,55 @@ public class MultiplayerFPSLook : NetworkBehaviour
     private void Update()
     {
         if (!isLocalPlayer) return;
-        HandleRotation();
+
+        if (Keyboard.current.vKey.wasPressedThisFrame) // Usa tecla V para cambiar cámara
+        {
+            firstPersonEnabled = !firstPersonEnabled;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        if (firstPersonEnabled)
+        {
+            HandleFirstPersonRotation();
+        }
+        else
+        {
+            HandleThirdPersonRotation();
+        }
     }
 
-    void HandleRotation()
+    void HandleFirstPersonRotation()
     {
         float mouseXRotation = lookInput.x * mouseSensitivity;
-
         verticalRotation -= lookInput.y * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -upRange, downRange);
 
+        float verticalPercent = Normalize(verticalRotation, downRange, -upRange);
+        animator.SetFloat("HeightCamera", verticalPercent);
         transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
         player.transform.Rotate(0, mouseXRotation, 0);
+
+        cameraTransform.localPosition = Vector3.zero; // Asegura que esté en la cabeza
+        cameraTransform.localRotation = Quaternion.identity;
+    }
+
+    void HandleThirdPersonRotation()
+    {
+        float mouseXRotation = lookInput.x * mouseSensitivity;
+        float mouseYRotation = lookInput.y * mouseSensitivity;
+
+        // Orbitar alrededor del jugador
+        verticalRotation -= mouseYRotation;
+        verticalRotation = Mathf.Clamp(verticalRotation, -upRange, downRange);
+
+        thirdPersonPivot.Rotate(0, mouseXRotation, 0);
+        cameraTransform.position = thirdPersonPivot.position - thirdPersonPivot.forward * thirdPersonDistance + Vector3.up * 2;
+        cameraTransform.LookAt(thirdPersonPivot.position + Vector3.up * 1.5f);
+    }
+
+    float Normalize(float value, float min, float max)
+    {
+        return (value - min) / (max - min);
     }
 }
