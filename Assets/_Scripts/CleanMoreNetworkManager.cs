@@ -116,6 +116,7 @@ public class CleanMoreNetworkManager : NetworkManager
         singleton.StartHost();
 
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "HostIP", SteamUser.GetSteamID().ToString());
+        print(SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "HostIP"));
     }
 
     private void OnGameLobbyJoinRequest(GameLobbyJoinRequested_t callback)
