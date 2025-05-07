@@ -38,7 +38,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     void Awake()
     {
-        if (!isLocalPlayer) { return; }
+        InputSystem.AddDevice<Keyboard>();
         moveAction = PlayerInputs.FindActionMap("OnGround").FindAction("Move");
         jumpAction = PlayerInputs.FindActionMap("OnGround").FindAction("Jump");
         sprintAction = PlayerInputs.FindActionMap("OnGround").FindAction("Sprint");

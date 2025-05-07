@@ -166,5 +166,10 @@ public class FirstPlayerController : MonoBehaviour
         footstepSource.clip = footsteoSounds[randomIndex];
         footstepSource.Play();
     }
+
+    public static implicit operator int(FirstPlayerController v)
+    {
+        throw new System.NotImplementedException();
+    }
     #endregion
 }
