@@ -13,7 +13,7 @@ public class MultiplayerFPSLook : NetworkBehaviour
     private float verticalRotation;
 
     [Header("Input Map")]
-    [SerializeField] private InputActionAsset PlayerInputs;
+    [SerializeField] private PlayerInput PlayerInputs;
     private InputAction lookAction;
     private Vector2 lookInput;
 
@@ -30,7 +30,7 @@ public class MultiplayerFPSLook : NetworkBehaviour
     private void Awake()
     {
         InputSystem.AddDevice<Mouse>();
-        lookAction = PlayerInputs.FindActionMap("OnGround").FindAction("Look");
+        lookAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Look");
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
 

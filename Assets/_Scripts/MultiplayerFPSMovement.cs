@@ -22,7 +22,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     [SerializeField] GameObject Feet;
 
     [Header("Input Map")]
-    [SerializeField] private InputActionAsset PlayerInputs;
+    [SerializeField] private PlayerInput PlayerInputs;
     private InputAction moveAction;
     private InputAction jumpAction;
     private InputAction sprintAction;
@@ -38,10 +38,9 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     void Awake()
     {
-        InputSystem.AddDevice<Keyboard>();
-        moveAction = PlayerInputs.FindActionMap("OnGround").FindAction("Move");
-        jumpAction = PlayerInputs.FindActionMap("OnGround").FindAction("Jump");
-        sprintAction = PlayerInputs.FindActionMap("OnGround").FindAction("Sprint");
+        moveAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Move");
+        jumpAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Jump");
+        sprintAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Sprint");
 
         moveAction.performed += context => moveInput = context.ReadValue<Vector2>();
         moveAction.canceled += context => moveInput = Vector2.zero;

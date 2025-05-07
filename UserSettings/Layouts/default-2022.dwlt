@@ -19,7 +19,11 @@ MonoBehaviour:
     width: 2240
     height: 1122
   m_ShowMode: 4
+<<<<<<< HEAD
   m_Title: Scene
+=======
+  m_Title: Game
+>>>>>>> origin/main
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 17
+  controlID: 148
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 18
+  controlID: 149
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +175,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 19
+  controlID: 21
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -192,8 +196,8 @@ MonoBehaviour:
     y: 0
     width: 410.5
     height: 614.5
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -252,7 +256,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< HEAD
   controlID: 119
+=======
+  controlID: 150
+>>>>>>> origin/main
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -301,8 +309,8 @@ MonoBehaviour:
     y: 0
     width: 581
     height: 457.5
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 23}
@@ -328,8 +336,8 @@ MonoBehaviour:
     y: 0
     width: 482
     height: 1072
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 24}
@@ -473,7 +481,11 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
+<<<<<<< HEAD
       m_ExpandedIDs: 9ed7fffffcd7ffff4ef8ffffbafaffff0e820000
+=======
+      m_ExpandedIDs: 6ca1ffff3ea5ffff4ca8ffff4af5fffff4ffffff
+>>>>>>> origin/main
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -899,9 +911,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -207, y: -242}
+      snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 3
+      snapCorner: 0
       id: AINavigationOverlay
       index: 8
       layout: 4
@@ -918,9 +930,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 41.61568, y: -1.8091803, z: 16.70659}
     speed: 2
     m_Value: {x: 41.61568, y: -1.8091803, z: 16.70659}
+=======
+    m_Target: {x: 0, y: 1.0299997, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 1.0299997, z: 0}
+>>>>>>> origin/main
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -966,6 +984,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
     m_Value: {x: 0.70710677, y: 0.000000024188644, z: -0.000000010715087, w: 0.7071068}
@@ -973,6 +992,15 @@ MonoBehaviour:
     m_Target: 12.632322
     speed: 2
     m_Value: 12.632322
+=======
+    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    speed: 2
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_Size:
+    m_Target: 10
+    speed: 2
+    m_Value: 10
+>>>>>>> origin/main
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2186,7 +2214,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/_Models/Scrapyard/Props/Exterior
+=======
+    - Assets/_Scripts
+>>>>>>> origin/main
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2194,16 +2226,26 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/_Models/Scrapyard/Props/Exterior
+=======
+  - Assets/_Scripts
+>>>>>>> origin/main
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/2a3d/Desktop/Kraken/CleanMore
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
+<<<<<<< HEAD
     m_SelectedIDs: 1e780000
     m_LastClickedID: 30750
     m_ExpandedIDs: 0000000016760000da770000207800002278000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 30820000
+    m_LastClickedID: 33328
+    m_ExpandedIDs: 00000000fc7e0000fe7e0000007f0000027f0000047f0000067f0000087f00000a7f00000c7f00000e7f0000107f0000127f0000147f0000167f000000ca9a3bffffff7f
+>>>>>>> origin/main
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2231,7 +2273,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000016760000
+=======
+    m_ExpandedIDs: 00000000fc7e0000fe7e0000007f0000027f0000047f0000067f0000087f00000a7f00000c7f00000e7f0000107f0000127f0000147f0000167f0000
+>>>>>>> origin/main
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2539,7 +2585,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -32438
+  m_LastSelectedObjectID: 39372
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
