@@ -21,14 +21,15 @@ public class MultiplayerFPSLook : NetworkBehaviour
     [SerializeField] Animator animator;
 
     [Header("Camera References")]
-    [SerializeField] private Transform cameraTransform; // Tu cámara
-    [SerializeField] private Transform thirdPersonPivot; // Un objeto detrás o encima del jugador
+    [SerializeField] private Transform cameraTransform; // Tu c?mara
+    [SerializeField] private Transform thirdPersonPivot; // Un objeto detr?s o encima del jugador
 
     public bool firstPersonEnabled = true;
     private float thirdPersonDistance = 5f;
 
     private void Awake()
     {
+        if (!isLocalPlayer) { return; }
         lookAction = PlayerInputs.FindActionMap("OnGround").FindAction("Look");
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
@@ -51,7 +52,7 @@ public class MultiplayerFPSLook : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
 
-        if (Keyboard.current.vKey.wasPressedThisFrame) // Usa tecla V para cambiar cámara
+        if (Keyboard.current.vKey.wasPressedThisFrame) // Usa tecla V para cambiar c?mara
         {
             firstPersonEnabled = !firstPersonEnabled;
             Cursor.visible = false;
@@ -79,7 +80,7 @@ public class MultiplayerFPSLook : NetworkBehaviour
         transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
         player.transform.Rotate(0, mouseXRotation, 0);
 
-        cameraTransform.localPosition = Vector3.zero; // Asegura que esté en la cabeza
+        cameraTransform.localPosition = Vector3.zero; // Asegura que est? en la cabeza
         cameraTransform.localRotation = Quaternion.identity;
     }
 
