@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2240
     height: 1122
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -252,11 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 55
-=======
-  controlID: 114
->>>>>>> origin/main
+  controlID: 119
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -268,7 +264,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -277,15 +273,15 @@ MonoBehaviour:
     y: 0
     width: 1177
     height: 457.5
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 21}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
   - {fileID: 22}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -477,11 +473,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-<<<<<<< HEAD
-      m_ExpandedIDs: cadaffff16deffff9cf7ffffeefaffff
-=======
-      m_ExpandedIDs: 1efbffff
->>>>>>> origin/main
+      m_ExpandedIDs: 9ed7fffffcd7ffff4ef8ffffbafaffff0e820000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -926,15 +918,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-    m_Target: {x: 16.357777, y: 0.49629048, z: -17.517958}
+    m_Target: {x: 41.61568, y: -1.8091803, z: 16.70659}
     speed: 2
-    m_Value: {x: 16.357777, y: 0.49629048, z: -17.517958}
-=======
-    m_Target: {x: -21.494244, y: 1.25, z: 2.7545223}
-    speed: 2
-    m_Value: {x: -21.494244, y: 1.25, z: 2.7545223}
->>>>>>> origin/main
+    m_Value: {x: 41.61568, y: -1.8091803, z: 16.70659}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -957,7 +943,7 @@ MonoBehaviour:
         m_Target: 0
         speed: 2
         m_Value: 0
-      m_Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0.4}
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     yGrid:
@@ -965,7 +951,7 @@ MonoBehaviour:
         m_Target: 1
         speed: 2
         m_Value: 1
-      m_Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0.4}
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     zGrid:
@@ -973,34 +959,24 @@ MonoBehaviour:
         m_Target: 0
         speed: 2
         m_Value: 0
-      m_Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0.4}
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-<<<<<<< HEAD
-    m_Target: {x: 0.3570022, y: -0.6344167, z: 0.54573876, w: 0.4150121}
+    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
-    m_Value: {x: 0.35700202, y: -0.6344164, z: 0.5457385, w: 0.41501188}
+    m_Value: {x: 0.70710677, y: 0.000000024188644, z: -0.000000010715087, w: 0.7071068}
   m_Size:
-    m_Target: 6.9709306
+    m_Target: 12.632322
     speed: 2
-    m_Value: 7.5029263
-=======
-    m_Target: {x: 0.026615739, y: 0.9728628, z: -0.17793429, w: 0.14552149}
-    speed: 2
-    m_Value: {x: 0.02661564, y: 0.9728592, z: -0.17793363, w: 0.14552096}
-  m_Size:
-    m_Target: 28.116192
-    speed: 2
-    m_Value: 28.116192
->>>>>>> origin/main
+    m_Value: 12.632322
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 2
     m_SpeedNormalized: 1
@@ -2210,11 +2186,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-<<<<<<< HEAD
     - Assets/_Models/Scrapyard/Props/Exterior
-=======
-    - Assets/_Scripts
->>>>>>> origin/main
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2222,26 +2194,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-<<<<<<< HEAD
   - Assets/_Models/Scrapyard/Props/Exterior
-=======
-  - Assets/_Scripts
->>>>>>> origin/main
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/2a3d/Desktop/JoelAguirre/GitHub/CleanMore
+  m_LastProjectPath: /Users/2a3d/Desktop/Kraken/CleanMore
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-<<<<<<< HEAD
-    m_SelectedIDs: fc820000
-    m_LastClickedID: 33532
-    m_ExpandedIDs: 00000000247b0000387b00000a7c0000167c000000ca9a3bffffff7f
-=======
-    m_SelectedIDs: 8e7b0000
-    m_LastClickedID: 31630
-    m_ExpandedIDs: 00000000587b00005a7b00005c7b00005e7b0000607b0000627b0000647b0000667b0000687b00006a7b00006c7b00006e7b0000707b0000727b0000927b000000ca9a3bffffff7f
->>>>>>> origin/main
+    m_SelectedIDs: 1e780000
+    m_LastClickedID: 30750
+    m_ExpandedIDs: 0000000016760000da770000207800002278000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2269,11 +2231,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 00000000247b0000
-=======
-    m_ExpandedIDs: 00000000587b00005a7b00005c7b00005e7b0000607b0000627b0000647b0000667b0000687b00006a7b00006c7b00006e7b0000707b0000727b0000
->>>>>>> origin/main
+    m_ExpandedIDs: 0000000016760000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
