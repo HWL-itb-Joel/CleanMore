@@ -344,7 +344,24 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""InputKeyMouse"",
+            ""bindingGroup"": ""InputKeyMouse"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // OnGround
         m_OnGround = asset.FindActionMap("OnGround", throwIfNotFound: true);
@@ -524,6 +541,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         }
     }
     public OnGroundActions @OnGround => new OnGroundActions(this);
+    private int m_InputKeyMouseSchemeIndex = -1;
+    public InputControlScheme InputKeyMouseScheme
+    {
+        get
+        {
+            if (m_InputKeyMouseSchemeIndex == -1) m_InputKeyMouseSchemeIndex = asset.FindControlSchemeIndex("InputKeyMouse");
+            return asset.controlSchemes[m_InputKeyMouseSchemeIndex];
+        }
+    }
     public interface IOnGroundActions
     {
         void OnMove(InputAction.CallbackContext context);

@@ -29,7 +29,7 @@ public class MultiplayerFPSLook : NetworkBehaviour
 
     private void Awake()
     {
-        if (!isLocalPlayer) { return; }
+        InputSystem.AddDevice<Mouse>();
         lookAction = PlayerInputs.FindActionMap("OnGround").FindAction("Look");
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
