@@ -23,6 +23,8 @@ public class Enemys : MonoBehaviour
     private bool isPatrolling;
     private bool isAttacking;
 
+    public float attackDamage = 5f;
+
     [Space]
 
     public float attackSpeed;
@@ -166,7 +168,7 @@ public class Enemys : MonoBehaviour
         isAttacking = true;
         Debug.Log("¡Atacando a " + targetPlayer.name + "!");
         targetPlayer.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth);
-        playerHealth.GetDamage(5);
+        playerHealth.GetDamage(attackDamage);
 
         yield return new WaitForSeconds(1f);
 
