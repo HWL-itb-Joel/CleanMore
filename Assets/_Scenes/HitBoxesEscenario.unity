@@ -2917,7 +2917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &169792819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3579,6 +3579,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572608376}
     m_Modifications:
+    - target: {fileID: 879717619677560833, guid: 090735b1410454a1ca23f379e488007b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7adb798eee2964d0ea025ef0ec0c5285, type: 2}
     - target: {fileID: 1672417605990162900, guid: 090735b1410454a1ca23f379e488007b, type: 3}
       propertyPath: m_Name
       value: _arbol (3)
@@ -4353,6 +4357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_3P
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a0ec4b7db436e4dc69994bc2acaf40eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: a0ec4b7db436e4dc69994bc2acaf40eb, type: 3}
       propertyPath: m_Controller
       value: 
@@ -4761,6 +4769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572608376}
     m_Modifications:
+    - target: {fileID: 879717619677560833, guid: 090735b1410454a1ca23f379e488007b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7adb798eee2964d0ea025ef0ec0c5285, type: 2}
     - target: {fileID: 1672417605990162900, guid: 090735b1410454a1ca23f379e488007b, type: 3}
       propertyPath: m_Name
       value: _arbol (5)
@@ -9375,6 +9387,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572608376}
     m_Modifications:
+    - target: {fileID: 879717619677560833, guid: 090735b1410454a1ca23f379e488007b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7adb798eee2964d0ea025ef0ec0c5285, type: 2}
     - target: {fileID: 1672417605990162900, guid: 090735b1410454a1ca23f379e488007b, type: 3}
       propertyPath: m_Name
       value: _arbol (1)
@@ -9773,6 +9789,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572608376}
     m_Modifications:
+    - target: {fileID: 879717619677560833, guid: 090735b1410454a1ca23f379e488007b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7adb798eee2964d0ea025ef0ec0c5285, type: 2}
     - target: {fileID: 1672417605990162900, guid: 090735b1410454a1ca23f379e488007b, type: 3}
       propertyPath: m_Name
       value: _arbol (4)
@@ -16436,6 +16456,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.018130548, y: 36.543804, z: 0.08615516}
   m_Center: {x: -0.50825715, y: 123.28545, z: -1.4657668}
+--- !u!1 &1386623995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1386623996}
+  m_Layer: 0
+  m_Name: propsPrefabs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1386623996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386623995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.86679, y: -0.013979583, z: 18.313324}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1393426395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18376,7 +18427,7 @@ PrefabInstance:
     - target: {fileID: 1691109796623608866, guid: a9d5eeadecf494f89a883375b5a7d7bb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 658786745a7254574b29bcf37b9f6fe0, type: 2}
+      objectReference: {fileID: 2100000, guid: 0dcd848f5a6144b33bd38c323eb2e735, type: 2}
     - target: {fileID: 2601534766060104525, guid: a9d5eeadecf494f89a883375b5a7d7bb, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -18385,6 +18436,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2968595263147039795, guid: a9d5eeadecf494f89a883375b5a7d7bb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d2c202559b53c4f3dbecd920827371b8, type: 2}
     - target: {fileID: 5956066021413225763, guid: a9d5eeadecf494f89a883375b5a7d7bb, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -20933,6 +20988,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1926128443993928014, guid: a4788d6381357457b8e3f27c964d94c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79e6c9fecf2424da4a41aeb3c9f5cab0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24205,6 +24264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572608376}
     m_Modifications:
+    - target: {fileID: 879717619677560833, guid: 090735b1410454a1ca23f379e488007b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7adb798eee2964d0ea025ef0ec0c5285, type: 2}
     - target: {fileID: 1672417605990162900, guid: 090735b1410454a1ca23f379e488007b, type: 3}
       propertyPath: m_Name
       value: _arbol (2)
@@ -25683,6 +25746,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572608376}
     m_Modifications:
+    - target: {fileID: 879717619677560833, guid: 090735b1410454a1ca23f379e488007b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7adb798eee2964d0ea025ef0ec0c5285, type: 2}
     - target: {fileID: 1672417605990162900, guid: 090735b1410454a1ca23f379e488007b, type: 3}
       propertyPath: m_Name
       value: _arbol
@@ -26880,3 +26947,4 @@ SceneRoots:
   - {fileID: 91892847}
   - {fileID: 263462981}
   - {fileID: 1891839590}
+  - {fileID: 1386623996}
