@@ -31,13 +31,15 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     [Header("Animations")]
     [SerializeField] Animator animator;
     float LegsY;
-
+    public static MultiplayerFPSMovement FPSMovement;
 
     CharacterController controller = null;
+    public bool isRunning;
     bool isMoving;
 
     void Awake()
     {
+        FPSMovement = this;
         moveAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Move");
         jumpAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Jump");
         sprintAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Sprint");
@@ -83,13 +85,15 @@ public class MultiplayerFPSMovement : NetworkBehaviour
             if (sprintAction.ReadValue<float>() != 0)
             {
                 LegsY = 1f;
+                isRunning = true;
             }
             else
             {
                 LegsY = 0.5f;
+                isRunning = false;
             }
         }
-        else { LegsY = 0f; }
+        else { LegsY = 0f; isRunning = false; }
         animator.SetFloat("LegsY", LegsY);
 
         float verticalSpeed = inputY * walkSpeed;

@@ -55,12 +55,10 @@ public class ZombieHordeManager : MonoBehaviour
 
     IEnumerator HordeLoop()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(timeBetweenHordes);
-            SpawnHorde();
-            currentHorde++;
-        }
+        yield return new WaitForSeconds(timeBetweenHordes);
+        print("new horde");
+        SpawnHorde();
+        currentHorde++;
     }
 
     void SpawnHorde()
@@ -79,9 +77,9 @@ public class ZombieHordeManager : MonoBehaviour
     ZombieType GetRandomZombieType()
     {
         float roll = Random.value;
-        if (currentHorde < 3 || roll < 0.6f) return ZombieType.Tanque;
-        if (roll < 0.75f) return ZombieType.Tanque;
-        if (roll < 0.9f) return ZombieType.Tanque;
+        if (roll < 0.6f) return ZombieType.Normal;
+        if (currentHorde < 5 && roll < 0.75f) return ZombieType.Rapido;
+        if (currentHorde < 7 && roll < 0.9f) return ZombieType.Distancia;
         return ZombieType.Tanque;
     }
 
