@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,6 +36,7 @@ public class GunController : MonoBehaviour
     public bool _canShoot;
     public bool _canReload;
     public bool _canAlternShoot;
+    bool run;
     private bool shootEnded;
     public bool _gunEnabled;
     private bool firstThroweableEnabled;
@@ -121,7 +123,7 @@ public class GunController : MonoBehaviour
     {
         //transform.rotation = Quaternion.Euler(camRotation.x -90, camRotation.y, 0);
         DetermineRotation();
-        if (fireAction.IsPressed())
+        if (fireAction.IsPressed() && !MultiplayerFPSMovement.FPSMovement.isRunning)
         {
             if (_canShoot && _currentAmmoInClip > 0 && _gunEnabled)
             {
@@ -149,6 +151,19 @@ public class GunController : MonoBehaviour
             _canShoot = true;
         }
 
+        if (MultiplayerFPSMovement.FPSMovement.isRunning)
+        {
+            _canShoot = false;
+            Animations.SetBool("isRunning", true);
+        }
+        else if (!MultiplayerFPSMovement.FPSMovement.isRunning && !fireAction.IsPressed())
+        {
+            _canShoot = true;
+            Animations.SetBool("isRunning", false);
+        }
+
+
+
         if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && _ammoInReserve > 0 && weaponInfo.weaponType != WeaponType.Secundaria && _canReload)
         {
             Animations.SetTrigger("Reloading");
@@ -162,22 +177,13 @@ public class GunController : MonoBehaviour
         if (scroll != 0)
         {
             ChangeGunWeapon();
-        }
-
-        if (MultiplayerFPSMovement.FPSMovement.isRunning)
-        {
-            _canShoot = false;
-            Animations.SetBool("isRunning", true);
-        }
-        else
-        {
             _canShoot = true;
-            Animations.SetBool("isRunning", false);
         }
 
         if (alternativeShoot.IsPressed() && weaponInfo.alternativeShoot && _canAlternShoot)
         {
             ChangeAlternativeShoot();
+            _canShoot = true;
         }
         else if (!alternativeShoot.IsPressed())
         {
@@ -309,8 +315,13 @@ public class GunController : MonoBehaviour
             {
                 GameObject feedback = Instantiate(weaponInfo.feedback);
                 feedback.transform.position = hit.point;
-                feedback.transform.rotation = Quaternion.Euler(Camera.main.transform.rotation.x * 180, (Camera.main.transform.rotation.y + hit.normal.y) * 180, Camera.main.transform.rotation.z * 180);
+                feedback.transform.rotation = Quaternion.Euler(hit.normal);
                 Destroy(feedback, 3f);
+
+                if (hit.transform.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
+                {
+                    r.TakeDamage(weaponInfo.damage);
+                }
             }
             catch { }
         }

@@ -8,7 +8,7 @@ using UnityEditor;
 #endif
 
 
-public class Enemys : MonoBehaviour
+public class Enemys : MonoBehaviour, IEnemyHealth
 {
     [Header("General Settings")]
     public ZombieState currentState = ZombieState.patrolling;
@@ -23,6 +23,8 @@ public class Enemys : MonoBehaviour
     private bool isPatrolling;
     private bool isAttacking;
 
+    public int Health {  get; set; }
+    public int zombieHealth;
     public float attackDamage = 5f;
 
     [Space]
@@ -37,6 +39,7 @@ public class Enemys : MonoBehaviour
 
     void Start()
     {
+        Health = zombieHealth;
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         patrolCenter = transform.position;
@@ -45,6 +48,11 @@ public class Enemys : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (Health <= 0)
+        {
+            ChangeState(ZombieState.dead);
+            return;
+        }
         CheckState();
         Debug.Log(currentState);
     }

@@ -25,19 +25,19 @@ MonoBehaviour:
   coolingAccelerationTime: 0
   coolingMultiplier: 0
   isCooling: 0
-  fireRate: 0.2
+  fireRate: 0.15
   bulletsByShot: 1
   sprayBullets: 1
-  sprayIndicator: 1
-  bulletsFireRate: 0.2
+  sprayIndicator: 2
+  bulletsFireRate: 0.05
   maxDistance: 30
-  damage: 25
+  damage: 20
   clipSize: 30
   reservedAmmoCapacity: 270
   alternativeShoot: 1
   alternativeType: 1
   alternativeBulletsByShoot: 3
   alternativeSpray: 1
-  alternativeSprayIndicator: 2
-  alternativeDamage: 20
-  alternativeFireRate: 0.25
+  alternativeSprayIndicator: 1
+  alternativeDamage: 25
+  alternativeFireRate: 0.4

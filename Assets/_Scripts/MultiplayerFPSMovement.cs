@@ -134,4 +134,17 @@ public class MultiplayerFPSMovement : NetworkBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(Feet.transform.position, CheckRadius);
     }
+
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+        CleanMoreNetworkManager.Register(transform);
+    }
+
+    public override void OnStopServer()
+    {
+        base.OnStopServer();
+        CleanMoreNetworkManager.Unregister(transform);
+    }
+
 }

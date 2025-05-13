@@ -408,6 +408,7 @@ MonoBehaviour:
   Feet: {fileID: 8850184830377105904}
   PlayerInputs: {fileID: 3907260981699159535}
   animator: {fileID: 8345445205245584217}
+  isRunning: 0
 --- !u!114 &4479895003205291932
 MonoBehaviour:
   m_ObjectHideFlags: 0

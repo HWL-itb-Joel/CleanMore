@@ -11,11 +11,27 @@ public class CleanMoreNetworkManager : NetworkManager
     [SerializeField] private GameObject EnterAddressPanel, landingPage;
     [SerializeField] private TMP_InputField AddressField;
 
-    public List<FirstPlayerController> PlayerList = new List<FirstPlayerController>();
+    public List<GameObject> PlayerList { get; set; } = new List<GameObject>();
+    public MultiplayerFPSMovement[] list;
 
     protected Callback<LobbyCreated_t> lobbyCreated;
     protected Callback<GameLobbyJoinRequested_t> gameLobbyJoinRequest;
     protected Callback<LobbyEnter_t> lobbyEntered;
+
+    public static readonly List<Transform> AllPlayers = new List<Transform>();
+
+    public static void Register(Transform player)
+    {
+        if (!AllPlayers.Contains(player))
+            AllPlayers.Add(player);
+    }
+
+    public static void Unregister(Transform player)
+    {
+        if (AllPlayers.Contains(player))
+            AllPlayers.Remove(player);
+    }
+
 
     private void Start()
     {
@@ -29,7 +45,7 @@ public class CleanMoreNetworkManager : NetworkManager
     {
         base.OnServerAddPlayer(conn);
 
-        FirstPlayerController playerPref = conn.identity.GetComponent<FirstPlayerController>();
+        GameObject playerPref = conn.identity.GetComponent<GameObject>();
 
         PlayerList.Add(playerPref);
 
@@ -43,7 +59,7 @@ public class CleanMoreNetworkManager : NetworkManager
     {
         base.OnServerDisconnect(conn);
 
-        FirstPlayerController playerPref = conn.identity.GetComponent<FirstPlayerController>();
+        GameObject playerPref = conn.identity.GetComponent<GameObject>();
 
         PlayerList.Remove(playerPref);
     }
