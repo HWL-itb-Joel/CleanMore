@@ -30,6 +30,7 @@ public class ZombieHordeManager : NetworkBehaviour
 
     void Start()
     {
+        if (!isServer) return;
         InitPools();
         StartCoroutine(HordeLoop());
 
@@ -73,8 +74,6 @@ public class ZombieHordeManager : NetworkBehaviour
 
     void SpawnHorde()
     {
-        if (!isServer) return;
-
         int totalZombies = baseZombiesPerHorde + currentHorde * 2;
 
         for (int i = 0; i < totalZombies; i++)
