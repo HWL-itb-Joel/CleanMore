@@ -19,7 +19,7 @@ public class GunController : MonoBehaviour
     public ThrowableWeapon throwableWeapon2;
 
     [Header("Input Settings")]
-    public InputActionAsset PlayerInputs;
+    [SerializeField] public PlayerInput PlayerInputs;
     private InputAction fireAction;
     private InputAction reloadAction;
     private InputAction lookAction;
@@ -69,11 +69,11 @@ public class GunController : MonoBehaviour
         GunController.gunController = this;
         camRotation = GetComponentInParent<Transform>().rotation;
         weaponInfo = primaryWeapon;
-        scrollWeapons = PlayerInputs.FindActionMap("OnGround").FindAction("PrimaryWeapon");
-        fireAction = PlayerInputs.FindActionMap("OnGround").FindAction("Fire");
-        reloadAction = PlayerInputs.FindActionMap("OnGround").FindAction("Reload");
-        lookAction = PlayerInputs.FindActionMap("OnGround").FindAction("Look");
-        alternativeShoot = PlayerInputs.FindActionMap("OnGround").FindAction("AlternativeShoot");
+        scrollWeapons = PlayerInputs.actions.FindActionMap("OnGround").FindAction("PrimaryWeapon");
+        fireAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Fire");
+        reloadAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Reload");
+        lookAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Look");
+        alternativeShoot = PlayerInputs.actions.FindActionMap("OnGround").FindAction("AlternativeShoot");
 
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
