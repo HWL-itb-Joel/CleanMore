@@ -1,9 +1,8 @@
 public interface IEnemyHealth
 {
-    public int Health { get; set; }
+    int Health { get; set; }
 
-    public void TakeDamage(int i)
-    {
-        Health -= i;
-    }
+    void FlashOnHit();
+    void TakeDamage(int i);
+    void OnHealthChanged(int oldValue, int newValue);
 }

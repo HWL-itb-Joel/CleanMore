@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Mirror;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 
-public class Enemys : MonoBehaviour, IEnemyHealth
+public class Enemys : NetworkBehaviour, IEnemyHealth
 {
     [Header("General Settings")]
     public ZombieState currentState = ZombieState.patrolling;
@@ -23,7 +24,15 @@ public class Enemys : MonoBehaviour, IEnemyHealth
     private bool isPatrolling;
     private bool isAttacking;
 
-    public int Health {  get; set; }
+    [SyncVar(hook = nameof(OnHealthChanged))]
+    public int health;
+
+    public int Health
+    {
+        get => health;
+        set => health = value;
+    }
+
     public int zombieHealth;
     public float attackDamage = 5f;
 
@@ -36,6 +45,14 @@ public class Enemys : MonoBehaviour, IEnemyHealth
     private Vector3 patrolTarget;
     private Transform targetPlayer = null;
     [SerializeField] private Animator animator;
+
+    public Renderer enemyRenderer;
+    public Material originalMaterial;
+    public Material flashMaterial;
+    public float flashDuration = 0.1f;
+
+    private Coroutine flashCoroutine;
+
 
     void Start()
     {
@@ -247,10 +264,42 @@ public class Enemys : MonoBehaviour, IEnemyHealth
         }
     }
 
+    public void OnHitFlash()
+    {
+        if (flashCoroutine != null)
+            StopCoroutine(flashCoroutine);
+
+        flashCoroutine = StartCoroutine(FlashRoutine());
+    }
+
+    private IEnumerator FlashRoutine()
+    {
+        enemyRenderer.material = flashMaterial;
+        yield return new WaitForSeconds(flashDuration);
+        enemyRenderer.material = originalMaterial;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         CheckForPlayers();
     }
+
+    public void FlashOnHit()
+    {
+        StartCoroutine(FlashRoutine());
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+    }
+
+    public void OnHealthChanged(int oldValue, int newValue)
+    {
+        // Lógica de sincronización visual o eventos
+    }
+
+
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {

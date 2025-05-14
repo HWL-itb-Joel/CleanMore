@@ -700,6 +700,10 @@ MonoBehaviour:
   attackDamage: 5
   attackSpeed: 0
   animator: {fileID: 3941230434729530531}
+  enemyRenderer: {fileID: 8676633334428570255}
+  originalMaterial: {fileID: 2100000, guid: 025f740e96c1188419fc36b7c4a56ac5, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 658786745a7254574b29bcf37b9f6fe0, type: 2}
+  flashDuration: 0.1
 --- !u!195 &2773626423811960233
 NavMeshAgent:
   m_ObjectHideFlags: 0

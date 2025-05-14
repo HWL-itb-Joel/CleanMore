@@ -75,6 +75,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5867538906908085103}
   m_SourcePrefab: {fileID: 100100000, guid: 16a320ebb51e5fa489183665da666945, type: 3}
+--- !u!137 &2538440111967912837 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7089183375633457274, guid: 16a320ebb51e5fa489183665da666945, type: 3}
+  m_PrefabInstance: {fileID: 4513856501293521923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3631336451888456018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16a320ebb51e5fa489183665da666945, type: 3}
@@ -103,6 +108,10 @@ MonoBehaviour:
   attackDamage: 5
   attackSpeed: 1
   animator: {fileID: 965886805450774216}
+  enemyRenderer: {fileID: 2538440111967912837}
+  originalMaterial: {fileID: 2100000, guid: 5ee81f185d2449e468dcd8c3d3b3ba5c, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 658786745a7254574b29bcf37b9f6fe0, type: 2}
+  flashDuration: 0.05
 --- !u!95 &965886805450774216
 Animator:
   serializedVersion: 5

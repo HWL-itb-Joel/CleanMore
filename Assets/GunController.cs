@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Mirror;
 
-public class GunController : MonoBehaviour
+public class GunController : NetworkBehaviour
 {
     [Header("Guns Selected")]
     private Gun weaponInfo;
@@ -324,9 +325,12 @@ public class GunController : MonoBehaviour
                 feedback.transform.rotation = Quaternion.Euler(hit.normal);
                 Destroy(feedback, 3f);
 
-                if (hit.transform.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
+                if (hit.collider.TryGetComponent<NetworkIdentity>(out var identity))
                 {
-                    r.TakeDamage(weaponInfo.damage);
+                    if (identity.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
+                    {
+                        CmdDamageEnemy(identity, weaponInfo.damage);
+                    }
                 }
             }
             catch { }
@@ -395,15 +399,25 @@ public class GunController : MonoBehaviour
         _canReload = true;
         _canShoot = true;
     }
-    #endregion
 
-    /*private void OnDrawGizmos()
+    [Command]
+    void CmdDamageEnemy(NetworkIdentity enemyID, int damage)
     {
-        Gizmos.color = Color.red;
-        Debug.DrawLine(Camera.main.transform.position, Camera.main.transform.forward * 180,Color.red);
-    }*/
+        if (enemyID.TryGetComponent<IEnemyHealth>(out var enemy))
+        {
+            enemy.TakeDamage(damage);
+            enemy.FlashOnHit(); // opcionalmente puedes hacer que esto se vea en todos
+        }
+    }
+        #endregion
 
-    void ChangeAlternativeShoot()
+        /*private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Debug.DrawLine(Camera.main.transform.position, Camera.main.transform.forward * 180,Color.red);
+        }*/
+
+        void ChangeAlternativeShoot()
     {
         _canAlternShoot = false;
         Debug.Log("Alternative Shoot Enabled");
