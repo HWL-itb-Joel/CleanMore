@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class ZombieHordeManager : MonoBehaviour
+public class ZombieHordeManager : NetworkBehaviour
 {
     public enum ZombieType { Normal, Rapido, Distancia, Tanque }
 
@@ -52,11 +53,12 @@ public class ZombieHordeManager : MonoBehaviour
             for (int i = 0; i < entry.initialSize; i++)
             {
                 GameObject z = Instantiate(entry.prefab, transform);
-                z.SetActive(false);
+                z.SetActive(false); // NO hacer Spawn aqu?
                 entry.pool.Add(z);
             }
         }
     }
+
 
     IEnumerator HordeLoop()
     {
@@ -71,15 +73,24 @@ public class ZombieHordeManager : MonoBehaviour
 
     void SpawnHorde()
     {
+        if (!isServer) return;
+
         int totalZombies = baseZombiesPerHorde + currentHorde * 2;
 
         for (int i = 0; i < totalZombies; i++)
         {
             ZombieType type = GetRandomZombieType();
             GameObject zombie = GetZombieFromPool(type);
+
+            if (zombie == null) continue;
+
             zombie.transform.position = GetSafeSpawnPosition();
-            zombie.SetActive(true);
+            zombie.transform.rotation = Quaternion.identity;
+
+            zombie.SetActive(true);              // Activar localmente en el servidor
+            NetworkServer.Spawn(zombie);         // Hacerlo visible a todos los jugadores
         }
+
     }
 
     ZombieType GetRandomZombieType()
@@ -102,15 +113,16 @@ public class ZombieHordeManager : MonoBehaviour
 
         foreach (var z in entry.pool)
         {
-            if (!z.activeInHierarchy) return z;
+            if (!z.activeInHierarchy) return z;  // Devuelve un zombie desactivado del pool
         }
 
-        // Expand pool if needed
+        // Expandir el pool si no hay disponibles
         GameObject newZ = Instantiate(entry.prefab, transform);
-        newZ.SetActive(true);
+        newZ.SetActive(false); // importante: el nuevo zombie inicia inactivo
         entry.pool.Add(newZ);
         return newZ;
     }
+
 
     Vector3 GetSafeSpawnPosition()
 {
@@ -141,8 +153,9 @@ public class ZombieHordeManager : MonoBehaviour
         if (isSafe) return candidate;
     }
 
-    // Fallback
-    return players[0].position + Random.onUnitSphere * maxSpawnDistance;
+        Vector3 fallback = players[0].position - players[0].forward * minSpawnDistance;
+        fallback.y = players[0].position.y;
+        return fallback;
 }
 
 
