@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae05082e79f294ac091c913526022ae0, type: 3}
+  m_Name: TiePodGun
+  m_EditorClassIdentifier: 
+  weaponName: TiePodGun
+  weaponType: 0
+  feedback: {fileID: 3767975676577083156, guid: 9112da23f8ff14e948c14f55e07f67d3, type: 3}
+  rateType: 0
+  heatThreshold: 0
+  currentHeat: 0
+  overheatCooldown: 0
+  isOverheated: 0
+  baseCoolingRate: 0
+  maxCoolingRate: 0
+  coolingAccelerationTime: 0
+  coolingMultiplier: 0
+  isCooling: 0
+  fireRate: 0.15
+  bulletsByShot: 1
+  sprayBullets: 1
+  sprayIndicator: 2
+  bulletsFireRate: 0.05
+  maxDistance: 30
+  damage: 20
+  clipSize: 30
+  reservedAmmoCapacity: 270
+  alternativeShoot: 1
+  alternativeType: 1
+  alternativeBulletsByShoot: 3
+  alternativeSpray: 1
+  alternativeSprayIndicator: 1
+  alternativeDamage: 25
+  alternativeFireRate: 0.4

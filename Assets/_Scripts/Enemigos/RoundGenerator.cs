@@ -20,8 +20,8 @@ public class ZombieHordeManager : MonoBehaviour
     public List<ZombieEntry> zombieTypes;
     public int baseZombiesPerHorde = 5;
     public float timeBetweenHordes = 10f;
-    public float minSpawnDistance = 10f;
-    public float maxSpawnDistance = 25f;
+    public float minSpawnDistance = 40f;
+    public float maxSpawnDistance = 60f;
     public float playerFOV = 90f;
 
     private int currentHorde = 1;
@@ -29,16 +29,21 @@ public class ZombieHordeManager : MonoBehaviour
 
     void Start()
     {
-        GameObject[] playerObjs = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject obj in playerObjs)
-        {
-            players.Add(obj.transform);
-        }
-
         InitPools();
         StartCoroutine(HordeLoop());
 
     }
+
+    private void UpdatePlayerList()
+    {
+        players = new List<Transform>(CleanMoreNetworkManager.AllPlayers);
+
+        if (players.Count > 0)
+        {
+            player = players[0]; // o usar lógica para elegir uno
+        }
+    }
+
 
     void InitPools()
     {
@@ -46,7 +51,7 @@ public class ZombieHordeManager : MonoBehaviour
         {
             for (int i = 0; i < entry.initialSize; i++)
             {
-                GameObject z = Instantiate(entry.prefab);
+                GameObject z = Instantiate(entry.prefab, transform);
                 z.SetActive(false);
                 entry.pool.Add(z);
             }
@@ -55,12 +60,12 @@ public class ZombieHordeManager : MonoBehaviour
 
     IEnumerator HordeLoop()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(timeBetweenHordes);
-            SpawnHorde();
-            currentHorde++;
-        }
+        yield return new WaitForSeconds(timeBetweenHordes);
+        UpdatePlayerList();
+        print("new horde");
+        SpawnHorde();
+        currentHorde++;
+        StartCoroutine(HordeLoop());
     }
 
     void SpawnHorde()
@@ -79,30 +84,42 @@ public class ZombieHordeManager : MonoBehaviour
     ZombieType GetRandomZombieType()
     {
         float roll = Random.value;
-        if (currentHorde < 3 || roll < 0.6f) return ZombieType.Tanque;
-        if (roll < 0.75f) return ZombieType.Tanque;
-        if (roll < 0.9f) return ZombieType.Tanque;
+        if (currentHorde < 3 || roll < 0.6f) return ZombieType.Normal;
+        if (currentHorde < 5 && roll < 0.75f) return ZombieType.Rapido;
+        if (currentHorde < 7 && roll < 0.9f) return ZombieType.Distancia;
         return ZombieType.Tanque;
     }
 
     GameObject GetZombieFromPool(ZombieType type)
     {
         var entry = zombieTypes.Find(e => e.type == type);
+        if (entry == null)
+        {
+            Debug.LogError("No se encontró entrada de pool para zombie type: " + type);
+            return null;
+        }
+
         foreach (var z in entry.pool)
         {
             if (!z.activeInHierarchy) return z;
         }
 
         // Expand pool if needed
-        GameObject newZ = Instantiate(entry.prefab);
-        newZ.SetActive(false);
+        GameObject newZ = Instantiate(entry.prefab, transform);
+        newZ.SetActive(true);
         entry.pool.Add(newZ);
         return newZ;
     }
 
     Vector3 GetSafeSpawnPosition()
 {
-    for (int i = 0; i < 30; i++)
+        if (players == null || players.Count == 0)
+        {
+            Debug.LogError("No hay jugadores en la lista de 'players'. No se puede generar posición de spawn segura.");
+            return Vector3.zero; // O un valor por defecto seguro
+        }
+
+        for (int i = 0; i < 30; i++)
     {
         Vector3 dir = Random.onUnitSphere;
         dir.y = 0;

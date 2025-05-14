@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,10 +9,11 @@ public class GunController : MonoBehaviour
     [Header("Guns Selected")]
     private Gun weaponInfo;
     public Gun primaryWeapon;
-    private GameObject primaryObject = null;
+    public GameObject primaryWeaponObj;
     public Gun secundayWeapon;
-    private GameObject secundayObject = null;
+    public GameObject secundayWeaponObj;
     public MeleeWeapon meleeWeapon;
+    public GameObject meleeWeaponObj;
     public ThrowableWeapon throwableWeapon1;
     public ThrowableWeapon throwableWeapon2;
 
@@ -23,6 +25,8 @@ public class GunController : MonoBehaviour
     private InputAction scrollWeapons;
     private InputAction alternativeShoot;
 
+    public Animator Animations;
+
     private Vector2 lookInput;
     private float scroll;
 
@@ -30,7 +34,9 @@ public class GunController : MonoBehaviour
     public int _currentAmmoInClip;
     public int _ammoInReserve;
     public bool _canShoot;
+    public bool _canReload;
     public bool _canAlternShoot;
+    bool run;
     private bool shootEnded;
     public bool _gunEnabled;
     private bool firstThroweableEnabled;
@@ -53,14 +59,21 @@ public class GunController : MonoBehaviour
     public bool randomizeRecoil;
     public Vector2 randomRecoilConstrains;
 
+    public static GunController gunController;
+
     private void Awake()
     {
+        if (GunController.gunController != this && GunController.gunController != null)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            GunController.gunController = this;
+        }
+        GunController.gunController = this;
         camRotation = GetComponentInParent<Transform>().rotation;
         weaponInfo = primaryWeapon;
-        primaryObject = Instantiate(primaryWeapon.prefab, gameObject.transform);
-        primaryObject.SetActive(true);
-        secundayObject = Instantiate(secundayWeapon.prefab,gameObject.transform);
-        secundayObject.SetActive(false);
         scrollWeapons = PlayerInputs.FindActionMap("OnGround").FindAction("PrimaryWeapon");
         fireAction = PlayerInputs.FindActionMap("OnGround").FindAction("Fire");
         reloadAction = PlayerInputs.FindActionMap("OnGround").FindAction("Reload");
@@ -99,6 +112,7 @@ public class GunController : MonoBehaviour
         _currentAmmoInClipReserve = secundayWeapon.clipSize;
         _ammoInReserveReserve = secundayWeapon.reservedAmmoCapacity;
         _canShoot = true;
+        _canReload = true;
         _canAlternShoot = true;
         weaponInfo.currentHeat = 0;
         firstThroweableEnabled = true;
@@ -107,9 +121,9 @@ public class GunController : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = Quaternion.Euler(camRotation.x -90, camRotation.y, 0);
+        //transform.rotation = Quaternion.Euler(camRotation.x -90, camRotation.y, 0);
         DetermineRotation();
-        if (fireAction.IsPressed())
+        if (fireAction.IsPressed() && !MultiplayerFPSMovement.FPSMovement.isRunning)
         {
             if (_canShoot && _currentAmmoInClip > 0 && _gunEnabled)
             {
@@ -137,9 +151,24 @@ public class GunController : MonoBehaviour
             _canShoot = true;
         }
 
-        if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && _ammoInReserve > 0 && weaponInfo.weaponType != WeaponType.Secundaria)
+        if (MultiplayerFPSMovement.FPSMovement.isRunning)
         {
-            Reload();
+            _canShoot = false;
+            Animations.SetBool("isRunning", true);
+        }
+        else if (!MultiplayerFPSMovement.FPSMovement.isRunning && !fireAction.IsPressed())
+        {
+            _canShoot = true;
+            Animations.SetBool("isRunning", false);
+        }
+
+
+
+        if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && _ammoInReserve > 0 && weaponInfo.weaponType != WeaponType.Secundaria && _canReload)
+        {
+            Animations.SetTrigger("Reloading");
+            _canReload = false;
+            _canShoot = false;
         }
         else if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && weaponInfo.weaponType == WeaponType.Secundaria)
         {
@@ -148,11 +177,13 @@ public class GunController : MonoBehaviour
         if (scroll != 0)
         {
             ChangeGunWeapon();
+            _canShoot = true;
         }
 
         if (alternativeShoot.IsPressed() && weaponInfo.alternativeShoot && _canAlternShoot)
         {
             ChangeAlternativeShoot();
+            _canShoot = true;
         }
         else if (!alternativeShoot.IsPressed())
         {
@@ -183,7 +214,7 @@ public class GunController : MonoBehaviour
         mouseAxis *= mouseSensitiity;
         _currentRotation += mouseAxis;
 
-        _currentRotation.y = Mathf.Clamp(_currentRotation.y, -90, 90);
+        _currentRotation.y = Mathf.Clamp(_currentRotation.y, -85, 50);
 
         float mouseX = lookInput.x * swayAmount;
         float mouseY = lookInput.y * swayAmount;
@@ -276,18 +307,21 @@ public class GunController : MonoBehaviour
             sprayIndicator = Vector2.zero;
         }
 
-        Debug.Log(Camera.main.transform.forward);
-
-        Vector3 dir = (Camera.main.transform.forward * 180) + sprayIndicator;
+        Vector3 dir = (Camera.main.transform.forward * 160) + sprayIndicator;
         if (Physics.Raycast(Camera.main.transform.position, dir, out hit, weaponInfo.maxDistance))
         {
-            Debug.DrawRay(Camera.main.transform.position, dir, Color.red, 834485f);
+            //Debug.DrawRay(Camera.main.transform.position, dir, Color.red, 834485f);
             try
             {
                 GameObject feedback = Instantiate(weaponInfo.feedback);
                 feedback.transform.position = hit.point;
-                feedback.transform.rotation = Quaternion.Euler(Camera.main.transform.rotation.x * 180, (Camera.main.transform.rotation.y + hit.normal.y) * 180, Camera.main.transform.rotation.z * 180);
+                feedback.transform.rotation = Quaternion.Euler(hit.normal);
                 Destroy(feedback, 3f);
+
+                if (hit.transform.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
+                {
+                    r.TakeDamage(weaponInfo.damage);
+                }
             }
             catch { }
         }
@@ -301,15 +335,13 @@ public class GunController : MonoBehaviour
         if (weaponInfo == primaryWeapon)
         {
             weaponInfo = secundayWeapon;
-            primaryObject.SetActive(false);
-            secundayObject.SetActive(true);
+            Animations.SetTrigger("ChangeWeapon");
 
         }
         else if (weaponInfo == secundayWeapon)
         {
             weaponInfo = primaryWeapon;
-            primaryObject.SetActive(true);
-            secundayObject.SetActive(false);
+            Animations.SetTrigger("ChangeWeapon");
         }
 
         _ammoInReserve = _ammoInReserveReserve;
@@ -334,11 +366,35 @@ public class GunController : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    #region Animations
+
+    public void PrimaryWeaponIn()
+    {
+        primaryWeaponObj.SetActive(true);
+        secundayWeaponObj.SetActive(false);
+        Animations.SetLayerWeight(1, 0);
+    }
+
+    public void SecundaryWeaponIn()
+    {
+        primaryWeaponObj.SetActive(false);
+        secundayWeaponObj.SetActive(true);
+        Animations.SetLayerWeight(1, 1);
+    }
+
+    public void ReloadAnimation()
+    {
+        Reload();
+        _canReload = true;
+        _canShoot = true;
+    }
+    #endregion
+
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Debug.DrawLine(Camera.main.transform.position, Camera.main.transform.forward * 180,Color.red);
-    }
+    }*/
 
     void ChangeAlternativeShoot()
     {

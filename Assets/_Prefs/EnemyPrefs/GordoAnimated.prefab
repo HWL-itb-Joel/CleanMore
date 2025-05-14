@@ -99,6 +99,7 @@ MonoBehaviour:
   patrolSpeed: 2
   chaseSpeed: 4
   patrolRadius: 10
+  zombieHealth: 500
   attackDamage: 5
   attackSpeed: 1
 --- !u!95 &965886805450774216
