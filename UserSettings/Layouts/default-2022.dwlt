@@ -30,8 +30,12 @@ MonoBehaviour:
 =======
     height: 997
   m_ShowMode: 4
+<<<<<<< HEAD
   m_Title: Animation
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  m_Title: Hierarchy
+>>>>>>> CleanMore/RoundGeneration+
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -167,8 +171,12 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 1895
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  controlID: 169
+>>>>>>> CleanMore/RoundGeneration+
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -211,8 +219,12 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 2185
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  controlID: 19
+>>>>>>> CleanMore/RoundGeneration+
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -256,8 +268,12 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< HEAD
   controlID: 1801
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  controlID: 20
+>>>>>>> CleanMore/RoundGeneration+
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -330,8 +346,8 @@ MonoBehaviour:
     y: 0
     width: 942
     height: 543
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
 >>>>>>> CleanMore/AjustesHitBoxes
   m_Panes:
@@ -381,8 +397,12 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< HEAD
   controlID: 2186
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  controlID: 145
+>>>>>>> CleanMore/RoundGeneration+
   draggingID: 0
 =======
     x: 1046
@@ -458,7 +478,7 @@ MonoBehaviour:
 <<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimationWindow
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -476,15 +496,21 @@ MonoBehaviour:
     y: 0
     width: 649
     height: 404
+<<<<<<< HEAD
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
+>>>>>>> CleanMore/RoundGeneration+
   m_Panes:
   - {fileID: 23}
   - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -515,9 +541,14 @@ MonoBehaviour:
     y: 0
     width: 692
     height: 947
+<<<<<<< HEAD
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> CleanMore/RoundGeneration+
   m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 24}
@@ -619,7 +650,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -735,6 +766,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 04f4ffff12fbffff
@@ -748,6 +780,11 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: 587cffff6c7cffff7a8cffff968fffff06fbffff
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1efbffff
+>>>>>>> CleanMore/RoundGeneration+
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1185,6 +1222,7 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 9.525615, y: -8.97832, z: -40.776485}
     speed: 2
     m_Value: {x: 9.525615, y: -8.97832, z: -40.776485}
@@ -1198,6 +1236,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 2.59, y: 0.7071067, z: 25.5}
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+    m_Target: {x: 17.325169, y: 5.93624, z: 6.668579}
+    speed: 2
+    m_Value: {x: 29.426872, y: 4.748992, z: 8.119621}
+>>>>>>> CleanMore/RoundGeneration+
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1245,6 +1288,7 @@ MonoBehaviour:
   m_Rotation:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.008817651, y: 0.98381126, z: -0.17172475, w: 0.050514888}
     speed: 2
     m_Value: {x: 0.009075212, y: 0.9837326, z: -0.17171103, w: 0.051990453}
@@ -1263,13 +1307,20 @@ MonoBehaviour:
 >>>>>>> CleanMore/InteriorProps
 =======
     m_Target: {x: 0.19516662, y: -0.7797324, z: 0.29430538, w: 0.5171486}
+=======
+    m_Target: {x: 0.031982597, y: -0.96800274, z: 0.18004864, w: 0.17194769}
+>>>>>>> CleanMore/RoundGeneration+
     speed: 2
-    m_Value: {x: 0.19515385, y: -0.7796814, z: 0.29428613, w: 0.51711476}
+    m_Value: {x: 0.031982023, y: -0.96798545, z: 0.18004543, w: 0.17194462}
   m_Size:
-    m_Target: 10
+    m_Target: 13.165221
     speed: 2
+<<<<<<< HEAD
     m_Value: 10
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+    m_Value: 13.996495
+>>>>>>> CleanMore/RoundGeneration+
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1326,6 +1377,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 410.5
     y: 83
     width: 1345.5
@@ -1342,6 +1394,12 @@ MonoBehaviour:
     width: 1096.5
     height: 593.5
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+    x: 286
+    y: 73
+    width: 940
+    height: 522
+>>>>>>> CleanMore/RoundGeneration+
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1376,6 +1434,7 @@ MonoBehaviour:
     - {fileID: -2436604836080809690, guid: df59c62564844419396d14821f17eb4d, type: 2}
     - {fileID: 4878957742206801748, guid: 1c470fac4e61a4dbfb25998d648b9356, type: 2}
     - {fileID: -7632099360230571853, guid: 1c470fac4e61a4dbfb25998d648b9356, type: 2}
+    - {fileID: 4864660943461796210, guid: 58a4bd4b8ecd46745a5ba5a9c4193828, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.91210526
       e01: 0
@@ -1427,14 +1486,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.7934066
+    - e00: 0.59157896
       e01: 0
       e02: 0
-      e03: -24.67035
+      e03: -14.578949
       e10: 0
-      e11: 0.7934066
+      e11: 0.59157896
       e12: 0
-      e13: 134.7868
+      e13: 158.67896
       e20: 0
       e21: 0
       e22: 1
@@ -1573,14 +1632,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.7338572
+    - e00: 0.474617
       e01: 0
       e02: 0
-      e03: -62.771576
+      e03: -34.95685
       e10: 0
-      e11: 0.7338572
+      e11: 0.474617
       e12: 0
-      e13: 182.08205
+      e13: 201.61357
       e20: 0
       e21: 0
       e22: 1
@@ -1589,14 +1648,30 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.75301707
+    - e00: 0.54580957
       e01: 0
       e02: 0
-      e03: -76.82492
+      e03: -73.5004
       e10: 0
-      e11: 0.75301707
+      e11: 0.54580957
       e12: 0
-      e13: 179.51248
+      e13: 189.85559
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.59157896
+      e01: 0
+      e02: 0
+      e03: -14.578949
+      e10: 0
+      e11: 0.59157896
+      e12: 0
+      e13: 194.17368
       e20: 0
       e21: 0
       e22: 1
@@ -1606,10 +1681,14 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 1c470fac4e61a4dbfb25998d648b9356, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 58a4bd4b8ecd46745a5ba5a9c4193828, type: 2}
   m_BreadCrumbs:
+<<<<<<< HEAD
   - m_Target: {fileID: 4878957742206801748, guid: 1c470fac4e61a4dbfb25998d648b9356, type: 2}
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  - m_Target: {fileID: 4864660943461796210, guid: 58a4bd4b8ecd46745a5ba5a9c4193828, type: 2}
+>>>>>>> CleanMore/RoundGeneration+
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -3659,6 +3738,7 @@ MonoBehaviour:
     m_Folders:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/_Mats/_Texures
 =======
     - Assets/_Prefs/ScrapYard/Interior
@@ -3666,6 +3746,9 @@ MonoBehaviour:
 =======
     - Assets
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+    - Assets/_Prefs/EnemyPrefs
+>>>>>>> CleanMore/RoundGeneration+
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -3700,17 +3783,23 @@ MonoBehaviour:
 =======
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/_Prefs/EnemyPrefs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Proyectos Unity GitHub\CleanMore
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
+<<<<<<< HEAD
     m_SelectedIDs: 7e820000
     m_LastClickedID: 33406
     m_ExpandedIDs: 0000000070820000728200007482000076820000788200007a8200007c8200007e82000080820000828200008482000086820000b2820000b482000000ca9a3bffffff7f
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+    m_SelectedIDs: 30830000
+    m_LastClickedID: 33584
+    m_ExpandedIDs: 0000000090820000928200009482000096820000988200009a8200009c8200009e820000a0820000a2820000a4820000a6820000b6820000be82000000ca9a3bffffff7f
+>>>>>>> CleanMore/RoundGeneration+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3740,6 +3829,7 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000001e7a0000207a0000227a0000247a0000267a0000287a0000
 =======
     m_ExpandedIDs: 
@@ -3747,6 +3837,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 0000000070820000728200007482000076820000788200007a8200007c8200007e8200008082000082820000848200008682000000ca9a3bffffff7f
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+    m_ExpandedIDs: 0000000090820000928200009482000096820000988200009a8200009c8200009e820000a0820000a2820000a4820000a6820000
+>>>>>>> CleanMore/RoundGeneration+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3776,6 +3869,7 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000326d0000f46e00002a6e0000866400009a63000068650000d06f00000a6f0000b2680000d4860000c4870000e86e00008e700000126a000000000000b8b700000a6701001a750000
 =======
     m_ExpandedInstanceIDs: c62300000a700000fe7000004e680000268c0000b68c000040670000
@@ -3783,6 +3877,9 @@ MonoBehaviour:
 =======
     m_ExpandedInstanceIDs: c6230000326d0000f46e00002a6e0000866400009a63000068650000d06f00000a6f0000b2680000d4860000c4870000e86e00008e700000126a000000000000b8b700000a670100b2180100
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+    m_ExpandedInstanceIDs: c6230000326d0000f46e00002a6e0000866400009a63000068650000d06f00000a6f0000b2680000d4860000c4870000e86e00008e700000126a000000000000b8b700000a670100b218010076780000
+>>>>>>> CleanMore/RoundGeneration+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4128,10 +4225,14 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastSelectedObjectID: -32438
 =======
   m_LastSelectedObjectID: -29574
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+  m_LastSelectedObjectID: -238994
+>>>>>>> CleanMore/RoundGeneration+
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -4187,6 +4288,7 @@ MonoBehaviour:
   m_PreviewResizer:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_CachedPref: 151
 =======
     m_CachedPref: 263
@@ -4194,6 +4296,9 @@ MonoBehaviour:
 =======
     m_CachedPref: 507
 >>>>>>> CleanMore/AjustesHitBoxes
+=======
+    m_CachedPref: 306
+>>>>>>> CleanMore/RoundGeneration+
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1

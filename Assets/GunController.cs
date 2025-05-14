@@ -14,6 +14,7 @@ public class GunController : MonoBehaviour
     public GameObject secundayWeaponObj;
     public MeleeWeapon meleeWeapon;
     public GameObject meleeWeaponObj;
+    public BoxCollider meleeCollider;
     public ThrowableWeapon throwableWeapon1;
     public ThrowableWeapon throwableWeapon2;
 
@@ -71,6 +72,8 @@ public class GunController : MonoBehaviour
         {
             GunController.gunController = this;
         }
+        meleeCollider = meleeWeaponObj.GetComponent<BoxCollider>();
+        primaryWeaponObj.SetActive(true);
         GunController.gunController = this;
         camRotation = GetComponentInParent<Transform>().rotation;
         weaponInfo = primaryWeapon;
@@ -166,7 +169,8 @@ public class GunController : MonoBehaviour
 
         if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && _ammoInReserve > 0 && weaponInfo.weaponType != WeaponType.Secundaria && _canReload)
         {
-            Animations.SetTrigger("Reloading");
+            if (weaponInfo == primaryWeapon) { Animations.SetTrigger("ReloadingPrincipal"); }
+            else if (weaponInfo == secundayWeapon) { Animations.SetTrigger("ReloadingSecundario"); }
             _canReload = false;
             _canShoot = false;
         }
@@ -223,6 +227,16 @@ public class GunController : MonoBehaviour
         mouseY = Mathf.Clamp(mouseY, -maxSway, maxSway);
 
         Vector3 targetPosition = new Vector3(initialPosition.x - mouseX, initialPosition.y - mouseY, initialPosition.z);
+
+        if (!MultiplayerFPSMovement.FPSMovement.grounded)
+        {
+            float fallSpeed = MultiplayerFPSMovement.FPSMovement.currentMovement.y;
+            float verticalOffset = Mathf.Clamp01(-fallSpeed / 10f) * swayAmount;
+
+            Vector3 targetPos = initialPosition + new Vector3(0, verticalOffset, 0);
+
+            targetPosition = targetPosition + targetPos;
+        }
 
         // Interpolar suavemente la posición del arma
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * smoothSpeed);
@@ -384,6 +398,7 @@ public class GunController : MonoBehaviour
 
     public void ReloadAnimation()
     {
+        Animations.SetBool("isReloading", false);
         Reload();
         _canReload = true;
         _canShoot = true;

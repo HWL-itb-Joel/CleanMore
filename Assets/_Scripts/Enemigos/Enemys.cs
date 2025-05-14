@@ -35,12 +35,11 @@ public class Enemys : MonoBehaviour, IEnemyHealth
     private Vector3 patrolCenter;
     private Vector3 patrolTarget;
     private Transform targetPlayer = null;
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     void Start()
     {
         Health = zombieHealth;
-        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         patrolCenter = transform.position;
         SetNewPatrolTarget();
@@ -172,6 +171,7 @@ public class Enemys : MonoBehaviour, IEnemyHealth
     IEnumerator Attack()
     {
         animator.SetBool("Walking", false);
+        animator.SetTrigger("Attack");
         agent.isStopped = true;
         isAttacking = true;
         Debug.Log("¡Atacando a " + targetPlayer.name + "!");
@@ -214,6 +214,13 @@ public class Enemys : MonoBehaviour, IEnemyHealth
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
         randomDirection += patrolCenter;
         NavMeshHit hit;
+        var path = new NavMeshPath();
+        agent.CalculatePath(randomDirection, path);
+        if (path.status == NavMeshPathStatus.PathInvalid || path.status == NavMeshPathStatus.PathPartial)
+        {
+            SetNewPatrolTarget();
+            return;
+        }
         if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, NavMesh.AllAreas))
         {
             patrolTarget = hit.position;
