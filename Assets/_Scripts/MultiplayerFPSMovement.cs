@@ -9,7 +9,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     [Header("Movement")]
     [SerializeField] private float walkSpeed = 3.0f;
     [SerializeField] private float sprintMultiplier = 2.0f;
-    Vector3 currentMovement = Vector3.zero;
+    public Vector3 currentMovement = Vector3.zero;
     Vector3 fallingMovement = Vector3.zero;
     Vector3 velocity = Vector3.zero;
 
@@ -17,6 +17,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     [SerializeField] private float jumpForce = 5.0f;
     [SerializeField] private float gravity = 9.81f;
     bool canJump;
+    public bool grounded;
     [SerializeField] LayerMask GroundMask = new LayerMask();
     [SerializeField] float CheckRadius = 0.4f;
     [SerializeField] GameObject Feet;
@@ -112,14 +113,14 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     void HandleGravityAndJumping()
     {
-        bool grounded = Physics.CheckSphere(Feet.transform.position, CheckRadius, GroundMask);
+        grounded = Physics.CheckSphere(Feet.transform.position, CheckRadius, GroundMask);
 
-        if (grounded && fallingMovement.y <= 0)
+        fallingMovement.y -= gravity * Time.deltaTime;
+
+        if (grounded && gameObject.transform.position.y <= -50)
         {
             fallingMovement.y = -2;
         }
-
-        fallingMovement.y -= gravity * Time.deltaTime;
 
         if (grounded && jumpAction.triggered)
         {

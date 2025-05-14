@@ -60,11 +60,11 @@ public class ZombieHordeManager : MonoBehaviour
 
     IEnumerator HordeLoop()
     {
-        yield return new WaitForSeconds(timeBetweenHordes);
         UpdatePlayerList();
         print("new horde");
         SpawnHorde();
         currentHorde++;
+        yield return new WaitForSeconds(timeBetweenHordes);
         StartCoroutine(HordeLoop());
     }
 

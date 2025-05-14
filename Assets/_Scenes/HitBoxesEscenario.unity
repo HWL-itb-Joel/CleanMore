@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 19575736}
   - component: {fileID: 19575735}
   - component: {fileID: 19575734}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (2)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40679602}
   - component: {fileID: 40679603}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 51676878}
   - component: {fileID: 51676879}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,6 +1224,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5884801257002590165, guid: 534bdf0470cce4f51ad76f868c969b65, type: 3}
   m_PrefabInstance: {fileID: 65392644}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &69553666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 69553667}
+  - component: {fileID: 69553668}
+  m_Layer: 0
+  m_Name: GameObject (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &69553667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69553666}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6142712, z: -0, w: 0.7890949}
+  m_LocalPosition: {x: 74.87, y: 0, z: -9.7699995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 75.798, z: 0}
+--- !u!114 &69553668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69553666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &72899708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 72899709}
   - component: {fileID: 72899710}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,7 +1339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73437533}
   - component: {fileID: 73437534}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1330,69 +1382,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.018130548, y: 36.543804, z: 0.21034105}
   m_Center: {x: -0.50825745, y: 123.28545, z: -1.527859}
---- !u!1 &77149890
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 77149892}
-  - component: {fileID: 77149891}
-  m_Layer: 0
-  m_Name: NavMesh Surface
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &77149891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77149890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 1
-  m_Size: {x: 21.971796, y: 23.99, z: 61.42}
-  m_Center: {x: 2.3102503, y: 1.1814404, z: -10.029392}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 2055
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 1
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.01
-  m_MinRegionArea: 0.09
-  m_NavMeshData: {fileID: 23800000, guid: e2b52072394758f44b417b10d3e9d1f9, type: 2}
-  m_BuildHeightMesh: 0
---- !u!4 &77149892
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77149890}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9076071, y: -9.4, z: 1.4638319}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &77614332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1551,7 +1540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 90582785}
   - component: {fileID: 90582786}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1604,7 +1593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 99569657}
   - component: {fileID: 99569658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1657,7 +1646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 104671460}
   - component: {fileID: 104671461}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,7 +1701,7 @@ GameObject:
   - component: {fileID: 106392282}
   - component: {fileID: 106392281}
   - component: {fileID: 106392280}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1889,7 +1878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 112406747}
   - component: {fileID: 112406748}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1942,7 +1931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 113958484}
   - component: {fileID: 113958485}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2145,7 +2134,7 @@ GameObject:
   - component: {fileID: 132639693}
   - component: {fileID: 132639692}
   - component: {fileID: 132639691}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2673,7 +2662,7 @@ GameObject:
   - component: {fileID: 161693714}
   - component: {fileID: 161693713}
   - component: {fileID: 161693712}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (Suelo)Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2876,7 +2865,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 1
   m_IgnoreNavMeshAgent: 1
@@ -2884,7 +2873,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.1
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 26a9b63e46e870943a8298eed5d9d8da, type: 2}
   m_BuildHeightMesh: 0
@@ -3203,6 +3192,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5884801257002590165, guid: 534bdf0470cce4f51ad76f868c969b65, type: 3}
   m_PrefabInstance: {fileID: 182699173}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &200776885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200776886}
+  - component: {fileID: 200776887}
+  m_Layer: 0
+  m_Name: GameObject (25)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &200776886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200776885}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.99621284, z: -0, w: 0.08694871}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 170.024, z: 0}
+--- !u!114 &200776887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200776885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &204423557
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,7 +3254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 204423558}
   - component: {fileID: 204423559}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3340,7 +3381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211280534}
   - component: {fileID: 211280535}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3467,7 +3508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 226832981}
   - component: {fileID: 226832982}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Techo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3593,7 +3634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 233524476}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Paredes(CasaIzquierda)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3778,7 +3819,7 @@ GameObject:
   - component: {fileID: 246965176}
   - component: {fileID: 246965175}
   - component: {fileID: 246965174}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (9)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3883,7 +3924,7 @@ GameObject:
   - component: {fileID: 251608462}
   - component: {fileID: 251608461}
   - component: {fileID: 251608460}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3986,7 +4027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 256011652}
   - component: {fileID: 256011653}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4039,7 +4080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 257528872}
   - component: {fileID: 257528873}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4092,7 +4133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262467877}
   - component: {fileID: 262467878}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4147,7 +4188,7 @@ GameObject:
   - component: {fileID: 263080116}
   - component: {fileID: 263080115}
   - component: {fileID: 263080114}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (3)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4250,7 +4291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 263884697}
   - component: {fileID: 263884698}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4303,7 +4344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 265840668}
   - component: {fileID: 265840669}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4358,7 +4399,7 @@ GameObject:
   - component: {fileID: 275722041}
   - component: {fileID: 275722040}
   - component: {fileID: 275722039}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4461,7 +4502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277463887}
   - component: {fileID: 277463888}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4514,7 +4555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 278730849}
   - component: {fileID: 278730850}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4715,7 +4756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289940752}
   - component: {fileID: 289940753}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4899,7 +4940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303310572}
   - component: {fileID: 303310573}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5226,7 +5267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 337079706}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "HitBoxesS\xF3tano"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5347,7 +5388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343373166}
   - component: {fileID: 343373167}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5390,6 +5431,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.016415616, y: 8.1397, z: 0.20869006}
   m_Center: {x: -0.5264618, y: 109.605286, z: -0.11653033}
+--- !u!1 &344408450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344408451}
+  - component: {fileID: 344408452}
+  m_Layer: 0
+  m_Name: GameObject (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &344408451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344408450}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.41011184, z: -0, w: 0.9120353}
+  m_LocalPosition: {x: 34.25, y: 0, z: 29.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -48.424, z: 0}
+--- !u!114 &344408452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344408450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1001 &345658088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5474,7 +5567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348742207}
   - component: {fileID: 348742208}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5527,7 +5620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351382548}
   - component: {fileID: 351382549}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5582,7 +5675,7 @@ GameObject:
   - component: {fileID: 369602840}
   - component: {fileID: 369602839}
   - component: {fileID: 369602838}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5685,7 +5778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369734186}
   - component: {fileID: 369734187}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5939,7 +6032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390647950}
   - component: {fileID: 390647951}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6066,7 +6159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 396724361}
   - component: {fileID: 396724362}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6109,6 +6202,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020967832, y: 12.024732, z: 0.14488204}
   m_Center: {x: -0.5166328, y: 130.53668, z: 0.3298855}
+--- !u!1 &396832205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396832206}
+  - component: {fileID: 396832207}
+  m_Layer: 0
+  m_Name: GameObject (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396832206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396832205}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.41011184, z: -0, w: 0.9120353}
+  m_LocalPosition: {x: 39.760002, y: 0, z: 29.59}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -48.424, z: 0}
+--- !u!114 &396832207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396832205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1001 &402149805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6267,7 +6412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421908726}
   - component: {fileID: 421908727}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6384,6 +6529,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5884801257002590165, guid: 534bdf0470cce4f51ad76f868c969b65, type: 3}
   m_PrefabInstance: {fileID: 422182485}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &426187399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426187400}
+  - component: {fileID: 426187401}
+  m_Layer: 0
+  m_Name: GameObject (18)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426187400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426187399}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6147812, z: -0, w: 0.7886978}
+  m_LocalPosition: {x: 45.440002, y: 0, z: -34.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 75.872, z: 0}
+--- !u!114 &426187401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426187399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &430146463
 GameObject:
   m_ObjectHideFlags: 0
@@ -6394,7 +6591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430146464}
   - component: {fileID: 430146465}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6547,7 +6744,7 @@ GameObject:
   - component: {fileID: 471459147}
   - component: {fileID: 471459146}
   - component: {fileID: 471459145}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (Suelo)Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6705,7 +6902,7 @@ GameObject:
   - component: {fileID: 509009727}
   - component: {fileID: 509009726}
   - component: {fileID: 509009725}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6882,7 +7079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 551304145}
   - component: {fileID: 551304146}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6935,7 +7132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 558851351}
   - component: {fileID: 558851352}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6990,7 +7187,7 @@ GameObject:
   - component: {fileID: 560191999}
   - component: {fileID: 560191998}
   - component: {fileID: 560191997}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7380,7 +7577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 587400906}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piso1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7650,7 +7847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603597500}
   - component: {fileID: 603597501}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7779,7 +7976,7 @@ GameObject:
   - component: {fileID: 606023208}
   - component: {fileID: 606023207}
   - component: {fileID: 606023206}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (Suelo)Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7946,6 +8143,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5884801257002590165, guid: 534bdf0470cce4f51ad76f868c969b65, type: 3}
   m_PrefabInstance: {fileID: 623588676}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &624413441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624413442}
+  - component: {fileID: 624413443}
+  m_Layer: 0
+  m_Name: GameObject (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624413442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624413441}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6142712, z: -0, w: 0.7890949}
+  m_LocalPosition: {x: 71.84, y: 0, z: -14.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 75.798, z: 0}
+--- !u!114 &624413443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624413441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1001 &627554608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8104,7 +8353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 644247830}
   - component: {fileID: 644247831}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8233,7 +8482,7 @@ GameObject:
   - component: {fileID: 653917099}
   - component: {fileID: 653917098}
   - component: {fileID: 653917097}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (7)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8537,7 +8786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 674308394}
   - component: {fileID: 674308395}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8590,7 +8839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 677137680}
   - component: {fileID: 677137681}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8643,7 +8892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 684707042}
   - component: {fileID: 684707043}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8772,7 +9021,7 @@ GameObject:
   - component: {fileID: 707271372}
   - component: {fileID: 707271371}
   - component: {fileID: 707271370}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9025,7 +9274,7 @@ GameObject:
   - component: {fileID: 724283120}
   - component: {fileID: 724283119}
   - component: {fileID: 724283118}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9202,7 +9451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757147676}
   - component: {fileID: 757147677}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9329,7 +9578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771461294}
   - component: {fileID: 771461295}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9381,7 +9630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 773048415}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Suelo(Planta1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9445,7 +9694,7 @@ GameObject:
   - component: {fileID: 785440325}
   - component: {fileID: 785440324}
   - component: {fileID: 785440323}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (Suelo)Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9548,7 +9797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797054342}
   - component: {fileID: 797054343}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9600,7 +9849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 800204391}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piso2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9875,7 +10124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 813076803}
   - component: {fileID: 813076804}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9928,7 +10177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814284355}
   - component: {fileID: 814284356}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9981,7 +10230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 818292239}
   - component: {fileID: 818292240}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10036,7 +10285,7 @@ GameObject:
   - component: {fileID: 829685318}
   - component: {fileID: 829685317}
   - component: {fileID: 829685316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10139,7 +10388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 830425142}
   - component: {fileID: 830425143}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10270,7 +10519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848667282}
   - component: {fileID: 848667283}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10325,7 +10574,7 @@ GameObject:
   - component: {fileID: 851158896}
   - component: {fileID: 851158895}
   - component: {fileID: 851158894}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10428,7 +10677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857083835}
   - component: {fileID: 857083836}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10654,7 +10903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 874385229}
   - component: {fileID: 874385230}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10707,7 +10956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879968790}
   - component: {fileID: 879968791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10910,7 +11159,7 @@ GameObject:
   - component: {fileID: 908500297}
   - component: {fileID: 908500296}
   - component: {fileID: 908500295}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (Suelo)Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11013,7 +11262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 909033467}
   - component: {fileID: 909033468}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11140,7 +11389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 918775554}
   - component: {fileID: 918775555}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11192,7 +11441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920907216}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Vallado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11361,69 +11610,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &933303258
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 933303260}
-  - component: {fileID: 933303259}
-  m_Layer: 0
-  m_Name: NavMesh Surface (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &933303259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933303258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 1
-  m_Size: {x: 24.920282, y: 23.99, z: 28.907137}
-  m_Center: {x: 2.508685, y: 1.1814404, z: -7.0291433}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 2055
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 1
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.01
-  m_MinRegionArea: 0.09
-  m_NavMeshData: {fileID: 23800000, guid: 6e90c6314a5c2ae41b30fb68adb8f76f, type: 2}
-  m_BuildHeightMesh: 0
---- !u!4 &933303260
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933303258}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.9014551, z: 0, w: 0.43287262}
-  m_LocalPosition: {x: 13.46, y: -9.4, z: -32.26}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -128.7, z: 0}
 --- !u!1 &954279545
 GameObject:
   m_ObjectHideFlags: 0
@@ -11434,7 +11620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 954279546}
   - component: {fileID: 954279547}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11762,7 +11948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 982234304}
   - component: {fileID: 982234305}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11990,7 +12176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 991686955}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Paredes(CasaDerecha)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12100,7 +12286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1007182290}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piso1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12153,7 +12339,7 @@ GameObject:
   - component: {fileID: 1007319885}
   - component: {fileID: 1007319884}
   - component: {fileID: 1007319883}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12330,7 +12516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1018640112}
   - component: {fileID: 1018640113}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12457,7 +12643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1037783987}
   - component: {fileID: 1037783988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12512,7 +12698,7 @@ GameObject:
   - component: {fileID: 1041640313}
   - component: {fileID: 1041640312}
   - component: {fileID: 1041640311}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12689,7 +12875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1047837344}
   - component: {fileID: 1047837345}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12742,7 +12928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1050556029}
   - component: {fileID: 1050556030}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12795,7 +12981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052784966}
   - component: {fileID: 1052784967}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12903,7 +13089,7 @@ GameObject:
   - component: {fileID: 1066585450}
   - component: {fileID: 1066585449}
   - component: {fileID: 1066585448}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (Suelo)Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13154,7 +13340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1095828182}
   - component: {fileID: 1095828183}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Techo (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13285,7 +13471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113105357}
   - component: {fileID: 1113105358}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13340,7 +13526,7 @@ GameObject:
   - component: {fileID: 1150569761}
   - component: {fileID: 1150569760}
   - component: {fileID: 1150569759}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13443,7 +13629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1155577633}
   - component: {fileID: 1155577634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13486,6 +13672,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.009555987, y: 8.1397, z: 0.5623384}
   m_Center: {x: -0.5258477, y: 109.605286, z: -0.68829006}
+--- !u!1 &1160725348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160725349}
+  - component: {fileID: 1160725350}
+  m_Layer: 0
+  m_Name: GameObject (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1160725349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160725348}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.02528388, z: -0, w: 0.99968034}
+  m_LocalPosition: {x: 71.520004, y: 0, z: 10.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.898, z: 0}
+--- !u!114 &1160725350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160725348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1001 &1163790577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13572,7 +13810,7 @@ GameObject:
   - component: {fileID: 1169754455}
   - component: {fileID: 1169754454}
   - component: {fileID: 1169754453}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13675,7 +13913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171288126}
   - component: {fileID: 1171288127}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13728,7 +13966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181116402}
   - component: {fileID: 1181116403}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13783,7 +14021,7 @@ GameObject:
   - component: {fileID: 1182800508}
   - component: {fileID: 1182800507}
   - component: {fileID: 1182800506}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (10)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14087,7 +14325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209365618}
   - component: {fileID: 1209365619}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14140,7 +14378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1211134177}
   - component: {fileID: 1211134178}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14267,7 +14505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1216757416}
   - component: {fileID: 1216757417}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14320,7 +14558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1217636870}
   - component: {fileID: 1217636871}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14375,7 +14613,7 @@ GameObject:
   - component: {fileID: 1220322978}
   - component: {fileID: 1220322977}
   - component: {fileID: 1220322976}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14478,7 +14716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1221758721}
   - component: {fileID: 1221758722}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14521,69 +14759,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.018130548, y: 17.6832, z: 0.03490411}
   m_Center: {x: -0.50825727, y: 132.71523, z: -1.9647993}
---- !u!1 &1226600859
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1226600861}
-  - component: {fileID: 1226600860}
-  m_Layer: 0
-  m_Name: NavMesh Surface (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1226600860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226600859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 1
-  m_Size: {x: 24.920282, y: 23.99, z: 28.907137}
-  m_Center: {x: 2.508685, y: 1.1814404, z: -7.0291433}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 2055
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 1
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.01
-  m_MinRegionArea: 0.09
-  m_NavMeshData: {fileID: 23800000, guid: c2c1703bbd8e9084183010c8ec60f86f, type: 2}
-  m_BuildHeightMesh: 0
---- !u!4 &1226600861
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226600859}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.5, y: -9.4, z: -4.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237041197
 GameObject:
   m_ObjectHideFlags: 0
@@ -14596,7 +14771,7 @@ GameObject:
   - component: {fileID: 1237041200}
   - component: {fileID: 1237041199}
   - component: {fileID: 1237041198}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (11)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14699,7 +14874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1240377137}
   - component: {fileID: 1240377138}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14754,7 +14929,7 @@ GameObject:
   - component: {fileID: 1245305626}
   - component: {fileID: 1245305625}
   - component: {fileID: 1245305624}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14931,7 +15106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1259620489}
   - component: {fileID: 1259620490}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15048,69 +15223,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5884801257002590165, guid: 534bdf0470cce4f51ad76f868c969b65, type: 3}
   m_PrefabInstance: {fileID: 1266740960}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1269515151
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1269515153}
-  - component: {fileID: 1269515152}
-  m_Layer: 0
-  m_Name: NavMesh Surface (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1269515152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269515151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 1
-  m_Size: {x: 20.009483, y: 23.99, z: 32.52208}
-  m_Center: {x: 0.9811568, y: 1.1814404, z: -20.259003}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 2055
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 1
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.01
-  m_MinRegionArea: 0.09
-  m_NavMeshData: {fileID: 23800000, guid: bd5662ce2e27e9f48b0bd1064e0aee7f, type: 2}
-  m_BuildHeightMesh: 0
---- !u!4 &1269515153
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269515151}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.51054287, z: 0, w: 0.8598523}
-  m_LocalPosition: {x: 2.66, y: -9.4, z: 11.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 61.4, z: 0}
 --- !u!1 &1273389465
 GameObject:
   m_ObjectHideFlags: 0
@@ -15174,7 +15286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273926592}
   - component: {fileID: 1273926593}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15229,7 +15341,7 @@ GameObject:
   - component: {fileID: 1274633679}
   - component: {fileID: 1274633678}
   - component: {fileID: 1274633677}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (12)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15322,6 +15434,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 337079706}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: -27.303}
+--- !u!1 &1281396572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281396573}
+  - component: {fileID: 1281396574}
+  m_Layer: 0
+  m_Name: GameObject (21)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1281396573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281396572}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6147812, z: -0, w: 0.7886978}
+  m_LocalPosition: {x: 12.590002, y: 0, z: -34.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 75.872, z: 0}
+--- !u!114 &1281396574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281396572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1303354000
 GameObject:
   m_ObjectHideFlags: 0
@@ -15385,7 +15549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1305947883}
   - component: {fileID: 1305947884}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15428,6 +15592,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.018130548, y: 17.757553, z: 0.08615516}
   m_Center: {x: -0.50825715, y: 132.67816, z: -1.4657668}
+--- !u!1 &1314561533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1314561534}
+  m_Layer: 0
+  m_Name: ZombiesIn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1314561534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314561533}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.72, y: 0.7071067, z: -5.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2084736121}
+  - {fileID: 1903336158}
+  - {fileID: 1599560677}
+  - {fileID: 1899026763}
+  - {fileID: 1574124538}
+  - {fileID: 344408451}
+  - {fileID: 396832206}
+  - {fileID: 1581145648}
+  - {fileID: 1639253279}
+  - {fileID: 1615621607}
+  - {fileID: 1800687774}
+  - {fileID: 1160725349}
+  - {fileID: 1583084654}
+  - {fileID: 2123277219}
+  - {fileID: 69553667}
+  - {fileID: 624413442}
+  - {fileID: 1708696996}
+  - {fileID: 1370848409}
+  - {fileID: 426187400}
+  - {fileID: 1329724869}
+  - {fileID: 2101948936}
+  - {fileID: 1281396573}
+  - {fileID: 2068166326}
+  - {fileID: 1642752513}
+  - {fileID: 1849418860}
+  - {fileID: 200776886}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1318091100
 GameObject:
   m_ObjectHideFlags: 0
@@ -15440,7 +15661,7 @@ GameObject:
   - component: {fileID: 1318091103}
   - component: {fileID: 1318091102}
   - component: {fileID: 1318091101}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15533,7 +15754,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 773048415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1323863847
+--- !u!1 &1329724868
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15541,61 +15762,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1323863849}
-  - component: {fileID: 1323863848}
+  - component: {fileID: 1329724869}
+  - component: {fileID: 1329724870}
   m_Layer: 0
-  m_Name: NavMesh Surface (1)
+  m_Name: GameObject (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1323863848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323863847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 1
-  m_Size: {x: 26.401083, y: 23.99, z: 41.41941}
-  m_Center: {x: 3.2490854, y: 1.1814404, z: -14.503442}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 2055
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 1
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.01
-  m_MinRegionArea: 0.09
-  m_NavMeshData: {fileID: 23800000, guid: 2416c106577bf0d4283bed74df3a571a, type: 2}
-  m_BuildHeightMesh: 0
---- !u!4 &1323863849
+  m_IsActive: 1
+--- !u!4 &1329724869
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323863847}
+  m_GameObject: {fileID: 1329724868}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.9, y: -9.4, z: -4.3}
+  m_LocalRotation: {x: -0, y: 0.6147812, z: -0, w: 0.7886978}
+  m_LocalPosition: {x: 33.57, y: 0, z: -34.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 75.872, z: 0}
+--- !u!114 &1329724870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329724868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1001 &1333579134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15828,7 +16038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1362907110}
   - component: {fileID: 1362907111}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15883,7 +16093,7 @@ GameObject:
   - component: {fileID: 1365520546}
   - component: {fileID: 1365520545}
   - component: {fileID: 1365520544}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15976,6 +16186,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 773048415}
   m_LocalEulerAnglesHint: {x: 0, y: 54.316, z: 0}
+--- !u!1 &1370848408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370848409}
+  - component: {fileID: 1370848410}
+  m_Layer: 0
+  m_Name: GameObject (17)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370848409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370848408}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7564577, z: -0, w: 0.6540426}
+  m_LocalPosition: {x: 59.840004, y: 0, z: -32.600002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 98.306, z: 0}
+--- !u!114 &1370848410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370848408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1372459885
 GameObject:
   m_ObjectHideFlags: 0
@@ -16039,7 +16301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376102620}
   - component: {fileID: 1376102621}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16168,7 +16430,7 @@ GameObject:
   - component: {fileID: 1382570533}
   - component: {fileID: 1382570532}
   - component: {fileID: 1382570531}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16271,7 +16533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382648808}
   - component: {fileID: 1382648809}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16398,7 +16660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1404589136}
   - component: {fileID: 1404589137}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16451,7 +16713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1406373349}
   - component: {fileID: 1406373350}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16504,7 +16766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1408359626}
   - component: {fileID: 1408359627}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16631,7 +16893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409871814}
   - component: {fileID: 1409871815}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16760,7 +17022,7 @@ GameObject:
   - component: {fileID: 1422921725}
   - component: {fileID: 1422921724}
   - component: {fileID: 1422921723}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17163,7 +17425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1435066640}
   - component: {fileID: 1435066641}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17512,7 +17774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1465638451}
   - component: {fileID: 1465638452}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17565,7 +17827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471367311}
   - component: {fileID: 1471367312}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17747,7 +18009,7 @@ GameObject:
   - component: {fileID: 1485599175}
   - component: {fileID: 1485599174}
   - component: {fileID: 1485599173}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17850,7 +18112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1485673749}
   - component: {fileID: 1485673750}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17977,7 +18239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1501213090}
   - component: {fileID: 1501213091}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18069,8 +18331,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7592584512469974159, guid: dc7e531cb00874e83a9beef332504436, type: 3}
+      propertyPath: maxSpawnDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592584512469974159, guid: dc7e531cb00874e83a9beef332504436, type: 3}
+      propertyPath: minSpawnDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592584512469974159, guid: dc7e531cb00874e83a9beef332504436, type: 3}
+      propertyPath: timeBetweenHordes
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592584512469974159, guid: dc7e531cb00874e83a9beef332504436, type: 3}
       propertyPath: baseZombiesPerHorde
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7592584512469974159, guid: dc7e531cb00874e83a9beef332504436, type: 3}
       propertyPath: zombieTypes.Array.size
@@ -18417,7 +18691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1535173992}
   - component: {fileID: 1535173993}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18470,7 +18744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1543092473}
   - component: {fileID: 1543092474}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18643,7 +18917,7 @@ GameObject:
   - component: {fileID: 1563068269}
   - component: {fileID: 1563068268}
   - component: {fileID: 1563068267}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18736,6 +19010,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 773048415}
   m_LocalEulerAnglesHint: {x: 0, y: 38.839, z: 0}
+--- !u!1 &1574124537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574124538}
+  - component: {fileID: 1574124539}
+  m_Layer: 0
+  m_Name: GameObject (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1574124538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574124537}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.41011184, z: -0, w: 0.9120353}
+  m_LocalPosition: {x: 29.27, y: 0, z: 29.060001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -48.424, z: 0}
+--- !u!114 &1574124539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574124537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1575660372
 GameObject:
   m_ObjectHideFlags: 0
@@ -18746,7 +19072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1575660373}
   - component: {fileID: 1575660374}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18801,7 +19127,7 @@ GameObject:
   - component: {fileID: 1576593231}
   - component: {fileID: 1576593230}
   - component: {fileID: 1576593229}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18894,6 +19220,110 @@ Transform:
   m_Children: []
   m_Father: {fileID: 773048415}
   m_LocalEulerAnglesHint: {x: 0, y: 42.336, z: 0}
+--- !u!1 &1581145647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581145648}
+  - component: {fileID: 1581145649}
+  m_Layer: 0
+  m_Name: GameObject (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1581145648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581145647}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.23731671, z: -0, w: 0.9714324}
+  m_LocalPosition: {x: 47.4, y: 0, z: 29.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -27.456, z: 0}
+--- !u!114 &1581145649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581145647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
+--- !u!1 &1583084653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1583084654}
+  - component: {fileID: 1583084655}
+  m_Layer: 0
+  m_Name: GameObject (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1583084654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583084653}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.02528388, z: -0, w: 0.99968034}
+  m_LocalPosition: {x: 77.92, y: 0, z: 4.96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.898, z: 0}
+--- !u!114 &1583084655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583084653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1588293154
 GameObject:
   m_ObjectHideFlags: 0
@@ -18904,7 +19334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1588293155}
   - component: {fileID: 1588293156}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18947,6 +19377,69 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.017005395, y: 31.534529, z: 0.24686621}
   m_Center: {x: -0.5119126, y: 120.78228, z: 0.48810503}
+--- !u!1 &1589562849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589562851}
+  - component: {fileID: 1589562850}
+  m_Layer: 0
+  m_Name: NavMesh Surface (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1589562850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589562849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 1
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.33333334
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: de3830a518714984f900465e5b689961, type: 2}
+  m_BuildHeightMesh: 0
+--- !u!4 &1589562851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589562849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1594143872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19095,6 +19588,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5884801257002590165, guid: 534bdf0470cce4f51ad76f868c969b65, type: 3}
   m_PrefabInstance: {fileID: 1595456185}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1599560676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599560677}
+  - component: {fileID: 1599560678}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1599560677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599560676}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.5960351, z: -0, w: 0.8029584}
+  m_LocalPosition: {x: 18.04, y: 0, z: 18.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -73.173, z: 0}
+--- !u!114 &1599560678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599560676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1603121051
 GameObject:
   m_ObjectHideFlags: 0
@@ -19107,7 +19652,7 @@ GameObject:
   - component: {fileID: 1603121054}
   - component: {fileID: 1603121053}
   - component: {fileID: 1603121052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19212,7 +19757,7 @@ GameObject:
   - component: {fileID: 1604996065}
   - component: {fileID: 1604996064}
   - component: {fileID: 1604996063}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (6)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19520,7 +20065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614876521}
   - component: {fileID: 1614876522}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19563,6 +20108,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.018130548, y: 17.6832, z: 0.3469011}
   m_Center: {x: -0.5082572, y: 132.71523, z: -1.8895596}
+--- !u!1 &1615621606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615621607}
+  - component: {fileID: 1615621608}
+  m_Layer: 0
+  m_Name: GameObject (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1615621607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615621606}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.02528388, z: -0, w: 0.99968034}
+  m_LocalPosition: {x: 56.58, y: 0, z: 20.619999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.898, z: 0}
+--- !u!114 &1615621608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615621606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1615672115
 GameObject:
   m_ObjectHideFlags: 0
@@ -19572,7 +20169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1615672116}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piso2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19624,7 +20221,7 @@ GameObject:
   - component: {fileID: 1617694445}
   - component: {fileID: 1617694444}
   - component: {fileID: 1617694443}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (Suelo)Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19801,7 +20398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628830061}
   - component: {fileID: 1628830062}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19844,6 +20441,110 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25802904, y: 28.705746, z: 0.015373585}
   m_Center: {x: 1.0553983, y: 10.580774, z: 0.32650295}
+--- !u!1 &1639253278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639253279}
+  - component: {fileID: 1639253280}
+  m_Layer: 0
+  m_Name: GameObject (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1639253279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639253278}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.02528388, z: -0, w: 0.99968034}
+  m_LocalPosition: {x: 51.7, y: 0, z: 24.279999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.898, z: 0}
+--- !u!114 &1639253280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639253278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
+--- !u!1 &1642752512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642752513}
+  - component: {fileID: 1642752514}
+  m_Layer: 0
+  m_Name: GameObject (23)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1642752513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642752512}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.99621284, z: -0, w: 0.08694871}
+  m_LocalPosition: {x: 0, y: 0, z: -21.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 170.024, z: 0}
+--- !u!114 &1642752514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642752512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1650643027
 GameObject:
   m_ObjectHideFlags: 0
@@ -19907,7 +20608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1650890538}
   - component: {fileID: 1650890539}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19960,7 +20661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661109313}
   - component: {fileID: 1661109314}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20013,7 +20714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664673603}
   - component: {fileID: 1664673604}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20066,7 +20767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665460987}
   - component: {fileID: 1665460988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20267,7 +20968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674915935}
   - component: {fileID: 1674915936}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20396,7 +21097,7 @@ GameObject:
   - component: {fileID: 1677569388}
   - component: {fileID: 1677569387}
   - component: {fileID: 1677569386}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (14)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20499,7 +21200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1680934834}
   - component: {fileID: 1680934835}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20626,7 +21327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682137221}
   - component: {fileID: 1682137222}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20679,7 +21380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1687716225}
   - component: {fileID: 1687716226}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20732,7 +21433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692161085}
   - component: {fileID: 1692161086}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20861,7 +21562,7 @@ GameObject:
   - component: {fileID: 1693368550}
   - component: {fileID: 1693368549}
   - component: {fileID: 1693368548}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21095,7 +21796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1697702514}
   - component: {fileID: 1697702515}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21212,6 +21913,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5884801257002590165, guid: 534bdf0470cce4f51ad76f868c969b65, type: 3}
   m_PrefabInstance: {fileID: 1707069677}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1708696995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708696996}
+  - component: {fileID: 1708696997}
+  m_Layer: 0
+  m_Name: GameObject (16)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708696996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708696995}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.67301214, z: -0, w: 0.7396314}
+  m_LocalPosition: {x: 70.66, y: 0, z: -23.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.6, z: 0}
+--- !u!114 &1708696997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708696995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1709799473
 GameObject:
   m_ObjectHideFlags: 0
@@ -21224,7 +21977,7 @@ GameObject:
   - component: {fileID: 1709799476}
   - component: {fileID: 1709799475}
   - component: {fileID: 1709799474}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (8)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21327,7 +22080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710750687}
   - component: {fileID: 1710750688}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Techo (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21382,7 +22135,7 @@ GameObject:
   - component: {fileID: 1720961072}
   - component: {fileID: 1720961071}
   - component: {fileID: 1720961070}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21635,7 +22388,7 @@ GameObject:
   - component: {fileID: 1740444702}
   - component: {fileID: 1740444701}
   - component: {fileID: 1740444700}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (13)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21738,7 +22491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753669692}
   - component: {fileID: 1753669693}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21791,7 +22544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1764923295}
   - component: {fileID: 1764923296}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21973,7 +22726,7 @@ GameObject:
   - component: {fileID: 1782460182}
   - component: {fileID: 1782460181}
   - component: {fileID: 1782460180}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22205,7 +22958,7 @@ GameObject:
   - component: {fileID: 1796601866}
   - component: {fileID: 1796601865}
   - component: {fileID: 1796601864}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (Suelo)Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22298,6 +23051,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1910386310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1800687773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1800687774}
+  - component: {fileID: 1800687775}
+  m_Layer: 0
+  m_Name: GameObject (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1800687774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800687773}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.02528388, z: -0, w: 0.99968034}
+  m_LocalPosition: {x: 64.86, y: 0, z: 15.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.898, z: 0}
+--- !u!114 &1800687775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800687773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1801721414
 GameObject:
   m_ObjectHideFlags: 0
@@ -22308,7 +23113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801721415}
   - component: {fileID: 1801721416}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22363,7 +23168,7 @@ GameObject:
   - component: {fileID: 1804703911}
   - component: {fileID: 1804703910}
   - component: {fileID: 1804703909}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (4)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22466,7 +23271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1804824269}
   - component: {fileID: 1804824270}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22519,7 +23324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1815624826}
   - component: {fileID: 1815624827}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22562,69 +23367,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.018130548, y: 36.543804, z: 0.31400746}
   m_Center: {x: -0.5082574, y: 123.28545, z: -1.495461}
---- !u!1 &1826431846
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1826431848}
-  - component: {fileID: 1826431847}
-  m_Layer: 0
-  m_Name: NavMesh Surface (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1826431847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826431846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 1
-  m_Size: {x: 24.920282, y: 23.99, z: 40.033096}
-  m_Center: {x: 2.508685, y: 1.1814404, z: -12.592129}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 2055
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 1
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.01
-  m_MinRegionArea: 0.09
-  m_NavMeshData: {fileID: 23800000, guid: 06a65f1b91c536043b71eba46e2aea08, type: 2}
-  m_BuildHeightMesh: 0
---- !u!4 &1826431848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826431846}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.89120454, z: 0, w: 0.45360166}
-  m_LocalPosition: {x: 33.46, y: -9.4, z: -8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 126.05, z: 0}
 --- !u!1001 &1827228648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22709,7 +23451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829961328}
   - component: {fileID: 1829961329}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22764,7 +23506,7 @@ GameObject:
   - component: {fileID: 1831352339}
   - component: {fileID: 1831352338}
   - component: {fileID: 1831352337}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube (5)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23030,6 +23772,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 727c8bc355a1c490a86a6c7b31e8aa68, type: 3}
   m_PrefabInstance: {fileID: 1849005557}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1849418859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849418860}
+  - component: {fileID: 1849418861}
+  m_Layer: 0
+  m_Name: GameObject (24)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1849418860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849418859}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.99621284, z: -0, w: 0.08694871}
+  m_LocalPosition: {x: 0, y: 0, z: -10.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 170.024, z: 0}
+--- !u!114 &1849418861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849418859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1851868459
 GameObject:
   m_ObjectHideFlags: 0
@@ -23040,7 +23834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1851868460}
   - component: {fileID: 1851868461}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23220,7 +24014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1882498298}
   - component: {fileID: 1882498299}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23273,7 +24067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885438473}
   - component: {fileID: 1885438474}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23325,7 +24119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1885819506}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Paredes(CasaCentro)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23383,7 +24177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891839590}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23412,6 +24206,110 @@ Transform:
   - {fileID: 920907216}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1899026762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899026763}
+  - component: {fileID: 1899026764}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1899026763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899026762}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.70042485, z: -0, w: 0.7137262}
+  m_LocalPosition: {x: 22.280003, y: 0, z: 21.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -88.922, z: 0}
+--- !u!114 &1899026764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899026762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
+--- !u!1 &1903336157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903336158}
+  - component: {fileID: 1903336159}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1903336158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903336157}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.5960351, z: -0, w: 0.8029584}
+  m_LocalPosition: {x: 10.820002, y: 0, z: 15.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -73.173, z: 0}
+--- !u!114 &1903336159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903336157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &1908506148
 GameObject:
   m_ObjectHideFlags: 0
@@ -23422,7 +24320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1908506149}
   - component: {fileID: 1908506150}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23474,7 +24372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1910386310}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Suelo(NivelCalle)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23514,7 +24412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1912555132}
   - component: {fileID: 1912555133}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23567,7 +24465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1914603487}
   - component: {fileID: 1914603488}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23620,7 +24518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1917601944}
   - component: {fileID: 1917601945}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23749,7 +24647,7 @@ GameObject:
   - component: {fileID: 1922712540}
   - component: {fileID: 1922712539}
   - component: {fileID: 1922712538}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "(S\xF3tano)Cube"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23852,7 +24750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1924240787}
   - component: {fileID: 1924240788}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Valla (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23999,7 +24897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1927508607}
   - component: {fileID: 1927508608}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24274,7 +25172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1941837073}
   - component: {fileID: 1941837074}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VallaCasa (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24676,7 +25574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1968011241}
   - component: {fileID: 1968011242}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24729,7 +25627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978342937}
   - component: {fileID: 1978342938}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24782,7 +25680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1982917583}
   - component: {fileID: 1982917584}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24835,7 +25733,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1984071066}
   - component: {fileID: 1984071067}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24890,7 +25788,7 @@ GameObject:
   - component: {fileID: 1996820824}
   - component: {fileID: 1996820823}
   - component: {fileID: 1996820822}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25141,7 +26039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005127972}
   - component: {fileID: 2005127973}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25194,7 +26092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2007319860}
   - component: {fileID: 2007319861}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25399,7 +26297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047607789}
   - component: {fileID: 2047607790}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25594,6 +26492,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2053164650921950062, guid: 090735b1410454a1ca23f379e488007b, type: 3}
   m_PrefabInstance: {fileID: 2057693679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2068166325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2068166326}
+  - component: {fileID: 2068166327}
+  m_Layer: 0
+  m_Name: GameObject (22)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2068166326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068166325}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.99621284, z: -0, w: 0.08694871}
+  m_LocalPosition: {x: 0.3199997, y: 0, z: -31.260002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 170.024, z: 0}
+--- !u!114 &2068166327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068166325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1001 &2076121788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25846,11 +26796,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_StartPoint: {x: -6.1333427, y: -0.84345996, z: -4.484733}
-  m_EndPoint: {x: -8.660927, y: -0.62333024, z: -3.1064968}
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
   m_Width: 1.73
   m_CostModifier: -1
-  m_Bidirectional: 1
+  m_Bidirectional: 0
   m_AutoUpdatePosition: 0
   m_Area: 2
 --- !u!4 &2084736121
@@ -25861,13 +26811,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084736119}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.82, y: 0.7071067, z: 6.06}
+  m_LocalRotation: {x: -0, y: -0.5960351, z: -0, w: 0.8029584}
+  m_LocalPosition: {x: 4.4000015, y: 0, z: 11.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: -73.173, z: 0}
 --- !u!1001 &2089925015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26016,6 +26966,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5884801257002590165, guid: 534bdf0470cce4f51ad76f868c969b65, type: 3}
   m_PrefabInstance: {fileID: 2099304662}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2101948935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101948936}
+  - component: {fileID: 2101948937}
+  m_Layer: 0
+  m_Name: GameObject (20)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101948936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101948935}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6147812, z: -0, w: 0.7886978}
+  m_LocalPosition: {x: 24.070002, y: 0, z: -34.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 75.872, z: 0}
+--- !u!114 &2101948937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101948935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1 &2110541226
 GameObject:
   m_ObjectHideFlags: 0
@@ -26026,7 +27028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110541227}
   - component: {fileID: 2110541228}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesCentro (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26079,7 +27081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110665301}
   - component: {fileID: 2110665302}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Techo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26122,6 +27124,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.020901, y: 1.3040074, z: 0.66015387}
   m_Center: {x: -0.0068545924, y: 141.04614, z: 0.104497015}
+--- !u!1 &2123277218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123277219}
+  - component: {fileID: 2123277220}
+  m_Layer: 0
+  m_Name: GameObject (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2123277219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123277218}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6142712, z: -0, w: 0.7890949}
+  m_LocalPosition: {x: 78.05, y: 0, z: -5.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1314561534}
+  m_LocalEulerAnglesHint: {x: 0, y: 75.798, z: 0}
+--- !u!114 &2123277220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123277218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: -3.19, y: -0.62333024, z: -3.1064968}
+  m_Width: 1.73
+  m_CostModifier: -1
+  m_Bidirectional: 0
+  m_AutoUpdatePosition: 0
+  m_Area: 2
 --- !u!1001 &2126655568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26206,7 +27260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126720622}
   - component: {fileID: 2126720623}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParedesIzquierda (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26335,7 +27389,7 @@ GameObject:
   - component: {fileID: 2132935745}
   - component: {fileID: 2132935744}
   - component: {fileID: 2132935743}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26588,7 +27642,7 @@ GameObject:
   - component: {fileID: 2135787185}
   - component: {fileID: 2135787184}
   - component: {fileID: 2135787183}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: (SueloPlanta1)Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26762,16 +27816,11 @@ SceneRoots:
   - {fileID: 439186152}
   - {fileID: 1957761312}
   - {fileID: 1547937561}
-  - {fileID: 77149892}
   - {fileID: 169792820}
-  - {fileID: 1269515153}
-  - {fileID: 1323863849}
-  - {fileID: 1226600861}
-  - {fileID: 933303260}
-  - {fileID: 1826431848}
+  - {fileID: 1589562851}
   - {fileID: 579444593}
   - {fileID: 572608376}
   - {fileID: 52438912}
   - {fileID: 1502355378}
   - {fileID: 1891839590}
-  - {fileID: 2084736121}
+  - {fileID: 1314561534}

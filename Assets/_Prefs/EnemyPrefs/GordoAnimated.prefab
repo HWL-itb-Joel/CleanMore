@@ -102,6 +102,7 @@ MonoBehaviour:
   zombieHealth: 500
   attackDamage: 5
   attackSpeed: 1
+  animator: {fileID: 965886805450774216}
 --- !u!95 &965886805450774216
 Animator:
   serializedVersion: 5
