@@ -96,8 +96,8 @@ MonoBehaviour:
   attackType: 0
   detectionRange: 15
   attackRange: 3
-  patrolSpeed: 2
-  chaseSpeed: 4
+  patrolSpeed: 0.5
+  chaseSpeed: 1.5
   patrolRadius: 10
   zombieHealth: 500
   attackDamage: 5
@@ -137,7 +137,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 250
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

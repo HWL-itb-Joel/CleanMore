@@ -77,6 +77,7 @@ public class Enemys : MonoBehaviour, IEnemyHealth
                 StartCoroutine(Attack());
                 break;
             case ZombieState.dead:
+                gameObject.SetActive(false);
                 break;
             default:
                 break;
@@ -97,7 +98,6 @@ public class Enemys : MonoBehaviour, IEnemyHealth
                 CheckForPlayers();
                 break;
             case ZombieState.following:
-
                 FollowPlayer();
                 break;
             case ZombieState.attacking:
@@ -106,6 +106,7 @@ public class Enemys : MonoBehaviour, IEnemyHealth
                 StartCoroutine(Attack());
                 break;
             case ZombieState.dead:
+                gameObject.SetActive(false);
                 break;
             default:
                 break;

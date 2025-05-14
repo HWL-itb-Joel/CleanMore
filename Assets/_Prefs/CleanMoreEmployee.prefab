@@ -399,8 +399,10 @@ MonoBehaviour:
   syncInterval: 0
   walkSpeed: 3
   sprintMultiplier: 2
+  currentMovement: {x: 0, y: 0, z: 0}
   jumpForce: 1
   gravity: 9.81
+  grounded: 0
   GroundMask:
     serializedVersion: 2
     m_Bits: 2048

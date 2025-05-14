@@ -40,7 +40,7 @@ public class ZombieHordeManager : MonoBehaviour
 
         if (players.Count > 0)
         {
-            player = players[0]; // o usar lógica para elegir uno
+            player = players[0]; // o usar l?gica para elegir uno
         }
     }
 
@@ -60,6 +60,7 @@ public class ZombieHordeManager : MonoBehaviour
 
     IEnumerator HordeLoop()
     {
+        yield return new WaitForSeconds(5f);
         UpdatePlayerList();
         print("new horde");
         SpawnHorde();
@@ -86,7 +87,7 @@ public class ZombieHordeManager : MonoBehaviour
         float roll = Random.value;
         if (currentHorde < 3 || roll < 0.6f) return ZombieType.Normal;
         if (currentHorde < 5 && roll < 0.75f) return ZombieType.Rapido;
-        if (currentHorde < 7 && roll < 0.9f) return ZombieType.Distancia;
+        if (currentHorde < 7 && roll < 0.9f) return ZombieType.Rapido;
         return ZombieType.Tanque;
     }
 
@@ -95,7 +96,7 @@ public class ZombieHordeManager : MonoBehaviour
         var entry = zombieTypes.Find(e => e.type == type);
         if (entry == null)
         {
-            Debug.LogError("No se encontró entrada de pool para zombie type: " + type);
+            Debug.LogError("No se encontr? entrada de pool para zombie type: " + type);
             return null;
         }
 
@@ -115,7 +116,7 @@ public class ZombieHordeManager : MonoBehaviour
 {
         if (players == null || players.Count == 0)
         {
-            Debug.LogError("No hay jugadores en la lista de 'players'. No se puede generar posición de spawn segura.");
+            Debug.LogError("No hay jugadores en la lista de 'players'. No se puede generar posici?n de spawn segura.");
             return Vector3.zero; // O un valor por defecto seguro
         }
 

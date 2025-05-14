@@ -64,14 +64,6 @@ public class GunController : MonoBehaviour
 
     private void Awake()
     {
-        if (GunController.gunController != this && GunController.gunController != null)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            GunController.gunController = this;
-        }
         meleeCollider = meleeWeaponObj.GetComponent<BoxCollider>();
         primaryWeaponObj.SetActive(true);
         GunController.gunController = this;
