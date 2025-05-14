@@ -10,7 +10,7 @@ public class CameraMainMenu : MonoBehaviour
         public Transform position;
     }
 
-    public CameraTransform[] cameraViews; // Deberían ser 4
+    public CameraTransform[] cameraViews; // Deber?an ser 4
     public float transitionSpeed = 2f;
 
     private int currentIndex = 0;
@@ -43,11 +43,15 @@ public class CameraMainMenu : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isTransitioning)
         {
-            if (currentIndex > 0)
+            if (currentIndex == 2 || currentIndex == 3)
             {
-                GoToView(currentIndex - 1);
+                GoToView(0);
+            }
+            else if (currentIndex == 1)
+            {
+                GoToView(2);
             }
             else
             {
@@ -61,7 +65,7 @@ public class CameraMainMenu : MonoBehaviour
     {
         if (index < 0 || index >= cameraViews.Length)
         {
-            Debug.LogWarning("Índice fuera de rango: " + index);
+            Debug.LogWarning("?ndice fuera de rango: " + index);
             return;
         }
 
@@ -82,7 +86,7 @@ public class CameraMainMenu : MonoBehaviour
         Debug.Log("Saliendo del juego...");
         Application.Quit();
 
-        // Esto es útil para que funcione también en el editor
+        // Esto es ?til para que funcione tambi?n en el editor
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif

@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class AnimacionesMenu : MonoBehaviour
 {
-    Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    [SerializeField] Animator animator;
 
     public void openBottomDrawer()
     {
