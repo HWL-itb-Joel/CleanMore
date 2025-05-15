@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,16 +11,20 @@ public class CameraMainMenu : MonoBehaviour
         public Transform position;
     }
 
-    public CameraTransform[] cameraViews; // Deberían ser 4
+    public CameraTransform[] cameraViews; // Deber?an ser 4
     public float transitionSpeed = 2f;
 
-    private int currentIndex = 0;
+    public int currentIndex = 0;
     private bool isTransitioning = false;
     private Vector3 targetPosition;
+    Vector3 startPosition;
     private Quaternion targetRotation;
+    Quaternion startRotation;
 
     void Start()
     {
+        startPosition = transform.position;
+        startRotation = transform.rotation;
         if (cameraViews.Length > 0)
         {
             SetCameraTransform(cameraViews[currentIndex]);
@@ -45,9 +50,22 @@ public class CameraMainMenu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (currentIndex > 0)
+            if (currentIndex == 3 || currentIndex == 2)
             {
-                GoToView(currentIndex - 1);
+                currentIndex = 0;
+                targetPosition = startPosition;
+                targetRotation = startRotation;
+                isTransitioning = true;
+            }
+            else if (currentIndex == 1 && !AnimacionesMenu.instance.openFolder)
+            {
+                AnimacionesMenu.instance.CloseBottomDrawer();
+                AnimacionesMenu.instance.CloseTopDrawer();
+                GoToView(2);
+            }
+            else if (AnimacionesMenu.instance.openFolder)
+            {
+                AnimacionesMenu.instance.CloseFolder();
             }
             else
             {
@@ -59,14 +77,8 @@ public class CameraMainMenu : MonoBehaviour
 
     public void GoToView(int index)
     {
-        if (index < 0 || index >= cameraViews.Length)
-        {
-            Debug.LogWarning("Índice fuera de rango: " + index);
-            return;
-        }
-
         currentIndex = index;
-        SetCameraTransform(cameraViews[currentIndex]);
+        SetCameraTransform(cameraViews[index]);
     }
 
 
@@ -82,7 +94,7 @@ public class CameraMainMenu : MonoBehaviour
         Debug.Log("Saliendo del juego...");
         Application.Quit();
 
-        // Esto es útil para que funcione también en el editor
+        // Esto es ?til para que funcione tambi?n en el editor
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif

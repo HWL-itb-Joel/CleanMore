@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: 08ecdd11539907346b8f278ccdb1dd50, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e73ec3599e5addc4296d9be7750a5cfe, type: 2}
+    - target: {fileID: -516098083770646512, guid: 08ecdd11539907346b8f278ccdb1dd50, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 08ecdd11539907346b8f278ccdb1dd50, type: 3}
       propertyPath: m_Name
       value: EnemyBase_Animations_Rig
@@ -59,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 08ecdd11539907346b8f278ccdb1dd50, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2634868107044832197}
+    - targetCorrespondingSourceObject: {fileID: -516098083770646512, guid: 08ecdd11539907346b8f278ccdb1dd50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8415133064143828348}
   m_SourcePrefab: {fileID: 100100000, guid: 08ecdd11539907346b8f278ccdb1dd50, type: 3}
 --- !u!4 &379702291205375938 stripped
 Transform:
@@ -91,6 +102,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!137 &7494378946779383538 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1526964690268444965, guid: 08ecdd11539907346b8f278ccdb1dd50, type: 3}
+  m_PrefabInstance: {fileID: 202169701144436777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8797838786065653817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: 08ecdd11539907346b8f278ccdb1dd50, type: 3}
+  m_PrefabInstance: {fileID: 202169701144436777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8415133064143828348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797838786065653817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d57aa3abdfb74c11b135e467bc51fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRenderer: {fileID: 0}
+  originalMaterial: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: 658786745a7254574b29bcf37b9f6fe0, type: 2}
+  flashDuration: 0.1
 --- !u!1001 &4513856501293521923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -185,17 +222,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38f8e3d6c08947efaa81c46a35bfa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   currentState: 0
   attackType: 0
   detectionRange: 20
   attackRange: 2
-  patrolSpeed: 3
-  chaseSpeed: 5
+  patrolSpeed: 2
+  chaseSpeed: 3
   patrolRadius: 15
   zombieHealth: 150
   attackDamage: 2.5
   attackSpeed: 2
   animator: {fileID: 2634868107044832197}
+  enemyRenderer: {fileID: 7494378946779383538}
+  originalMaterial: {fileID: 2100000, guid: e73ec3599e5addc4296d9be7750a5cfe, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 658786745a7254574b29bcf37b9f6fe0, type: 2}
+  flashDuration: 0.05
 --- !u!195 &8984493514125272864
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -209,7 +253,7 @@ NavMeshAgent:
   m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 250
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

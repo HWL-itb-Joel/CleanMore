@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Mirror;
 
-public class GunController : MonoBehaviour
+public class GunController : NetworkBehaviour
 {
     [Header("Guns Selected")]
     private Gun weaponInfo;
@@ -19,7 +20,7 @@ public class GunController : MonoBehaviour
     public ThrowableWeapon throwableWeapon2;
 
     [Header("Input Settings")]
-    public InputActionAsset PlayerInputs;
+    [SerializeField] public PlayerInput PlayerInputs;
     private InputAction fireAction;
     private InputAction reloadAction;
     private InputAction lookAction;
@@ -64,24 +65,16 @@ public class GunController : MonoBehaviour
 
     private void Awake()
     {
-        if (GunController.gunController != this && GunController.gunController != null)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            GunController.gunController = this;
-        }
         meleeCollider = meleeWeaponObj.GetComponent<BoxCollider>();
         primaryWeaponObj.SetActive(true);
         GunController.gunController = this;
         camRotation = GetComponentInParent<Transform>().rotation;
         weaponInfo = primaryWeapon;
-        scrollWeapons = PlayerInputs.FindActionMap("OnGround").FindAction("PrimaryWeapon");
-        fireAction = PlayerInputs.FindActionMap("OnGround").FindAction("Fire");
-        reloadAction = PlayerInputs.FindActionMap("OnGround").FindAction("Reload");
-        lookAction = PlayerInputs.FindActionMap("OnGround").FindAction("Look");
-        alternativeShoot = PlayerInputs.FindActionMap("OnGround").FindAction("AlternativeShoot");
+        scrollWeapons = PlayerInputs.actions.FindActionMap("OnGround").FindAction("PrimaryWeapon");
+        fireAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Fire");
+        reloadAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Reload");
+        lookAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Look");
+        alternativeShoot = PlayerInputs.actions.FindActionMap("OnGround").FindAction("AlternativeShoot");
 
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
@@ -332,9 +325,12 @@ public class GunController : MonoBehaviour
                 feedback.transform.rotation = Quaternion.Euler(hit.normal);
                 Destroy(feedback, 3f);
 
-                if (hit.transform.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
+                if (hit.collider.TryGetComponent<NetworkIdentity>(out var identity))
                 {
-                    r.TakeDamage(weaponInfo.damage);
+                    if (identity.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
+                    {
+                        CmdDamageEnemy(identity, weaponInfo.damage);
+                    }
                 }
             }
             catch { }
@@ -403,15 +399,25 @@ public class GunController : MonoBehaviour
         _canReload = true;
         _canShoot = true;
     }
-    #endregion
 
-    /*private void OnDrawGizmos()
+    [Command]
+    void CmdDamageEnemy(NetworkIdentity enemyID, int damage)
     {
-        Gizmos.color = Color.red;
-        Debug.DrawLine(Camera.main.transform.position, Camera.main.transform.forward * 180,Color.red);
-    }*/
+        if (enemyID.TryGetComponent<IEnemyHealth>(out var enemy))
+        {
+            enemy.TakeDamage(damage);
+            enemy.FlashOnHit(); // opcionalmente puedes hacer que esto se vea en todos
+        }
+    }
+        #endregion
 
-    void ChangeAlternativeShoot()
+        /*private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Debug.DrawLine(Camera.main.transform.position, Camera.main.transform.forward * 180,Color.red);
+        }*/
+
+        void ChangeAlternativeShoot()
     {
         _canAlternShoot = false;
         Debug.Log("Alternative Shoot Enabled");
