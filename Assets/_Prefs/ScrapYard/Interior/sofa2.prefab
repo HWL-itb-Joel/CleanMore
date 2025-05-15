@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4d44898f8a3ef4d23aeb0bf0f51fd0d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb0afde2a7aa2497b8be7dcef46c343b, type: 2}
     - target: {fileID: 919132149155446097, guid: 4d44898f8a3ef4d23aeb0bf0f51fd0d5, type: 3}
       propertyPath: m_Name
       value: sofa2

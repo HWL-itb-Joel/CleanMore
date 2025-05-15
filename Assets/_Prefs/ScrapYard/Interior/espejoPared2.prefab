@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b7415a8d7c6df4f15af2bb0534d1ed6e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b43305a1c56cf4b2b909237ce5ad157a, type: 2}
     - target: {fileID: 919132149155446097, guid: b7415a8d7c6df4f15af2bb0534d1ed6e, type: 3}
       propertyPath: m_Name
       value: espejoPared2
