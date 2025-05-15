@@ -25,7 +25,7 @@ MonoBehaviour:
   coolingAccelerationTime: 0
   coolingMultiplier: 0
   isCooling: 0
-  fireRate: 0.15
+  fireRate: 0.1
   bulletsByShot: 1
   sprayBullets: 1
   sprayIndicator: 2
@@ -40,4 +40,4 @@ MonoBehaviour:
   alternativeSpray: 1
   alternativeSprayIndicator: 1
   alternativeDamage: 25
-  alternativeFireRate: 0.4
+  alternativeFireRate: 0.25

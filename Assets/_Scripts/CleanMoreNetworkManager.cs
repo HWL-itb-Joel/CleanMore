@@ -121,6 +121,12 @@ public class CleanMoreNetworkManager : NetworkManager
         }
     }
 
+    public override void OnStopServer()
+    {
+        base.OnStopServer();
+        CleanMoreNetworkManager.singleton.StopClient();
+    }
+
     #region Callbacks
     private void OnLobbyCreated(LobbyCreated_t callback)
     {

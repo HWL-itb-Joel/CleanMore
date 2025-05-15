@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Models/Scrapyard/Props/Interior/vaterintacto2.fbx.meta
+guid: f911e97563e664943b34dc4a7c7d5675
+========
 guid: 67032a4ee983f4c30b7309d96a4a5775
+>>>>>>>> MergeInteriorProps:Assets/_Models/Scrapyard/Props/Interior/sofa3.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []

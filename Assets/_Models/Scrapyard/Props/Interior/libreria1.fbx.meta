@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Models/Scrapyard/Props/Interior/escritorio2.fbx.meta
+guid: ceee3690960c94cb7abeedee070277e4
+========
 guid: 83ad2dd9761dc415a9924dec97cac1b8
+>>>>>>>> MergeInteriorProps:Assets/_Models/Scrapyard/Props/Interior/libreria1.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []

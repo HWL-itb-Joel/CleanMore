@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Models/Scrapyard/Props/Interior/sofa3.fbx.meta
+guid: 67032a4ee983f4c30b7309d96a4a5775
+========
 guid: ceee3690960c94cb7abeedee070277e4
+>>>>>>>> MergeInteriorProps:Assets/_Models/Scrapyard/Props/Interior/escritorio2.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -71,7 +75,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
@@ -90,7 +94,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.075
+    globalScale: 0.00075
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
