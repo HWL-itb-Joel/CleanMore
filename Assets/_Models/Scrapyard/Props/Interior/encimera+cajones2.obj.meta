@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/_Models/Enemy/Gordo/GordoAttack.fbx.meta
-guid: 8cffd43969b424bd994c9a6540b231ac
-========
-guid: 98b330174f8c84fb4b1779f77634e514
->>>>>>>> CleanMore/AñadirCoches+Texuras:Assets/_Models/Scrapyard/Props/Interior/encimera+cajones.obj.meta
+guid: 21111a515bb304bd7b5b626fa12962cf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -39,7 +35,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 0.075
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -94,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.001
+    globalScale: 0.075
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
