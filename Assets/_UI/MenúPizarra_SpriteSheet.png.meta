@@ -1,0 +1,2230 @@
+fileFormatVersion: 2
+guid: 7c6a3fe82a8ac49db98dc93992a142ac
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_0"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1117
+        width: 186
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97ffabe342804764adf82e8adc15da0
+      internalID: 724682878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_1"
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1117
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d132153e7ed64490fb5bae82b085ba09
+      internalID: -2076983954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_2"
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1123
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502c5e0a0696f49c3914149b968767c3
+      internalID: 1623390287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_3"
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1145
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066d0af6ddc1149d49330368b067810c
+      internalID: -167519966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_4"
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1122
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7236f47cb24cf48cbb5cb08e4dacc649
+      internalID: 452246011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_5"
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 1123
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909e65d871c9d4918a8ebd1de7516723
+      internalID: -937683756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_6"
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1124
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587c96787c7204bbc9adf95bb98383ba
+      internalID: -2084787535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_7"
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1135
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b3d1b0fe9f64995a6bada47c89f96f
+      internalID: 767573945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_8"
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1123
+        width: 8
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8890b46419f4bc3a77a37404a2c393
+      internalID: 562296432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_9"
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1124
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c11078c8d084764831a1f71d6544f9
+      internalID: 1352292513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_10"
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1123
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a54391ffb4fc4fa193e179eeb6defd7
+      internalID: -459247019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_11"
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1100
+        width: 376
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780a6584e193b40f4b6d8e875c19dd01
+      internalID: -1042642828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_12"
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 1082
+        width: 206
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7d797a43693466992d5b61266f9518
+      internalID: -1236664981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_13"
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 1082
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f91cc7382277400695707141d62d294
+      internalID: 723941324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_14"
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 1084
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05dd668cfac674be2a74236d8953341a
+      internalID: 466843461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_15"
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1084
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac16e77396e84710b1792953a4a00de
+      internalID: -965397351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_16"
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 1082
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa5f45a25e704257a1c9b05e53c466b
+      internalID: 1476805493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_17"
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 1082
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d221c8e17c84d31a507e1bee5ea5e8
+      internalID: 1907119152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_18"
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 1082
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985b0229f8c75496b91bf2ebc002e821
+      internalID: 579413145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_19"
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 1082
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2346e52fd4a64a17b3e37dc2cb1498c
+      internalID: 1162125337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_20"
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 1084
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9a0685e45f142dfbe86ee0e6cace0c
+      internalID: 1050073859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_21"
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 1082
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e92ec77254342d4be084d1c52aa6cc
+      internalID: 1874120194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_22"
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1031
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e277d107544a94c599d167818d6ebd88
+      internalID: 2125748686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_23"
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 1031
+        width: 37
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a908b85d83f9443fb92185ec4df8309
+      internalID: -461709400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_24"
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 1038
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48eddbc4e1964cffbe06100a7865eef
+      internalID: 190407617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_25"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 985
+        width: 181
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce09d017432c54b478371bcc3c3f458d
+      internalID: -245935456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_26"
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 988
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae159b2704b024f4eb8c41b3fd529486
+      internalID: -479446421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_27"
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 1010
+        width: 38
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58c0d5eede764dcb91559f3b26392b7
+      internalID: 854558512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_28"
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 745
+        width: 598
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd21245bb59704b0ebe7cc21e3898d0f
+      internalID: 52737020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_29"
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 1014
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cdf354696d674c82820a0b717f0b669
+      internalID: 1287238703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_30"
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 1010
+        width: 42
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c2ac6b6f79745318cd15087c325cdd
+      internalID: 1360669713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_31"
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 986
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e791e527955044ff95b7c0808e4df8a
+      internalID: -1967581134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_32"
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 986
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ba51bda2b1b4631a1ee0d378a25486
+      internalID: 1951655803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_33"
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 986
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8971019be881d403ab5173028d92e96f
+      internalID: 1894898668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_34"
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 986
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49320ae137ba42f9ae1b89841892f0e
+      internalID: 310167922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_35"
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 989
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3e9b4f4a77441939d44958bc71c956
+      internalID: -687269997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_36"
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 998
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb338d5b78d50487492f5db1aa49a8be
+      internalID: -2112062794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_37"
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 1000
+        width: 52
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abef0f9c5b4e403ab17e5bfc824cf0f
+      internalID: 1578779979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_38"
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 986
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41480bfbb64347bc86fe9287871dbf9
+      internalID: -1215626045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_39"
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 984
+        width: 14
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7227752b3cb14427aef413394d6f5e2
+      internalID: 204823792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_40"
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 988
+        width: 35
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4147e77096061480a965464a9f2864e4
+      internalID: -1927376114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_41"
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 974
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9bb385b85bf44148f63e7033187db8
+      internalID: -1029651153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_42"
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 923
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1bc21331c014458b222351dda5c0eb
+      internalID: -1619769862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_43"
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 933
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2138e25ebf204e3a91db2270dfc5539
+      internalID: 59672110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_44"
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 929
+        width: 83
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4051d7bc76d994aa093c9355b7eb67d7
+      internalID: -890882304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_45"
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 924
+        width: 376
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091c8a6c6dc554bab8c0da55261609fb
+      internalID: 760259427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_46"
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 895
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646feb08e75684d70998863d28fb5817
+      internalID: -1492115038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_47"
+      rect:
+        serializedVersion: 2
+        x: 2245
+        y: 905
+        width: 18
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cfd2f2d2af34cdc8554783b5e580d5
+      internalID: 1381449835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_48"
+      rect:
+        serializedVersion: 2
+        x: 2266
+        y: 900
+        width: 45
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff265064f3a94d4daf1ef4cfdda4986
+      internalID: -264543044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_49"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 851
+        width: 121
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def4bb87db315451ab00362701be74fa
+      internalID: -101569386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_50"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 873
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1437a5be8b61442688b795c55a45deac
+      internalID: 474847104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_51"
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 851
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9f706f35b984581a04767be3569482
+      internalID: 1042860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_52"
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 851
+        width: 12
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe52a7a49b8f942368b749d2f33615eb
+      internalID: -1492752389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_53"
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 840
+        width: 119
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f772c9289c324a77a0716ccb909b1ce
+      internalID: 575968372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_54"
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 840
+        width: 119
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baec2e16f0ab7477bbec64d6195e8d0f
+      internalID: -1362849714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_55"
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 868
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee67679b79844cd187ab3cb2eaeee2d
+      internalID: -1061889295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_56"
+      rect:
+        serializedVersion: 2
+        x: 2246
+        y: 879
+        width: 17
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73380ab3ba6734412a9af4dc27f397ad
+      internalID: 106508200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_57"
+      rect:
+        serializedVersion: 2
+        x: 2266
+        y: 875
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc9a409fe0f2406bb02db1f55f3d2c1
+      internalID: -1678278513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_58"
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 851
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647bff6e6196243539ac1a80f4ccbc2f
+      internalID: -1021653536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_59"
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 851
+        width: 8
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cd176cb26994104b8f549b1b104f8b
+      internalID: -1930111370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_60"
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 850
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5ca52840af54333900052a2e8f87fb
+      internalID: 2146132817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_61"
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 863
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a234eae846620465396f37ae50516fa9
+      internalID: -1451366916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_62"
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 842
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6e1f4ff7e6f4ec1abcef10d80414e6
+      internalID: 1941792711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_63"
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 851
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f58a1c5f8a44a77b8b582faa46f7eb
+      internalID: -694911783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_64"
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 850
+        width: 14
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4417a7439050493d8278ec925e93bad
+      internalID: -996449685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_65"
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 849
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd530c2fcd92544dc86a9a3c5324317b
+      internalID: -1384047818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_66"
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 849
+        width: 30
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528b300a56fce44d9aa3e9cdc25736cc
+      internalID: 1422132309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_67"
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 803
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f120a20c9a0740c6b96e84a74ee080d
+      internalID: 1559922961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_68"
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 803
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701a3095d131d45a68cb695437982349
+      internalID: 1490081947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_69"
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 773
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4e06fbb44704a1b8888c99bfc7ecbf
+      internalID: -24848329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_70"
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 748
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa4af64267804674a5ae24a5469c43e
+      internalID: -1365037500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_71"
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 760
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484e42be8d3eb446b81f8a9f7d3d4317
+      internalID: 1019994588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_72"
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 753
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b034fc54a33fe4201a256ae869a349f3
+      internalID: -1297953594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_73"
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 766
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229110b8af1cf49e188e269a7fa9ed95
+      internalID: -20186950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_74"
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 773
+        width: 98
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495ce797db1f045fca584674ea7f4462
+      internalID: 1033663003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_75"
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 718
+        width: 210
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c441e106b9d0849699d13b8f1ff244eb
+      internalID: -1376427157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_76"
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 718
+        width: 209
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55185db36d964b0aadbe8ef7a3396a2
+      internalID: 472048908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_77"
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 754
+        width: 44
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b591862b8d74b1db97f840170af6c6
+      internalID: 956803046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_78"
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 763
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9441645b24c41b38e2b9689346cf0b
+      internalID: -531683736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_79"
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 760
+        width: 34
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2eb830e60ea4a8e9b9339e40319981
+      internalID: -1733560625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_80"
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 745
+        width: 55
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9be8070182c48beac4927aecd35be8
+      internalID: -627558412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_81"
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 749
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44992269851745018b72689cfb3cede
+      internalID: -603331311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_82"
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 560
+        width: 412
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da5bdf5ce8eb40828060566de39266b
+      internalID: 588682930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_83"
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 560
+        width: 412
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd2604479abb4957b53b9f8c6a0f6e1
+      internalID: 1540009934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_84"
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 592
+        width: 128
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8d9fb54840148a1aaaae0326711240
+      internalID: 89789961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_85"
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 582
+        width: 140
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9d6ffa6825345a196dbe3e619e4853
+      internalID: -1314501888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_86"
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 116
+        width: 423
+        height: 521
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3199acd647f0a4b23a05447f953c2d60
+      internalID: 110427245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_87"
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 512
+        width: 178
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6860591f6611744bf98c33e632bb7587
+      internalID: 837472392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_88"
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 502
+        width: 196
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccda3112ea931446a83a539055560963
+      internalID: 1717578901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_89"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 379
+        width: 357
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95bb6d810bb044a0b9de549369248845
+      internalID: -1747265868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_90"
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 380
+        width: 357
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20a47046115340fca37496b5a7cde9a
+      internalID: 252788892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_91"
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 422
+        width: 123
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6e638ff352d439196509c5204f9716
+      internalID: -1140108483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_92"
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 418
+        width: 133
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed10637bc86d4608a8aff07e2a9eba3
+      internalID: -1184030386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_93"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 184
+        width: 357
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a13c0bc9d8140feb202b28494c3ae6
+      internalID: 199452895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Menu\u0301Pizarra_SpriteSheet_94"
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 184
+        width: 357
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7436fae5e4894639887a17e4cc084a1
+      internalID: 314905839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 70be4430b95ec480f90881bd347cc48e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "Menu\u0301Pizarra_SpriteSheet_0": 724682878
+      "Menu\u0301Pizarra_SpriteSheet_1": -2076983954
+      "Menu\u0301Pizarra_SpriteSheet_10": -459247019
+      "Menu\u0301Pizarra_SpriteSheet_11": -1042642828
+      "Menu\u0301Pizarra_SpriteSheet_12": -1236664981
+      "Menu\u0301Pizarra_SpriteSheet_13": 723941324
+      "Menu\u0301Pizarra_SpriteSheet_14": 466843461
+      "Menu\u0301Pizarra_SpriteSheet_15": -965397351
+      "Menu\u0301Pizarra_SpriteSheet_16": 1476805493
+      "Menu\u0301Pizarra_SpriteSheet_17": 1907119152
+      "Menu\u0301Pizarra_SpriteSheet_18": 579413145
+      "Menu\u0301Pizarra_SpriteSheet_19": 1162125337
+      "Menu\u0301Pizarra_SpriteSheet_2": 1623390287
+      "Menu\u0301Pizarra_SpriteSheet_20": 1050073859
+      "Menu\u0301Pizarra_SpriteSheet_21": 1874120194
+      "Menu\u0301Pizarra_SpriteSheet_22": 2125748686
+      "Menu\u0301Pizarra_SpriteSheet_23": -461709400
+      "Menu\u0301Pizarra_SpriteSheet_24": 190407617
+      "Menu\u0301Pizarra_SpriteSheet_25": -245935456
+      "Menu\u0301Pizarra_SpriteSheet_26": -479446421
+      "Menu\u0301Pizarra_SpriteSheet_27": 854558512
+      "Menu\u0301Pizarra_SpriteSheet_28": 52737020
+      "Menu\u0301Pizarra_SpriteSheet_29": 1287238703
+      "Menu\u0301Pizarra_SpriteSheet_3": -167519966
+      "Menu\u0301Pizarra_SpriteSheet_30": 1360669713
+      "Menu\u0301Pizarra_SpriteSheet_31": -1967581134
+      "Menu\u0301Pizarra_SpriteSheet_32": 1951655803
+      "Menu\u0301Pizarra_SpriteSheet_33": 1894898668
+      "Menu\u0301Pizarra_SpriteSheet_34": 310167922
+      "Menu\u0301Pizarra_SpriteSheet_35": -687269997
+      "Menu\u0301Pizarra_SpriteSheet_36": -2112062794
+      "Menu\u0301Pizarra_SpriteSheet_37": 1578779979
+      "Menu\u0301Pizarra_SpriteSheet_38": -1215626045
+      "Menu\u0301Pizarra_SpriteSheet_39": 204823792
+      "Menu\u0301Pizarra_SpriteSheet_4": 452246011
+      "Menu\u0301Pizarra_SpriteSheet_40": -1927376114
+      "Menu\u0301Pizarra_SpriteSheet_41": -1029651153
+      "Menu\u0301Pizarra_SpriteSheet_42": -1619769862
+      "Menu\u0301Pizarra_SpriteSheet_43": 59672110
+      "Menu\u0301Pizarra_SpriteSheet_44": -890882304
+      "Menu\u0301Pizarra_SpriteSheet_45": 760259427
+      "Menu\u0301Pizarra_SpriteSheet_46": -1492115038
+      "Menu\u0301Pizarra_SpriteSheet_47": 1381449835
+      "Menu\u0301Pizarra_SpriteSheet_48": -264543044
+      "Menu\u0301Pizarra_SpriteSheet_49": -101569386
+      "Menu\u0301Pizarra_SpriteSheet_5": -937683756
+      "Menu\u0301Pizarra_SpriteSheet_50": 474847104
+      "Menu\u0301Pizarra_SpriteSheet_51": 1042860
+      "Menu\u0301Pizarra_SpriteSheet_52": -1492752389
+      "Menu\u0301Pizarra_SpriteSheet_53": 575968372
+      "Menu\u0301Pizarra_SpriteSheet_54": -1362849714
+      "Menu\u0301Pizarra_SpriteSheet_55": -1061889295
+      "Menu\u0301Pizarra_SpriteSheet_56": 106508200
+      "Menu\u0301Pizarra_SpriteSheet_57": -1678278513
+      "Menu\u0301Pizarra_SpriteSheet_58": -1021653536
+      "Menu\u0301Pizarra_SpriteSheet_59": -1930111370
+      "Menu\u0301Pizarra_SpriteSheet_6": -2084787535
+      "Menu\u0301Pizarra_SpriteSheet_60": 2146132817
+      "Menu\u0301Pizarra_SpriteSheet_61": -1451366916
+      "Menu\u0301Pizarra_SpriteSheet_62": 1941792711
+      "Menu\u0301Pizarra_SpriteSheet_63": -694911783
+      "Menu\u0301Pizarra_SpriteSheet_64": -996449685
+      "Menu\u0301Pizarra_SpriteSheet_65": -1384047818
+      "Menu\u0301Pizarra_SpriteSheet_66": 1422132309
+      "Menu\u0301Pizarra_SpriteSheet_67": 1559922961
+      "Menu\u0301Pizarra_SpriteSheet_68": 1490081947
+      "Menu\u0301Pizarra_SpriteSheet_69": -24848329
+      "Menu\u0301Pizarra_SpriteSheet_7": 767573945
+      "Menu\u0301Pizarra_SpriteSheet_70": -1365037500
+      "Menu\u0301Pizarra_SpriteSheet_71": 1019994588
+      "Menu\u0301Pizarra_SpriteSheet_72": -1297953594
+      "Menu\u0301Pizarra_SpriteSheet_73": -20186950
+      "Menu\u0301Pizarra_SpriteSheet_74": 1033663003
+      "Menu\u0301Pizarra_SpriteSheet_75": -1376427157
+      "Menu\u0301Pizarra_SpriteSheet_76": 472048908
+      "Menu\u0301Pizarra_SpriteSheet_77": 956803046
+      "Menu\u0301Pizarra_SpriteSheet_78": -531683736
+      "Menu\u0301Pizarra_SpriteSheet_79": -1733560625
+      "Menu\u0301Pizarra_SpriteSheet_8": 562296432
+      "Menu\u0301Pizarra_SpriteSheet_80": -627558412
+      "Menu\u0301Pizarra_SpriteSheet_81": -603331311
+      "Menu\u0301Pizarra_SpriteSheet_82": 588682930
+      "Menu\u0301Pizarra_SpriteSheet_83": 1540009934
+      "Menu\u0301Pizarra_SpriteSheet_84": 89789961
+      "Menu\u0301Pizarra_SpriteSheet_85": -1314501888
+      "Menu\u0301Pizarra_SpriteSheet_86": 110427245
+      "Menu\u0301Pizarra_SpriteSheet_87": 837472392
+      "Menu\u0301Pizarra_SpriteSheet_88": 1717578901
+      "Menu\u0301Pizarra_SpriteSheet_89": -1747265868
+      "Menu\u0301Pizarra_SpriteSheet_9": 1352292513
+      "Menu\u0301Pizarra_SpriteSheet_90": 252788892
+      "Menu\u0301Pizarra_SpriteSheet_91": -1140108483
+      "Menu\u0301Pizarra_SpriteSheet_92": -1184030386
+      "Menu\u0301Pizarra_SpriteSheet_93": 199452895
+      "Menu\u0301Pizarra_SpriteSheet_94": 314905839
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
