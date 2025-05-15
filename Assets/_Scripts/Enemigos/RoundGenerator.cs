@@ -30,7 +30,6 @@ public class ZombieHordeManager : NetworkBehaviour
 
     void Start()
     {
-        if (!isServer) return;
         InitPools();
         StartCoroutine(HordeLoop());
 
@@ -54,7 +53,7 @@ public class ZombieHordeManager : NetworkBehaviour
             for (int i = 0; i < entry.initialSize; i++)
             {
                 GameObject z = Instantiate(entry.prefab, transform);
-                z.SetActive(false); // NO hacer Spawn aqu?
+                z.SetActive(false); // NO hacer Spawn aqui
                 entry.pool.Add(z);
             }
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,13 +14,17 @@ public class CameraMainMenu : MonoBehaviour
     public CameraTransform[] cameraViews; // Deber?an ser 4
     public float transitionSpeed = 2f;
 
-    private int currentIndex = 0;
+    public int currentIndex = 0;
     private bool isTransitioning = false;
     private Vector3 targetPosition;
+    Vector3 startPosition;
     private Quaternion targetRotation;
+    Quaternion startRotation;
 
     void Start()
     {
+        startPosition = transform.position;
+        startRotation = transform.rotation;
         if (cameraViews.Length > 0)
         {
             SetCameraTransform(cameraViews[currentIndex]);
@@ -43,15 +48,24 @@ public class CameraMainMenu : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !isTransitioning)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (currentIndex == 2 || currentIndex == 3)
+            if (currentIndex == 3 || currentIndex == 2)
             {
-                GoToView(0);
+                currentIndex = 0;
+                targetPosition = startPosition;
+                targetRotation = startRotation;
+                isTransitioning = true;
             }
-            else if (currentIndex == 1)
+            else if (currentIndex == 1 && !AnimacionesMenu.instance.openFolder)
             {
+                AnimacionesMenu.instance.CloseBottomDrawer();
+                AnimacionesMenu.instance.CloseTopDrawer();
                 GoToView(2);
+            }
+            else if (AnimacionesMenu.instance.openFolder)
+            {
+                AnimacionesMenu.instance.CloseFolder();
             }
             else
             {
@@ -63,14 +77,8 @@ public class CameraMainMenu : MonoBehaviour
 
     public void GoToView(int index)
     {
-        if (index < 0 || index >= cameraViews.Length)
-        {
-            Debug.LogWarning("?ndice fuera de rango: " + index);
-            return;
-        }
-
         currentIndex = index;
-        SetCameraTransform(cameraViews[currentIndex]);
+        SetCameraTransform(cameraViews[index]);
     }
 
 

@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38f8e3d6c08947efaa81c46a35bfa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   currentState: 0
   attackType: 0
   detectionRange: 15
@@ -104,9 +107,10 @@ MonoBehaviour:
   patrolSpeed: 0.5
   chaseSpeed: 1.5
   patrolRadius: 10
+  health: 0
   zombieHealth: 500
   attackDamage: 5
-  attackSpeed: 1
+  attackSpeed: 0.25
   animator: {fileID: 965886805450774216}
   enemyRenderer: {fileID: 2538440111967912837}
   originalMaterial: {fileID: 2100000, guid: 5ee81f185d2449e468dcd8c3d3b3ba5c, type: 2}
