@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/SampleScene.unity
     guid: fff09e4976428c0439af0a85acebc263
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/HitBoxesEscenario.unity
     guid: e7dbc296665ed4f89bb1bb68cdc7f0fb
   - enabled: 1
