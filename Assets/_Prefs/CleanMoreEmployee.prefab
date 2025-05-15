@@ -659,7 +659,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3975355666369395501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 648494389ed334778a5056838f4fbf9b, type: 3}
   m_Name: 
@@ -990,6 +990,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b4fa6e8a0bd4120adbfcf05577213a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   primaryWeapon: {fileID: 11400000, guid: 7b2dddb9f358c4ef487cf8ded2da1f23, type: 2}
   primaryWeaponObj: {fileID: 6159155811629617740}
   secundayWeapon: {fileID: 11400000, guid: e7ab102799cb64cdd9028db2bfe1e113, type: 2}
