@@ -8,7 +8,6 @@ using Steamworks;
 
 public class CleanMoreNetworkManager : NetworkManager
 {
-    [SerializeField] private GameObject EnterAddressPanel, landingPage;
     [SerializeField] private TMP_InputField AddressField;
 
     public List<GameObject> PlayerList { get; set; } = new List<GameObject>();
@@ -75,12 +74,6 @@ public class CleanMoreNetworkManager : NetworkManager
         NetworkManager.singleton.StartHost();
     }
 
-    public void JoinButton()
-    {
-        EnterAddressPanel.SetActive(true);
-        landingPage.SetActive(false);
-    }
-
     public void JoinLobby()
     {
         NetworkManager.singleton.networkAddress = AddressField.text;
@@ -90,9 +83,6 @@ public class CleanMoreNetworkManager : NetworkManager
     public override void OnClientDisconnect()
     {
         base.OnClientDisconnect();
-
-        landingPage.SetActive(true);
-        EnterAddressPanel.SetActive(false);
     }
 
     public override void OnApplicationQuit()
