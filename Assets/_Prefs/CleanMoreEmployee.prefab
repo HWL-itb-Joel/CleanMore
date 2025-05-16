@@ -1560,6 +1560,8 @@ MonoBehaviour:
   PlayerInputs: {fileID: 3907260981699159535}
   animator: {fileID: 8345445205245584217}
   thirtPersonAnim: {fileID: 3178966012583939295}
+  movement: {fileID: 6142524356234719228}
+  canMove: 0
   isRunning: 0
 --- !u!114 &4479895003205291932
 MonoBehaviour:
@@ -7955,6 +7957,7 @@ MonoBehaviour:
   primarySpawnPos: {fileID: 4006682718801515737}
   secondarySpawnPos: {fileID: 1157818427574978277}
   actualWeaponSprite: {fileID: 7074282352832573962}
+  MultiplayerFPSMovement: {fileID: 6142524356234719228}
 --- !u!1 &8162398372798059976
 GameObject:
   m_ObjectHideFlags: 0

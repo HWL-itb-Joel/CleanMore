@@ -88,6 +88,8 @@ public class GunController : NetworkBehaviour, IGun
     [SerializeField] Transform secondarySpawnPos;
     [SerializeField] Image actualWeaponSprite;
 
+    [SerializeField] MultiplayerFPSMovement MultiplayerFPSMovement;
+
     private void Awake()
     {
         onMenu = false;
@@ -163,7 +165,7 @@ public class GunController : NetworkBehaviour, IGun
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-                MultiplayerFPSMovement.FPSMovement.enabled = false;
+                MultiplayerFPSMovement.canMove = false;
                 onMenu = true;
                 HUD.SetActive(false);
                 MenuOnPlay.SetActive(true);
@@ -172,7 +174,7 @@ public class GunController : NetworkBehaviour, IGun
 
             //transform.rotation = Quaternion.Euler(camRotation.x -90, camRotation.y, 0);
             DetermineRotation();
-            if (fireAction.IsPressed() && !MultiplayerFPSMovement.FPSMovement.isRunning)
+            if (fireAction.IsPressed() && !MultiplayerFPSMovement.isRunning)
             {
                 Animations.SetBool("isShooting", true);
                 ThirtPersonAnim.SetBool("isShooting", true);
@@ -195,13 +197,13 @@ public class GunController : NetworkBehaviour, IGun
                 ThirtPersonAnim.SetBool("isShooting", false);
             }
 
-            if (MultiplayerFPSMovement.FPSMovement.isRunning)
+            if (MultiplayerFPSMovement.isRunning)
             {
                 _canShoot = false;
                 Animations.SetBool("isRunning", true);
                 ThirtPersonAnim.SetBool("isRunning", true);
             }
-            else if (!MultiplayerFPSMovement.FPSMovement.isRunning && !fireAction.IsPressed())
+            else if (!MultiplayerFPSMovement.isRunning && !fireAction.IsPressed())
             {
                 _canShoot = true;
                 Animations.SetBool("isRunning", false);
@@ -215,7 +217,7 @@ public class GunController : NetworkBehaviour, IGun
                 _canReload = false;
                 _canShoot = false;
             }
-            if (scroll != 0 && _gunEnabled && !meleeEquiped && !MultiplayerFPSMovement.FPSMovement.isRunning)
+            if (scroll != 0 && _gunEnabled && !meleeEquiped && !MultiplayerFPSMovement.isRunning)
             {
                 _canReload = false;
                 _canShoot = false;
@@ -316,7 +318,7 @@ public class GunController : NetworkBehaviour, IGun
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 onMenu = false;
-                MultiplayerFPSMovement.FPSMovement.enabled = true;
+                MultiplayerFPSMovement.canMove = true;
                 HUD.SetActive(true);
                 MenuControlls.SetActive(false);
                 MenuOnPlay.SetActive(false);
@@ -347,9 +349,9 @@ public class GunController : NetworkBehaviour, IGun
 
         Vector3 targetPosition = new Vector3(initialPosition.x - mouseX, initialPosition.y - mouseY, initialPosition.z);
 
-        if (!MultiplayerFPSMovement.FPSMovement.grounded)
+        if (!MultiplayerFPSMovement.grounded)
         {
-            float fallSpeed = MultiplayerFPSMovement.FPSMovement.currentMovement.y;
+            float fallSpeed = MultiplayerFPSMovement.currentMovement.y;
             float verticalOffset = Mathf.Clamp01(-fallSpeed / 10f) * swayAmount;
 
             Vector3 targetPos = initialPosition + new Vector3(0, verticalOffset, 0);
@@ -438,7 +440,7 @@ public class GunController : NetworkBehaviour, IGun
     public void ActiveGamePlay()
     {
         onMenu = false;
-        MultiplayerFPSMovement.FPSMovement.enabled = true;
+        MultiplayerFPSMovement.canMove = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
