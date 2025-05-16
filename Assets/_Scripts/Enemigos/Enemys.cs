@@ -24,6 +24,9 @@ public class Enemys : NetworkBehaviour, IEnemyHealth
     private bool isPatrolling;
     private bool isAttacking;
 
+    [SerializeField] private GameObject particles;
+    [SerializeField] private Transform posParticle;
+
     [SyncVar(hook = nameof(OnHealthChanged))]
     public int health;
 
@@ -58,7 +61,19 @@ public class Enemys : NetworkBehaviour, IEnemyHealth
     {
         Health = zombieHealth;
         agent = GetComponent<NavMeshAgent>();
+
+        if (!agent.isOnNavMesh)
+        {
+            Debug.LogError($"{gameObject.name} no está sobre el NavMesh.");
+            enabled = false;
+            return;
+        }
+
         patrolCenter = transform.position;
+    }
+
+    private void OnEnable()
+    {
         SetNewPatrolTarget();
     }
 
@@ -94,6 +109,9 @@ public class Enemys : NetworkBehaviour, IEnemyHealth
                 StartCoroutine(Attack());
                 break;
             case ZombieState.dead:
+                GameObject a = Instantiate(particles);
+                a.transform.position = transform.position;
+                Destroy(a,1.5f);
                 gameObject.SetActive(false);
                 break;
             default:
@@ -123,6 +141,10 @@ public class Enemys : NetworkBehaviour, IEnemyHealth
                 StartCoroutine(Attack());
                 break;
             case ZombieState.dead:
+                GameObject a = Instantiate(particles);
+                a.transform.position = posParticle.position;
+                a.transform.localScale = posParticle.localScale;
+                Destroy(a, 1.5f);
                 gameObject.SetActive(false);
                 break;
             default:
@@ -150,6 +172,7 @@ public class Enemys : NetworkBehaviour, IEnemyHealth
                 else if (Vector3.Distance(transform.position, targetPlayer.position) <= detectionRange)
                 {
                     ChangeState(ZombieState.following);
+                    animator.SetBool("Walking", true);
                 }
                 return;
             }
@@ -202,6 +225,7 @@ public class Enemys : NetworkBehaviour, IEnemyHealth
         if (distance > attackRange)
         {
             agent.isStopped = false;
+            animator.SetBool("Walking", true);
             ChangeState(ZombieState.following);
             isAttacking = false;
             yield return null;
@@ -211,39 +235,48 @@ public class Enemys : NetworkBehaviour, IEnemyHealth
 
     IEnumerator Patrol()
     {
-        animator.SetBool("Walking", true);
-        isPatrolling = true;
-        SetNewPatrolTarget();
-        float patrolWaitTime = Random.Range(4, 10);
-        agent.speed = patrolSpeed;
+        if (isPatrolling)
+            yield break;
 
+        isPatrolling = true;
+        animator.SetBool("Walking", true);
+        SetNewPatrolTarget();
+
+        agent.speed = patrolSpeed;
         agent.SetDestination(patrolTarget);
 
-        yield return new WaitWhile(() => Vector3.Distance(transform.position, patrolTarget) > 1);
+        yield return new WaitUntil(() => Vector3.Distance(transform.position, patrolTarget) < 1);
 
         animator.SetBool("Walking", false);
+        yield return new WaitForSeconds(Random.Range(4, 10));
 
-        yield return new WaitForSeconds(patrolWaitTime);
-        StartCoroutine(Patrol());
+        isPatrolling = false;
+        ChangeState(ZombieState.patrolling); // vuelve a comenzar si es necesario
     }
+
 
     void SetNewPatrolTarget()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
-        randomDirection += patrolCenter;
-        NavMeshHit hit;
-        var path = new NavMeshPath();
-        agent.CalculatePath(randomDirection, path);
-        if (path.status == NavMeshPathStatus.PathInvalid || path.status == NavMeshPathStatus.PathPartial)
+        int maxTries = 10;
+        int attempts = 0;
+        while (attempts < maxTries)
         {
-            SetNewPatrolTarget();
-            return;
+            Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
+            randomDirection += patrolCenter;
+            if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, patrolRadius, NavMesh.AllAreas))
+            {
+                var path = new NavMeshPath();
+                if (agent.CalculatePath(hit.position, path) && path.status == NavMeshPathStatus.PathComplete)
+                {
+                    patrolTarget = hit.position;
+                    return;
+                }
+            }
+            attempts++;
         }
-        if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, NavMesh.AllAreas))
-        {
-            patrolTarget = hit.position;
-        }
+        Debug.LogWarning("SetNewPatrolTarget falló al encontrar una ruta válida.");
     }
+
 
     public void AlertFromSound(Vector3 soundPosition)
     {

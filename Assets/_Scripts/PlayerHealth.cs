@@ -8,14 +8,12 @@ using Mirror;
 public class PlayerHealth : NetworkBehaviour
 {
     [SyncVar(hook = nameof(HealthValueChanged))] float healthValue = 100f;
-    [SerializeField] TMP_Text health_txt = null;
     [SerializeField] Slider health_bar = null;
     [SerializeField] MultiplayerFPSMovement fpsScript;
 
     private void Start()
     {
         if (!isLocalPlayer) return;
-        health_txt.text = healthValue.ToString();
         health_bar.value = healthValue;
         fpsScript.GetComponent<MultiplayerFPSMovement>();
     }
@@ -34,7 +32,6 @@ public class PlayerHealth : NetworkBehaviour
 
     void HealthValueChanged(float oldValue, float newValue)
     {
-        health_txt.text = healthValue.ToString();
         health_bar.value = healthValue;
     }
 }

@@ -34,7 +34,7 @@ MonoBehaviour:
   damage: 20
   clipSize: 30
   reservedAmmoCapacity: 270
-  alternativeShoot: 1
+  alternativeShoot: 0
   alternativeType: 1
   alternativeBulletsByShoot: 3
   alternativeSpray: 1

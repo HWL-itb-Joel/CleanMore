@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/_Models/Enemy/Gordo/GordoAttack.fbx.meta
-guid: 85c8c787460d84f3f8e7bc6a20619d53
-========
-guid: 98b330174f8c84fb4b1779f77634e514
->>>>>>>> CleanMore/AñadirCoches+Texuras:Assets/_Models/Scrapyard/Props/Interior/encimera+cajones.obj.meta
+guid: 512c198c831538744853f71faf1272c5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -75,7 +71,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
@@ -94,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.001
+    globalScale: 0.1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Mirror;
+using TMPro;
 
 public class GunController : NetworkBehaviour
 {
@@ -14,10 +15,21 @@ public class GunController : NetworkBehaviour
     public Gun secundayWeapon;
     public GameObject secundayWeaponObj;
     public MeleeWeapon meleeWeapon;
+    bool canSwitchMelee;
+    bool meleeEquiped;
     public GameObject meleeWeaponObj;
     public BoxCollider meleeCollider;
     public ThrowableWeapon throwableWeapon1;
     public ThrowableWeapon throwableWeapon2;
+
+    [Header("UI Settings")]
+    public TextMeshProUGUI currentAmmo;
+    public TextMeshProUGUI maxAmmo;
+
+    public TextMeshProUGUI currentWeapon;
+    public GameObject HUD;
+    public GameObject MenuOnPlay;
+    bool onMenu;
 
     [Header("Input Settings")]
     [SerializeField] public PlayerInput PlayerInputs;
@@ -26,6 +38,7 @@ public class GunController : NetworkBehaviour
     private InputAction lookAction;
     private InputAction scrollWeapons;
     private InputAction alternativeShoot;
+    private InputAction equipMelee;
 
     public Animator Animations;
 
@@ -63,8 +76,16 @@ public class GunController : NetworkBehaviour
 
     public static GunController gunController;
 
+    [SerializeField] TrailRenderer bulletTrail;
+    //[SerializeField] ParticleSystem ImpactParticleSystem;
+    [SerializeField] Transform primarySpawnPos;
+    [SerializeField] Transform secondarySpawnPos;
+
     private void Awake()
     {
+        onMenu = false;
+        meleeEquiped = false;
+        canSwitchMelee = true;
         meleeCollider = meleeWeaponObj.GetComponent<BoxCollider>();
         primaryWeaponObj.SetActive(true);
         GunController.gunController = this;
@@ -75,6 +96,7 @@ public class GunController : NetworkBehaviour
         reloadAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Reload");
         lookAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Look");
         alternativeShoot = PlayerInputs.actions.FindActionMap("OnGround").FindAction("AlternativeShoot");
+        equipMelee = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Melee");
 
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
@@ -113,93 +135,144 @@ public class GunController : NetworkBehaviour
         weaponInfo.currentHeat = 0;
         firstThroweableEnabled = true;
         _gunEnabled = true;
+        mouseSensitiity = Settings.instance.sensitivityValue;
+        ActualizeUI();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
-        //transform.rotation = Quaternion.Euler(camRotation.x -90, camRotation.y, 0);
-        DetermineRotation();
-        if (fireAction.IsPressed() && !MultiplayerFPSMovement.FPSMovement.isRunning)
+        if (!onMenu)
         {
-            if (_canShoot && _currentAmmoInClip > 0 && _gunEnabled)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                StartCoroutine(ShootGun());
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                MultiplayerFPSMovement.FPSMovement.enabled = false;
+                onMenu = true;
+                HUD.SetActive(false);
+                MenuOnPlay.SetActive(true);
             }
-            else if (!_gunEnabled && weaponInfo.weaponType == WeaponType.Melee)
+
+            //transform.rotation = Quaternion.Euler(camRotation.x -90, camRotation.y, 0);
+            DetermineRotation();
+            if (fireAction.IsPressed() && !MultiplayerFPSMovement.FPSMovement.isRunning)
             {
-                //Desarrollo melee
+                Animations.SetBool("isShooting", true);
+                if (_canShoot && _currentAmmoInClip > 0 && _gunEnabled && (weaponInfo.weaponType == WeaponType.Principal || weaponInfo.weaponType == WeaponType.Secundaria))
+                {
+                    StartCoroutine(ShootGun());
+                }
+                else if (meleeEquiped)
+                {
+                    StartCoroutine(ShootMelee());
+                }
+                else if (!_gunEnabled && weaponInfo.weaponType == WeaponType.Arrojadiza)
+                {
+                    //arrojadiza
+                    if (firstThroweableEnabled)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
             }
-            else if (!_gunEnabled && weaponInfo.weaponType == WeaponType.Arrojadiza)
+            else if (weaponInfo.rateType == fireRateType.OneShot && !fireAction.IsPressed() && shootEnded && _gunEnabled)
             {
-                //arrojadiza
-                if (firstThroweableEnabled)
-                {
+                _canShoot = true;
+            }
+            else if (!fireAction.IsPressed())
+            {
+                Animations.SetBool("isShooting", false);
+            }
 
+            if (MultiplayerFPSMovement.FPSMovement.isRunning)
+            {
+                _canShoot = false;
+                Animations.SetBool("isRunning", true);
+            }
+            else if (!MultiplayerFPSMovement.FPSMovement.isRunning && !fireAction.IsPressed())
+            {
+                _canShoot = true;
+                Animations.SetBool("isRunning", false);
+            }
+
+            if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && _ammoInReserve > 0 && _canReload && _gunEnabled)
+            {
+                Animations.SetTrigger("Reload");
+                _canReload = false;
+                _canShoot = false;
+            }
+            if (scroll != 0 && _gunEnabled && !meleeEquiped)
+            {
+                _canReload = false;
+                _canShoot = false;
+                Animations.SetTrigger("ChangeWeapon");
+                Animations.SetTrigger("switchWeapon");
+                ChangeGunWeapon();
+            }
+
+            if (equipMelee.IsPressed() && canSwitchMelee)
+            {
+                canSwitchMelee = false;
+                if (!meleeEquiped && (weaponInfo.weaponType == WeaponType.Principal || weaponInfo.weaponType == WeaponType.Secundaria))
+                {
+                    meleeEquiped = true;
+                    _gunEnabled = false;
+                    Animations.SetTrigger("ChangeWeapon");
+                    Animations.SetTrigger("switchMelee");
                 }
-                else
+                else if (meleeEquiped)
                 {
+                    meleeEquiped = false;
+                    _gunEnabled = true;
+                    Animations.SetTrigger("ChangeWeapon");
+                    Animations.SetTrigger("switchMelee");
+                }
+            }
 
+            if (alternativeShoot.IsPressed() && weaponInfo.alternativeShoot && _canAlternShoot)
+            {
+                Animations.SetTrigger("switchShoot");
+                ChangeAlternativeShoot();
+                _canShoot = true;
+            }
+            else if (!alternativeShoot.IsPressed())
+            {
+                _canAlternShoot = true;
+            }
+            if (!meleeWeapon.isOverheated && !fireAction.IsPressed())
+            {
+                meleeCollider.enabled = false;
+                if (meleeWeapon.currentHeat > 0)
+                {
+                    // Si no estamos disparando, comenzar el enfriamiento progresivo
+                    if (!meleeWeapon.isCooling)
+                    {
+                        meleeWeapon.isCooling = true;
+                        StartCoroutine(IncreaseCoolingRate());
+                    }
+
+                    float coolingRate = Mathf.Lerp(meleeWeapon.baseCoolingRate, meleeWeapon.maxCoolingRate, meleeWeapon.coolingMultiplier);
+                    meleeWeapon.currentHeat -= coolingRate * Time.deltaTime;
+                    meleeWeapon.currentHeat = Mathf.Max(0, meleeWeapon.currentHeat);
                 }
             }
         }
-        else if (weaponInfo.rateType == fireRateType.OneShot && !fireAction.IsPressed() && shootEnded && _gunEnabled)
+        else
         {
-            _canShoot = true;
-        }
-
-        if (MultiplayerFPSMovement.FPSMovement.isRunning)
-        {
-            _canShoot = false;
-            Animations.SetBool("isRunning", true);
-        }
-        else if (!MultiplayerFPSMovement.FPSMovement.isRunning && !fireAction.IsPressed())
-        {
-            _canShoot = true;
-            Animations.SetBool("isRunning", false);
-        }
-
-
-
-        if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && _ammoInReserve > 0 && weaponInfo.weaponType != WeaponType.Secundaria && _canReload)
-        {
-            if (weaponInfo == primaryWeapon) { Animations.SetTrigger("ReloadingPrincipal"); }
-            else if (weaponInfo == secundayWeapon) { Animations.SetTrigger("ReloadingSecundario"); }
-            _canReload = false;
-            _canShoot = false;
-        }
-        else if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && weaponInfo.weaponType == WeaponType.Secundaria)
-        {
-            _currentAmmoInClip = weaponInfo.clipSize;
-        }
-        if (scroll != 0)
-        {
-            ChangeGunWeapon();
-            _canShoot = true;
-        }
-
-        if (alternativeShoot.IsPressed() && weaponInfo.alternativeShoot && _canAlternShoot)
-        {
-            ChangeAlternativeShoot();
-            _canShoot = true;
-        }
-        else if (!alternativeShoot.IsPressed())
-        {
-            _canAlternShoot = true;
-        }
-        if (!weaponInfo.isOverheated)
-        {
-            if (weaponInfo.currentHeat > 0)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                // Si no estamos disparando, comenzar el enfriamiento progresivo
-                if (!weaponInfo.isCooling)
-                {
-                    weaponInfo.isCooling = true;
-                    StartCoroutine(IncreaseCoolingRate());
-                }
-
-                float coolingRate = Mathf.Lerp(weaponInfo.baseCoolingRate, weaponInfo.maxCoolingRate, weaponInfo.coolingMultiplier);
-                weaponInfo.currentHeat -= coolingRate * Time.deltaTime;
-                weaponInfo.currentHeat = Mathf.Max(0, weaponInfo.currentHeat);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                onMenu = false;
+                MultiplayerFPSMovement.FPSMovement.enabled = true;
+                HUD.SetActive(true);
+                MenuOnPlay.SetActive(false);
             }
         }
     }
@@ -260,6 +333,7 @@ public class GunController : NetworkBehaviour
         {
             _canShoot = false;
             _currentAmmoInClip--;
+            ActualizeUI();
             DetermineRecoil();
             RatCastForEnemy(weaponInfo.sprayBullets);
             yield return new WaitForSeconds(weaponInfo.fireRate);
@@ -271,6 +345,7 @@ public class GunController : NetworkBehaviour
             for (int i = 0; i < weaponInfo.bulletsByShot; i++)
             {
                 _currentAmmoInClip--;
+                ActualizeUI();
                 DetermineRecoil();
                 RatCastForEnemy(weaponInfo.sprayBullets);
                 yield return new WaitForSeconds(weaponInfo.bulletsFireRate);
@@ -286,6 +361,7 @@ public class GunController : NetworkBehaviour
                 _canShoot = false;
                 shootEnded = false;
                 _currentAmmoInClip--;
+                ActualizeUI();
                 DetermineRecoil();
                 RatCastForEnemy(weaponInfo.sprayBullets);
             }
@@ -296,9 +372,59 @@ public class GunController : NetworkBehaviour
         else if (weaponInfo.rateType == fireRateType.OverHeating && !weaponInfo.isOverheated)
         {
             weaponInfo.isCooling = false;
+            meleeCollider.enabled = true;
             weaponInfo.currentHeat += 0.1f;
             Debug.Log(" Heat level: " + weaponInfo.currentHeat);
             if (weaponInfo.currentHeat >= weaponInfo.heatThreshold)
+            {
+                StartCoroutine(Overheat());
+            }
+        }
+    }
+
+    public void ActiveGamePlay()
+    {
+        onMenu = false;
+        MultiplayerFPSMovement.FPSMovement.enabled = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    IEnumerator ShootMelee()
+    {
+        if (meleeWeapon.rateType == fireRateType.Auto)
+        {
+            Animations.SetBool("isShooting", true);
+            _canShoot = false;
+            _currentAmmoInClip--;
+            DetermineRecoil();
+            RatCastForEnemy(weaponInfo.sprayBullets);
+            yield return new WaitForSeconds(weaponInfo.fireRate);
+            _canShoot = true;
+        }
+        else if (meleeWeapon.rateType == fireRateType.OneShot)
+        {
+            Animations.SetTrigger("shoot");
+            for (int i = 0; i < weaponInfo.bulletsByShot; i++)
+            {
+                if (_currentAmmoInClip <= 0) break;
+                _canShoot = false;
+                shootEnded = false;
+                _currentAmmoInClip--;
+                DetermineRecoil();
+                RatCastForEnemy(weaponInfo.sprayBullets);
+            }
+
+            yield return new WaitForSeconds(weaponInfo.fireRate);
+            shootEnded = true;
+        }
+        else if (meleeWeapon.rateType == fireRateType.OverHeating && !weaponInfo.isOverheated)
+        {
+            meleeWeapon.isCooling = false;
+            meleeCollider.enabled = true;
+            meleeWeapon.currentHeat += 0.1f;
+            Debug.Log(" Heat level: " + meleeWeapon.currentHeat);
+            if (meleeWeapon.currentHeat >= meleeWeapon.heatThreshold)
             {
                 StartCoroutine(Overheat());
             }
@@ -320,10 +446,18 @@ public class GunController : NetworkBehaviour
             //Debug.DrawRay(Camera.main.transform.position, dir, Color.red, 834485f);
             try
             {
-                GameObject feedback = Instantiate(weaponInfo.feedback);
-                feedback.transform.position = hit.point;
-                feedback.transform.rotation = Quaternion.Euler(hit.normal);
-                Destroy(feedback, 3f);
+                if (weaponInfo.weaponType == WeaponType.Principal)
+                {
+                    TrailRenderer trail = Instantiate(bulletTrail, primarySpawnPos.position, Quaternion.identity);
+
+                    StartCoroutine(SpawnTrail(trail, hit));
+                }
+                else if (weaponInfo.weaponType == WeaponType.Secundaria)
+                {
+                    TrailRenderer trail = Instantiate(bulletTrail, secondarySpawnPos.position, Quaternion.identity);
+
+                    StartCoroutine(SpawnTrail(trail, hit));
+                }
 
                 if (hit.collider.TryGetComponent<NetworkIdentity>(out var identity))
                 {
@@ -337,6 +471,25 @@ public class GunController : NetworkBehaviour
         }
     }
 
+    private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)
+    {
+        float time = 0;
+        Vector3 startPos = Trail.transform.position;
+
+        while(time < 0.1f)
+        {
+            time += Time.deltaTime;
+            Trail.transform.position = Vector3.Lerp(startPos, hit.point, time);
+
+            yield return null;
+        }
+
+        Trail.transform.position = hit.point;
+        //Instantiate(ImpactParticleSystem, hit.point, Quaternion.LookRotation(hit.normal));
+
+        Destroy(Trail.gameObject, Trail.time);
+    }
+
     void ChangeGunWeapon()
     {
         int ammoInClip = _currentAmmoInClip;
@@ -345,13 +498,11 @@ public class GunController : NetworkBehaviour
         if (weaponInfo == primaryWeapon)
         {
             weaponInfo = secundayWeapon;
-            Animations.SetTrigger("ChangeWeapon");
 
         }
         else if (weaponInfo == secundayWeapon)
         {
             weaponInfo = primaryWeapon;
-            Animations.SetTrigger("ChangeWeapon");
         }
 
         _ammoInReserve = _ammoInReserveReserve;
@@ -363,6 +514,11 @@ public class GunController : NetworkBehaviour
 
     public void Reload()
     {
+        if (weaponInfo.weaponType == WeaponType.Secundaria)
+        {
+            _currentAmmoInClip = weaponInfo.clipSize;
+            return;
+        }
         int amountNeeded = weaponInfo.clipSize - _currentAmmoInClip;
         if (amountNeeded >= _ammoInReserve)
         {
@@ -377,31 +533,54 @@ public class GunController : NetworkBehaviour
     }
 
     #region Animations
+    public void ActiveShoot()
+    {
+        _canAlternShoot = true;
+        _canReload = true;
+        _canShoot = true;
+    }
 
     public void PrimaryWeaponIn()
     {
+        ActualizeUI();
+        currentWeapon.text = weaponInfo.name;
         primaryWeaponObj.SetActive(true);
         secundayWeaponObj.SetActive(false);
-        Animations.SetLayerWeight(1, 0);
+        meleeWeaponObj.SetActive(false);
+        canSwitchMelee = true;
     }
 
     public void SecundaryWeaponIn()
     {
+        ActualizeUI();
+        currentWeapon.text = weaponInfo.name;
         primaryWeaponObj.SetActive(false);
         secundayWeaponObj.SetActive(true);
-        Animations.SetLayerWeight(1, 1);
+        meleeWeaponObj.SetActive(false);
+        canSwitchMelee = true;
+    }
+
+    public void MeleeIn()
+    {
+        currentAmmo.text = "XX";
+        maxAmmo.text = "XX";
+        currentWeapon.text = meleeWeapon.name;
+        primaryWeaponObj.SetActive(false);
+        secundayWeaponObj.SetActive(false);
+        meleeWeaponObj.SetActive(true);
+        canSwitchMelee = true;
     }
 
     public void ReloadAnimation()
     {
-        Animations.SetBool("isReloading", false);
         Reload();
+        ActualizeUI();
         _canReload = true;
         _canShoot = true;
     }
 
     [Command]
-    void CmdDamageEnemy(NetworkIdentity enemyID, int damage)
+    public void CmdDamageEnemy(NetworkIdentity enemyID, int damage)
     {
         if (enemyID.TryGetComponent<IEnemyHealth>(out var enemy))
         {
@@ -445,23 +624,29 @@ public class GunController : NetworkBehaviour
 
     private IEnumerator Overheat()
     {
-        weaponInfo.isOverheated = true;
+        Animations.SetTrigger("overheated");
+        meleeWeapon.isOverheated = true;
         Debug.Log("🚨 Weapon overheated! Cooling down...");
-        yield return new WaitForSeconds(weaponInfo.overheatCooldown);
-        weaponInfo.currentHeat = 0f;
-        weaponInfo.isOverheated = false;
+        yield return new WaitForSeconds(meleeWeapon.overheatCooldown);
+        meleeWeapon.currentHeat = 0f;
+        meleeWeapon.isOverheated = false;
         Debug.Log("✅ Weapon cooled down. Ready to fire!");
     }
 
     private IEnumerator IncreaseCoolingRate()
     {
-        weaponInfo.coolingMultiplier = 0f;
-        while (weaponInfo.isCooling && weaponInfo.coolingMultiplier < 1f)
+        meleeWeapon.coolingMultiplier = 0f;
+        while (weaponInfo.isCooling && meleeWeapon.coolingMultiplier < 1f)
         {
-            weaponInfo.coolingMultiplier += Time.deltaTime / weaponInfo.coolingAccelerationTime;
-            weaponInfo.coolingMultiplier = Mathf.Clamp01(weaponInfo.coolingMultiplier);
+            meleeWeapon.coolingMultiplier += Time.deltaTime / meleeWeapon.coolingAccelerationTime;
+            meleeWeapon.coolingMultiplier = Mathf.Clamp01(meleeWeapon.coolingMultiplier);
             yield return null;
         }
     }
 
+    private void ActualizeUI()
+    {
+        currentAmmo.text = _currentAmmoInClip.ToString();
+        maxAmmo.text = _ammoInReserve.ToString();
+    }
 }

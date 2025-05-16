@@ -85,16 +85,22 @@ public class MultiplayerFPSMovement : NetworkBehaviour
         {
             if (sprintAction.ReadValue<float>() != 0)
             {
-                LegsY = 1f;
+                if (moveInput.y < 0) { LegsY = -1f; }
+                else { LegsY = 1f; }
                 isRunning = true;
             }
             else
             {
-                LegsY = 0.5f;
+                if (moveInput.y < 0) { LegsY = -0.5f; }
+                else { LegsY = 0.5f; }
                 isRunning = false;
             }
         }
-        else { LegsY = 0f; isRunning = false; }
+        else 
+        { 
+            LegsY = 0f; 
+            isRunning = false; 
+        }
         animator.SetFloat("LegsY", LegsY);
 
         float verticalSpeed = inputY * walkSpeed;

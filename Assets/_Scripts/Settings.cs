@@ -6,6 +6,7 @@ using TMPro;
 
 public class Settings : MonoBehaviour
 {
+    public static Settings instance;
     //Volumen
     public Slider volumeSlider;
     public float volumeValue;
@@ -22,8 +23,14 @@ public class Settings : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
 
+    //Sensibilidad
+    public Slider sensitivitySlider;
+    public float sensitivityValue;
+
     void Start()
     {
+        instance = this;
+
         //Volumen
         volumeSlider.value = PlayerPrefs.GetFloat("audioVolume", 0.5f);
         AudioListener.volume = volumeSlider.value;
@@ -31,6 +38,10 @@ public class Settings : MonoBehaviour
         //Brillo
         brightnessSlider.value = PlayerPrefs.GetFloat("imageBrightness", 0.5f);
         brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, brightnessSlider.value);
+
+        //Sensibilidad
+        sensitivityValue = PlayerPrefs.GetFloat("sensitivity", 1f);
+        sensitivitySlider.value = sensitivityValue;
 
         //Pantalla completa
         if (Screen.fullScreen)
@@ -59,6 +70,16 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetFloat("imageBrightness", brightnessValue);
         brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, brightnessSlider.value);
 
+    }
+
+    public void ChangeSensitivity(float value)
+    {
+        sensitivityValue = value;
+        PlayerPrefs.SetFloat("sensitivity", sensitivityValue);
+        if (FindAnyObjectByType<GunController>())
+        {
+            GunController.gunController.mouseSensitiity = sensitivityValue;
+        }
     }
 
     public void ChangeFullScreen(bool fullScreen)

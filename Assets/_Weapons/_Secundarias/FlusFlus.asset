@@ -32,7 +32,7 @@ MonoBehaviour:
   bulletsFireRate: 0
   maxDistance: 50
   damage: 10
-  clipSize: 13
+  clipSize: 12
   reservedAmmoCapacity: 999
   alternativeShoot: 1
   alternativeType: 2

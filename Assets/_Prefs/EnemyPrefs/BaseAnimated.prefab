@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6104075580881190460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9040200430831390007}
+  m_Layer: 0
+  m_Name: ParticlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9040200430831390007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104075580881190460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.944, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 4120452741452364776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &202169701144436777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,6 +219,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16a320ebb51e5fa489183665da666945, type: 3}
       insertIndex: -1
       addedObject: {fileID: 379702291205375938}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16a320ebb51e5fa489183665da666945, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9040200430831390007}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16a320ebb51e5fa489183665da666945, type: 3}
       insertIndex: -1
@@ -232,6 +266,9 @@ MonoBehaviour:
   patrolSpeed: 2
   chaseSpeed: 3
   patrolRadius: 15
+  particles: {fileID: 8411197286815844329, guid: 78cf2bbb1efcc4b40869f8d2a4bbf097, type: 3}
+  posParticle: {fileID: 9040200430831390007}
+  health: 0
   zombieHealth: 150
   attackDamage: 2.5
   attackSpeed: 2
