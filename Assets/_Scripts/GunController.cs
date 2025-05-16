@@ -92,12 +92,12 @@ public class GunController : NetworkBehaviour
 
     private void Awake()
     {
+        if (!isLocalPlayer) return;
         onMenu = false;
         meleeEquiped = false;
         canSwitchMelee = true;
         meleeCollider = meleeWeaponObj.GetComponent<BoxCollider>();
         primaryWeaponObj.SetActive(true);
-        GunController.gunController = this;
         camRotation = GetComponentInParent<Transform>().rotation;
         weaponInfo = primaryWeapon;
         actualWeaponSprite.sprite = weaponInfo.Sprite;
