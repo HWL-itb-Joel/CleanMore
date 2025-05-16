@@ -42,7 +42,6 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     void Awake()
     {
-        if (!isLocalPlayer) return;
         canMove = true;
         movement = GetComponent<MultiplayerFPSMovement>();
 
@@ -76,7 +75,6 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     private void Update()
     {
-        if (!isLocalPlayer) return;
         if (!canMove) return;
         HandleMovement();
     }

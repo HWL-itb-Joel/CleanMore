@@ -155,6 +155,7 @@ public class GunController : NetworkBehaviour, IGun
         ActualizeUI();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        MultiplayerFPSMovement.canMove = true;
     }
 
     private void Update()
