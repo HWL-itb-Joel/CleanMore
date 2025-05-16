@@ -1596,7 +1596,8 @@ MonoBehaviour:
   syncInterval: 0
   FPSCam: {fileID: 3975355666369395501}
   TpMeshArms: {fileID: 6791459344677152713}
-  TPFullEmployee: {fileID: 7860815339601629430}
+  TPFullEmployee: {fileID: 3819355645646129107}
+  EmployeeOnline: {fileID: 0}
   meshHead: {fileID: 36499466953805108}
 --- !u!114 &3907260981699159535
 MonoBehaviour:
@@ -10437,7 +10438,7 @@ MonoBehaviour:
   syncDirection: 1
   syncMode: 0
   syncInterval: 0
-  clientAuthority: 0
+  clientAuthority: 1
   animator: {fileID: 3178966012583939295}
 --- !u!114 &7893621051332862854
 MonoBehaviour:
