@@ -6,3 +6,8 @@ public interface IEnemyHealth
     void TakeDamage(int i);
     void OnHealthChanged(int oldValue, int newValue);
 }
+
+public interface IGun
+{
+    public void StartFlashFeedBack();
+}

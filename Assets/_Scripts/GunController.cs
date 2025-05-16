@@ -7,7 +7,7 @@ using Mirror;
 using TMPro;
 using UnityEngine.UI;
 
-public class GunController : NetworkBehaviour
+public class GunController : NetworkBehaviour, IGun
 {
     [Header("Guns Selected")]
     private Gun weaponInfo;
@@ -82,8 +82,6 @@ public class GunController : NetworkBehaviour
     public bool randomizeRecoil;
     public Vector2 randomRecoilConstrains;
 
-    public static GunController gunController;
-
     [SerializeField] TrailRenderer bulletTrail;
     //[SerializeField] ParticleSystem ImpactParticleSystem;
     [SerializeField] Transform primarySpawnPos;
@@ -92,7 +90,6 @@ public class GunController : NetworkBehaviour
 
     private void Awake()
     {
-        if (!isLocalPlayer) return;
         onMenu = false;
         meleeEquiped = false;
         canSwitchMelee = true;
@@ -122,6 +119,8 @@ public class GunController : NetworkBehaviour
         fireAction.Enable();
         reloadAction.Enable();
         lookAction.Enable();
+        equipMelee.Enable();
+        throwAction.Enable();
     }
 
     private void OnDisable()
@@ -131,6 +130,8 @@ public class GunController : NetworkBehaviour
         fireAction.Disable();
         reloadAction.Disable();
         lookAction.Disable();
+        equipMelee.Disable();
+        throwAction.Disable();
     }
 
     private void Start()
@@ -156,7 +157,6 @@ public class GunController : NetworkBehaviour
 
     private void Update()
     {
-        if (!isLocalPlayer) return;
         if (!onMenu)
         {
             if (Input.GetKeyDown(KeyCode.Escape))

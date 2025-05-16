@@ -14,7 +14,7 @@ public class MeleeDamage : MonoBehaviour
         Debug.Log(other);
         if (other.TryGetComponent<NetworkIdentity>(out var identity))
         {
-            GunController.gunController.CmdDamageEnemy(identity, GunController.gunController.meleeWeapon.damage);
+            
         }
     }
 }

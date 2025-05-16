@@ -1,36 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
 public class AnimationChanges : MonoBehaviour
 {
+    public GunController gunController;
+
     public void changePrimaryWeapon()
     {
-        GunController.gunController.PrimaryWeaponIn();
+        gunController.PrimaryWeaponIn();
     }
+
     public void changeSecundaryWeapon()
     {
-        GunController.gunController.SecundaryWeaponIn();
+        gunController.SecundaryWeaponIn();
     }
 
     public void CanShootAgain()
     {
-        GunController.gunController.ActiveShoot();
+        gunController.ActiveShoot();
     }
 
     public void Melee()
     {
-        GunController.gunController.MeleeIn();
+        gunController.MeleeIn();
     }
 
     public void Reload()
     {
-        GunController.gunController.ReloadAnimation();
+        gunController.ReloadAnimation();
     }
 
     public void LanchGraneat()
     {
-        GunController.gunController.Graneat();
+        gunController.Graneat();
     }
 }

@@ -3846,6 +3846,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fce8c71f0bc954fbcad3de4fd5036c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  gunController: {fileID: 5701391459416027884}
   volumeSlider: {fileID: 3879582551127858611}
   volumeValue: 0
   brightnessSlider: {fileID: 4856672493203115943}
@@ -11920,6 +11924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2b785d83cc64606bf2ead565569733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunController: {fileID: 5701391459416027884}
 --- !u!4 &7310831672285646460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8252204991703668946, guid: 61deb848206a247eab7fd8d44b2f221b, type: 3}

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Mirror;
 
-public class Settings : MonoBehaviour
+public class Settings : NetworkBehaviour
 {
     public static Settings instance;
+    public GunController gunController;
+
     //Volumen
     public Slider volumeSlider;
     public float volumeValue;
@@ -29,6 +32,7 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
+        if (!isLocalPlayer) { return; }
         instance = this;
 
         //Volumen
@@ -76,10 +80,8 @@ public class Settings : MonoBehaviour
     {
         sensitivityValue = value;
         PlayerPrefs.SetFloat("sensitivity", sensitivityValue);
-        if (FindAnyObjectByType<GunController>())
-        {
-            GunController.gunController.mouseSensitiity = sensitivityValue;
-        }
+        if (gunController != null)
+            gunController.mouseSensitiity = sensitivityValue;
     }
 
     public void ChangeFullScreen(bool fullScreen)
