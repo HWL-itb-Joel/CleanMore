@@ -33,7 +33,6 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Animator thirtPersonAnim;
     float LegsY;
-    public MultiplayerFPSMovement movement;
     public bool canMove;
 
     CharacterController controller = null;
@@ -43,7 +42,6 @@ public class MultiplayerFPSMovement : NetworkBehaviour
     void Awake()
     {
         canMove = true;
-        movement = GetComponent<MultiplayerFPSMovement>();
 
         moveAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Move");
         jumpAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Jump");
@@ -75,6 +73,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     private void Update()
     {
+        if (!isLocalPlayer) return;
         if (!canMove) return;
         HandleMovement();
     }
