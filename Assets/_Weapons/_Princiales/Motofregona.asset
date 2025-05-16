@@ -15,6 +15,7 @@ MonoBehaviour:
   weaponName: Motofregona
   weaponType: 2
   feedback: {fileID: 0}
+  Sprite: {fileID: -951725908, guid: e0763bbd927b14e0380fa37b624825b3, type: 3}
   rateType: 3
   heatThreshold: 100
   currentHeat: 0
