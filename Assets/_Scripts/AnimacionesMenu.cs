@@ -11,6 +11,7 @@ public class AnimacionesMenu : MonoBehaviour
 
     [SerializeField] GameObject JoinFolder;
     [SerializeField] GameObject DrawerLight;
+    [SerializeField] GameObject PlayLight;
 
     public Transform joinCloseFolder;
     public Transform joinOpenFolder;
@@ -29,6 +30,7 @@ public class AnimacionesMenu : MonoBehaviour
     void Start()
     {
         DrawerLight.SetActive(false);
+        PlayLight.SetActive(true);
         openFolder = false;
         instance = this;
         TopDrawer.transform.position = new Vector3(StartPoint.position.x, TopDrawer.transform.position.y, StartPoint.position.z);
@@ -82,12 +84,14 @@ public class AnimacionesMenu : MonoBehaviour
     public void OpenBottomDrawer()
     {
         SetCameraTransform(false, EndPoint);
+        PlayLight.SetActive(false);
         DrawerLight.SetActive(true);
     }
 
     public void CloseBottomDrawer()
     {
         SetCameraTransform(false, StartPoint);
+        PlayLight.SetActive(true);
         DrawerLight.SetActive(false);
     }
 

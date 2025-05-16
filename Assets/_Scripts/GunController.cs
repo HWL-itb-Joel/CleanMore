@@ -32,6 +32,7 @@ public class GunController : NetworkBehaviour
     public GameObject MenuOnPlay;
     public GameObject MenuControlls;
     bool onMenu;
+    public Image feedback;
 
     [Header("Input Settings")]
     [SerializeField] public PlayerInput PlayerInputs;
@@ -674,5 +675,17 @@ public class GunController : NetworkBehaviour
     {
         currentAmmo.text = _currentAmmoInClip.ToString();
         maxAmmo.text = _ammoInReserve.ToString();
+    }
+
+    public void StartFlashFeedBack()
+    {
+        StartCoroutine(FlashFeedbackDamage());
+    }
+
+    public IEnumerator FlashFeedbackDamage()
+    {
+        feedback.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        feedback.color = Color.black;
     }
 }
