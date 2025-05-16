@@ -7,7 +7,8 @@ using Mirror;
 
 public class PlayerHealth : NetworkBehaviour
 {
-    [SyncVar(hook = nameof(HealthValueChanged))] float healthValue = 100f;
+    [SyncVar(hook = nameof(HealthValueChanged))] public float healthValue = 100f;
+    public static PlayerHealth Instance { get; private set; }
     [SerializeField] Slider health_bar = null;
     [SerializeField] MultiplayerFPSMovement fpsScript;
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
 public class AnimationChanges : MonoBehaviour
 {
@@ -26,5 +27,10 @@ public class AnimationChanges : MonoBehaviour
     public void Reload()
     {
         GunController.gunController.ReloadAnimation();
+    }
+
+    public void LanchGraneat()
+    {
+        GunController.gunController.Graneat();
     }
 }

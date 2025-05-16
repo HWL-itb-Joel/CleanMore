@@ -14,24 +14,20 @@ public class CameraMainMenu : MonoBehaviour
     public CameraTransform[] cameraViews; // Deber?an ser 4
     public float transitionSpeed = 2f;
 
-    public int currentIndex = 0;
+    public int currentIndex = 4;
     private bool isTransitioning = false;
     private Vector3 targetPosition;
-    Vector3 startPosition;
     private Quaternion targetRotation;
-    Quaternion startRotation;
 
     void Start()
     {
-        startPosition = transform.position;
-        startRotation = transform.rotation;
         if (cameraViews.Length > 0)
         {
             SetCameraTransform(cameraViews[currentIndex]);
             transform.position = targetPosition;
             transform.rotation = targetRotation;
         }
-
+        GoToView(0);
     }
 
     void Update()
@@ -52,10 +48,7 @@ public class CameraMainMenu : MonoBehaviour
         {
             if (currentIndex == 3 || currentIndex == 2)
             {
-                currentIndex = 0;
-                targetPosition = startPosition;
-                targetRotation = startRotation;
-                isTransitioning = true;
+                GoToView(0);
             }
             else if (currentIndex == 1 && !AnimacionesMenu.instance.openFolder)
             {

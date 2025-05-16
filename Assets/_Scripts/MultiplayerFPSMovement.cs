@@ -31,6 +31,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
     [Header("Animations")]
     [SerializeField] Animator animator;
+    [SerializeField] Animator thirtPersonAnim;
     float LegsY;
     public static MultiplayerFPSMovement FPSMovement;
 
@@ -101,11 +102,13 @@ public class MultiplayerFPSMovement : NetworkBehaviour
             LegsY = 0f; 
             isRunning = false; 
         }
+        thirtPersonAnim.SetFloat("LegsY", LegsY);
         animator.SetFloat("LegsY", LegsY);
 
         float verticalSpeed = inputY * walkSpeed;
         float horizontalSpeed = moveInput.x * walkSpeed;
         animator.SetFloat("LegsX", moveInput.x);
+        thirtPersonAnim.SetFloat("LegsX", moveInput.x);
 
         Vector3 horizontalMovement = new Vector3(horizontalSpeed, 0, verticalSpeed);
 

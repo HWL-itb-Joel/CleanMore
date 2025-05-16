@@ -20,8 +20,10 @@ public class GunController : NetworkBehaviour
     bool meleeEquiped;
     public GameObject meleeWeaponObj;
     public BoxCollider meleeCollider;
-    public ThrowableWeapon throwableWeapon1;
-    public ThrowableWeapon throwableWeapon2;
+    public GameObject GraneatRig;
+    public Transform GraneatSpawnPoint;
+    public GameObject graneatPref;
+    public Vector3 launchGraneat;
 
     [Header("UI Settings")]
     public TextMeshProUGUI currentAmmo;
@@ -42,8 +44,10 @@ public class GunController : NetworkBehaviour
     private InputAction scrollWeapons;
     private InputAction alternativeShoot;
     private InputAction equipMelee;
+    private InputAction throwAction;
 
     public Animator Animations;
+    public Animator ThirtPersonAnim;
 
     private Vector2 lookInput;
     private float scroll;
@@ -54,6 +58,7 @@ public class GunController : NetworkBehaviour
     public bool _canShoot;
     public bool _canReload;
     public bool _canAlternShoot;
+    bool _canThrow;
     bool run;
     private bool shootEnded;
     public bool _gunEnabled;
@@ -102,6 +107,7 @@ public class GunController : NetworkBehaviour
         lookAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Look");
         alternativeShoot = PlayerInputs.actions.FindActionMap("OnGround").FindAction("AlternativeShoot");
         equipMelee = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Melee");
+        throwAction = PlayerInputs.actions.FindActionMap("OnGround").FindAction("Throweable");
 
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
@@ -135,11 +141,13 @@ public class GunController : NetworkBehaviour
         _currentAmmoInClipReserve = secundayWeapon.clipSize;
         _ammoInReserveReserve = secundayWeapon.reservedAmmoCapacity;
         _canShoot = true;
+        _canThrow = true;
         _canReload = true;
         _canAlternShoot = true;
         weaponInfo.currentHeat = 0;
         firstThroweableEnabled = true;
         _gunEnabled = true;
+        feedback.color = Color.clear;
         mouseSensitiity = Settings.instance.sensitivityValue;
         ActualizeUI();
         Cursor.visible = false;
@@ -166,6 +174,7 @@ public class GunController : NetworkBehaviour
             if (fireAction.IsPressed() && !MultiplayerFPSMovement.FPSMovement.isRunning)
             {
                 Animations.SetBool("isShooting", true);
+                ThirtPersonAnim.SetBool("isShooting", true);
                 if (_canShoot && _currentAmmoInClip > 0 && _gunEnabled && (weaponInfo.weaponType == WeaponType.Principal || weaponInfo.weaponType == WeaponType.Secundaria))
                 {
                     StartCoroutine(ShootGun());
@@ -173,18 +182,6 @@ public class GunController : NetworkBehaviour
                 else if (meleeEquiped)
                 {
                     StartCoroutine(ShootMelee());
-                }
-                else if (!_gunEnabled && weaponInfo.weaponType == WeaponType.Arrojadiza)
-                {
-                    //arrojadiza
-                    if (firstThroweableEnabled)
-                    {
-
-                    }
-                    else
-                    {
-
-                    }
                 }
             }
             else if (weaponInfo.rateType == fireRateType.OneShot && !fireAction.IsPressed() && shootEnded && _gunEnabled)
@@ -194,32 +191,61 @@ public class GunController : NetworkBehaviour
             else if (!fireAction.IsPressed())
             {
                 Animations.SetBool("isShooting", false);
+                ThirtPersonAnim.SetBool("isShooting", false);
             }
 
             if (MultiplayerFPSMovement.FPSMovement.isRunning)
             {
                 _canShoot = false;
                 Animations.SetBool("isRunning", true);
+                ThirtPersonAnim.SetBool("isRunning", true);
             }
             else if (!MultiplayerFPSMovement.FPSMovement.isRunning && !fireAction.IsPressed())
             {
                 _canShoot = true;
                 Animations.SetBool("isRunning", false);
+                ThirtPersonAnim.SetBool("isRunning", false);
             }
 
             if (reloadAction.IsPressed() && _currentAmmoInClip < weaponInfo.clipSize && _ammoInReserve > 0 && _canReload && _gunEnabled)
             {
                 Animations.SetTrigger("Reload");
+                ThirtPersonAnim.SetTrigger("Reload");
                 _canReload = false;
                 _canShoot = false;
             }
-            if (scroll != 0 && _gunEnabled && !meleeEquiped)
+            if (scroll != 0 && _gunEnabled && !meleeEquiped && !MultiplayerFPSMovement.FPSMovement.isRunning)
             {
                 _canReload = false;
                 _canShoot = false;
                 Animations.SetTrigger("ChangeWeapon");
+                ThirtPersonAnim.SetTrigger("ChangeWeapon");
                 Animations.SetTrigger("switchWeapon");
+                ThirtPersonAnim.SetTrigger("switchWeapon");
                 ChangeGunWeapon();
+            }
+
+            if (throwAction.IsPressed() && _canThrow)
+            {
+                _canThrow = false;
+                Animations.SetTrigger("Graneat");
+                ThirtPersonAnim.SetTrigger("Graneat");
+                GraneatRig.SetActive(true);
+                meleeWeaponObj.SetActive(false);
+                primaryWeaponObj.SetActive(false);
+                secundayWeaponObj.SetActive(false);
+                if (weaponInfo.weaponType == WeaponType.Principal)
+                {
+                    _gunEnabled = true;
+                    Animations.SetBool("isPrimaryEnabled", true);
+                    ThirtPersonAnim.SetBool("isPrimaryEnabled", true);
+                }
+                else if (weaponInfo.weaponType == WeaponType.Secundaria)
+                {
+                    _gunEnabled = true;
+                    Animations.SetBool("isPrimaryEnabled", false);
+                    ThirtPersonAnim.SetBool("isPrimaryEnabled", false);
+                }
             }
 
             if (equipMelee.IsPressed() && canSwitchMelee)
@@ -311,6 +337,12 @@ public class GunController : NetworkBehaviour
 
         mouseX = Mathf.Clamp(mouseX, -maxSway, maxSway);
         mouseY = Mathf.Clamp(mouseY, -maxSway, maxSway);
+
+        float normalizedLookY = Mathf.InverseLerp(50, -85f, _currentRotation.y);
+
+        // Pasarlo al Animator
+        ThirtPersonAnim.SetFloat("UpRange", normalizedLookY);
+
 
         Vector3 targetPosition = new Vector3(initialPosition.x - mouseX, initialPosition.y - mouseY, initialPosition.z);
 
@@ -686,6 +718,36 @@ public class GunController : NetworkBehaviour
     {
         feedback.color = Color.white;
         yield return new WaitForSeconds(0.1f);
-        feedback.color = Color.black;
+
+        float duration = 0.5f; // Duración del fade-out
+        float elapsed = 0f;
+        Color startColor = Color.white;
+        Color endColor = new Color(1f, 1f, 1f, 0f); // Color blanco con alpha 0
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            feedback.color = Color.Lerp(startColor, endColor, t);
+            yield return null;
+        }
+
+        feedback.color = endColor; // Asegurarse de que termine en transparente
+    }
+
+
+    public void Graneat()
+    {
+        _canThrow = true;
+        GameObject grenadeInstance = Instantiate(graneatPref, GraneatSpawnPoint.position, Quaternion.identity);
+
+        Rigidbody rb = grenadeInstance.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            Vector3 throwDirection = Camera.main.transform.forward;
+            float throwForce = 15f; // ajusta esto a tu gusto
+            rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
+        }
+
     }
 }

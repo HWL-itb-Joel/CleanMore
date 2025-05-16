@@ -107,6 +107,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throweable"",
+                    ""type"": ""Button"",
+                    ""id"": ""a6b4bd21-a258-44cc-b9fa-416841d51dee"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -351,6 +360,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""AlternativeShoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""73552915-d14b-4f41-9c16-6c770e17a379"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throweable"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -385,6 +405,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_OnGround_PrimaryWeapon = m_OnGround.FindAction("PrimaryWeapon", throwIfNotFound: true);
         m_OnGround_Melee = m_OnGround.FindAction("Melee", throwIfNotFound: true);
         m_OnGround_AlternativeShoot = m_OnGround.FindAction("AlternativeShoot", throwIfNotFound: true);
+        m_OnGround_Throweable = m_OnGround.FindAction("Throweable", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -455,6 +476,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnGround_PrimaryWeapon;
     private readonly InputAction m_OnGround_Melee;
     private readonly InputAction m_OnGround_AlternativeShoot;
+    private readonly InputAction m_OnGround_Throweable;
     public struct OnGroundActions
     {
         private @PlayerInputs m_Wrapper;
@@ -468,6 +490,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @PrimaryWeapon => m_Wrapper.m_OnGround_PrimaryWeapon;
         public InputAction @Melee => m_Wrapper.m_OnGround_Melee;
         public InputAction @AlternativeShoot => m_Wrapper.m_OnGround_AlternativeShoot;
+        public InputAction @Throweable => m_Wrapper.m_OnGround_Throweable;
         public InputActionMap Get() { return m_Wrapper.m_OnGround; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -504,6 +527,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @AlternativeShoot.started += instance.OnAlternativeShoot;
             @AlternativeShoot.performed += instance.OnAlternativeShoot;
             @AlternativeShoot.canceled += instance.OnAlternativeShoot;
+            @Throweable.started += instance.OnThroweable;
+            @Throweable.performed += instance.OnThroweable;
+            @Throweable.canceled += instance.OnThroweable;
         }
 
         private void UnregisterCallbacks(IOnGroundActions instance)
@@ -535,6 +561,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @AlternativeShoot.started -= instance.OnAlternativeShoot;
             @AlternativeShoot.performed -= instance.OnAlternativeShoot;
             @AlternativeShoot.canceled -= instance.OnAlternativeShoot;
+            @Throweable.started -= instance.OnThroweable;
+            @Throweable.performed -= instance.OnThroweable;
+            @Throweable.canceled -= instance.OnThroweable;
         }
 
         public void RemoveCallbacks(IOnGroundActions instance)
@@ -572,5 +601,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnPrimaryWeapon(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
         void OnAlternativeShoot(InputAction.CallbackContext context);
+        void OnThroweable(InputAction.CallbackContext context);
     }
 }
