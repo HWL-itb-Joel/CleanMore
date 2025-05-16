@@ -218,8 +218,7 @@ public class Enemys : NetworkBehaviour, IEnemyHealth
         Debug.Log("¡Atacando a " + targetPlayer.name + "!");
         targetPlayer.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth);
         playerHealth.GetDamage(attackDamage);
-        targetPlayer.TryGetComponent<GunController>(out GunController z);
-        z.StartFlashFeedBack();
+        playerHealth.GetComponentInChildren<GunController>().StartFlashFeedBack();
 
         yield return new WaitForSeconds(1f);
 
