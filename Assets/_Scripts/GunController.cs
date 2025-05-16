@@ -156,6 +156,7 @@ public class GunController : NetworkBehaviour
 
     private void Update()
     {
+        if (!isLocalPlayer) return;
         if (!onMenu)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
