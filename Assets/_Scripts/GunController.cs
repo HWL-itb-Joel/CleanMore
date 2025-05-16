@@ -520,6 +520,7 @@ public class GunController : NetworkBehaviour, IGun
                     if (identity.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
                     {
                         CmdDamageEnemy(identity, weaponInfo.damage);
+                        r.FlashOnHit();
                     }
                 }
             }
