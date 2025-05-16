@@ -425,7 +425,7 @@ public class GunController : NetworkBehaviour, IGun
             yield return new WaitForSeconds(weaponInfo.fireRate);
             shootEnded = true;
         }
-        else if (weaponInfo.rateType == fireRateType.OverHeating && !weaponInfo.isOverheated)
+        else if (weaponInfo.rateType == fireRateType.OverHeating && !weaponInfo.isOverheated && weaponInfo.currentHeat >= weaponInfo.heatThreshold)
         {
             weaponInfo.isCooling = false;
             meleeCollider.enabled = true;
@@ -648,7 +648,7 @@ public class GunController : NetworkBehaviour, IGun
         if (enemyID.TryGetComponent<IEnemyHealth>(out var enemy))
         {
             enemy.TakeDamage(damage);
-            enemy.FlashOnHit(); // opcionalmente puedes hacer que esto se vea en todos
+            enemy.FlashOnHit();
         }
     }
         #endregion

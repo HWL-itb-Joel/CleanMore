@@ -30,6 +30,7 @@ public class ZombieHordeManager : NetworkBehaviour
 
     void Start()
     {
+        if (!isServer) return;
         InitPools();
         StartCoroutine(HordeLoop());
 
