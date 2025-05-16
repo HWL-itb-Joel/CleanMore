@@ -53,7 +53,7 @@ public class ZombieHordeManager : NetworkBehaviour
         {
             for (int i = 0; i < entry.initialSize; i++)
             {
-                GameObject z = Instantiate(entry.prefab, transform);
+                GameObject z = Instantiate(entry.prefab);
                 z.SetActive(false); // NO hacer Spawn aqui
                 entry.pool.Add(z);
             }
@@ -116,7 +116,7 @@ public class ZombieHordeManager : NetworkBehaviour
         }
 
         // Expandir el pool si no hay disponibles
-        GameObject newZ = Instantiate(entry.prefab, transform);
+        GameObject newZ = Instantiate(entry.prefab);
         newZ.SetActive(false); // importante: el nuevo zombie inicia inactivo
         entry.pool.Add(newZ);
         return newZ;
