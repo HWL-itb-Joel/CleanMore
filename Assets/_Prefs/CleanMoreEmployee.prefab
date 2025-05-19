@@ -1554,7 +1554,7 @@ MonoBehaviour:
   grounded: 0
   GroundMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 3072
   CheckRadius: 0.1
   Feet: {fileID: 8850184830377105904}
   PlayerInputs: {fileID: 3907260981699159535}

@@ -747,13 +747,14 @@ public class GunController : NetworkBehaviour, IGun
     {
         _canThrow = true;
         GameObject grenadeInstance = Instantiate(graneatPref, GraneatSpawnPoint.position, Quaternion.identity);
-
+        
         Rigidbody rb = grenadeInstance.GetComponent<Rigidbody>();
         if (rb != null)
         {
             Vector3 throwDirection = Camera.main.transform.forward;
             float throwForce = 15f; // ajusta esto a tu gusto
             rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
+            NetworkServer.Spawn(grenadeInstance);
         }
 
     }

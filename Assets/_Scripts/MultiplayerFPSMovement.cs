@@ -130,7 +130,7 @@ public class MultiplayerFPSMovement : NetworkBehaviour
 
         if (grounded && gameObject.transform.position.y <= -50)
         {
-            fallingMovement.y = -2;
+            fallingMovement.y = -0.01f;
         }
 
         if (grounded && jumpAction.triggered)
