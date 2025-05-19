@@ -507,13 +507,13 @@ public class GunController : NetworkBehaviour, IGun
                 if (weaponInfo.weaponType == WeaponType.Principal)
                 {
                     TrailRenderer trail = Instantiate(bulletTrail, primarySpawnPos.position, Quaternion.identity);
-
+                    NetworkServer.Spawn(trail.gameObject);
                     StartCoroutine(SpawnTrail(trail, hit));
                 }
                 else if (weaponInfo.weaponType == WeaponType.Secundaria)
                 {
                     TrailRenderer trail = Instantiate(bulletTrail, secondarySpawnPos.position, Quaternion.identity);
-
+                    NetworkServer.Spawn(trail.gameObject);
                     StartCoroutine(SpawnTrail(trail, hit));
                 }
 
@@ -746,6 +746,7 @@ public class GunController : NetworkBehaviour, IGun
     public void Graneat()
     {
         _canThrow = true;
+        GraneatRig.SetActive(false);
         GameObject grenadeInstance = Instantiate(graneatPref, GraneatSpawnPoint.position, Quaternion.identity);
         
         Rigidbody rb = grenadeInstance.GetComponent<Rigidbody>();
