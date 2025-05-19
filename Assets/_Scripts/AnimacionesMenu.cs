@@ -27,6 +27,9 @@ public class AnimacionesMenu : MonoBehaviour
 
     public bool openFolder;
 
+    public AudioSource selectPC;
+    public AudioClip soundSelectPC;
+
     void Start()
     {
         DrawerLight.SetActive(false);
@@ -106,5 +109,16 @@ public class AnimacionesMenu : MonoBehaviour
             bottomTargetPosition = new Vector3(camTransform.position.x, BottomDrawer.transform.position.y, camTransform.position.z);
         }
         isTransitioning = true;
+    }
+
+    public void SelectedPCOption()
+    {
+        selectPC.PlayOneShot(soundSelectPC);
+        selectPC.time = 0.1f;
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 }
