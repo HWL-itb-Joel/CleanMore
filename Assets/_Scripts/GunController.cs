@@ -85,7 +85,9 @@ public class GunController : NetworkBehaviour, IGun
     [SerializeField] TrailRenderer bulletTrail;
     //[SerializeField] ParticleSystem ImpactParticleSystem;
     [SerializeField] Transform primarySpawnPos;
+    [SerializeField] Transform primarySpawnPosOnlnie;
     [SerializeField] Transform secondarySpawnPos;
+    [SerializeField] Transform secondarySpawnPosOnline;
     [SerializeField] Image actualWeaponSprite;
 
     [SerializeField] MultiplayerFPSMovement MultiplayerFPSMovement;
@@ -507,14 +509,18 @@ public class GunController : NetworkBehaviour, IGun
                 if (weaponInfo.weaponType == WeaponType.Principal)
                 {
                     TrailRenderer trail = Instantiate(bulletTrail, primarySpawnPos.position, Quaternion.identity);
-                    NetworkServer.Spawn(trail.gameObject);
+                    TrailRenderer trailOnline = Instantiate(bulletTrail, primarySpawnPosOnlnie.position, Quaternion.identity);
+                    NetworkServer.Spawn(trailOnline.gameObject);
                     StartCoroutine(SpawnTrail(trail, hit));
+                    StartCoroutine(SpawnTrail(trailOnline, hit));
                 }
                 else if (weaponInfo.weaponType == WeaponType.Secundaria)
                 {
                     TrailRenderer trail = Instantiate(bulletTrail, secondarySpawnPos.position, Quaternion.identity);
-                    NetworkServer.Spawn(trail.gameObject);
+                    TrailRenderer trailOnline = Instantiate(bulletTrail, secondarySpawnPosOnline.position, Quaternion.identity);
+                    NetworkServer.Spawn(trailOnline.gameObject);
                     StartCoroutine(SpawnTrail(trail, hit));
+                    StartCoroutine(SpawnTrail(trailOnline, hit));
                 }
 
                 if (hit.collider.TryGetComponent<NetworkIdentity>(out var identity))
