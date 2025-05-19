@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using Unity.VisualScripting;
 
 public class Graneat : NetworkBehaviour
 {
@@ -15,6 +16,11 @@ public class Graneat : NetworkBehaviour
     void Start()
     {
         StartCoroutine(ExplodeAfterDelay());
+    }
+
+    private void OnEnable()
+    {
+        NetworkServer.Spawn(gameObject);
     }
 
     IEnumerator ExplodeAfterDelay()

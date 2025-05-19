@@ -1580,6 +1580,7 @@ MonoBehaviour:
   healthValue: 100
   health_bar: {fileID: 7411500820562076084}
   fpsScript: {fileID: 6142524356234719228}
+  player: {fileID: 1774078246480493748}
 --- !u!114 &2684866517078344131
 MonoBehaviour:
   m_ObjectHideFlags: 0

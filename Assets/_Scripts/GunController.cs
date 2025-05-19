@@ -776,8 +776,6 @@ public class GunController : NetworkBehaviour, IGun
             Vector3 throwDirection = Camera.main.transform.forward;
             float throwForce = 15f; // ajusta esto a tu gusto
             rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
-            NetworkServer.Spawn(grenadeInstance);
         }
-
     }
 }

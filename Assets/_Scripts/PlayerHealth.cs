@@ -11,6 +11,7 @@ public class PlayerHealth : NetworkBehaviour
     public static PlayerHealth Instance { get; private set; }
     [SerializeField] Slider health_bar = null;
     [SerializeField] MultiplayerFPSMovement fpsScript;
+    [SerializeField] GameObject player;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerHealth : NetworkBehaviour
         if (healthValue <= 0)
         {
             fpsScript.enabled = false;
+            player.SetActive(false);
             print("die");
         }
     }
