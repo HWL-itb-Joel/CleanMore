@@ -5,7 +5,8 @@ using Mirror;
 
 public class NetworkStuff : NetworkBehaviour
 {
-    [SerializeField] private GameObject FPSCam = null, TpMeshArms = null, TPFullEmployee, EmployeeOnline, meshHead;
+    [SerializeField] private GameObject FPSCam = null, TPFullEmployee, EmployeeOnline;
+    [SerializeField] private SkinnedMeshRenderer mochila, brazos3p, cabeza, cuerpo, flusflus, graneat, motofregona, tiepodgun;
 
     void Start()
     {
@@ -14,16 +15,28 @@ public class NetworkStuff : NetworkBehaviour
             FPSCam.SetActive(true);
             TPFullEmployee.SetActive(true);
             EmployeeOnline.SetActive(false);
-            meshHead.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
-            TpMeshArms.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            mochila.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            brazos3p.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            cabeza.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            cuerpo.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            flusflus.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            graneat.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            motofregona.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            tiepodgun.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
         }
         else
         {
             FPSCam.SetActive(false);
             TPFullEmployee.SetActive(false);
             EmployeeOnline.SetActive(true);
-            meshHead.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-            TpMeshArms.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            mochila.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            brazos3p.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            cabeza.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            cuerpo.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            flusflus.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            graneat.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            motofregona.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            tiepodgun.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         }
     }
 }
