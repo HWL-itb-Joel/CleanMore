@@ -494,66 +494,81 @@ public class GunController : NetworkBehaviour, IGun
     void RatCastForEnemy(bool srpay)
     {
         RaycastHit hit;
-        Vector3 sprayIndicator = new Vector3(Random.Range(-weaponInfo.sprayIndicator, weaponInfo.sprayIndicator), Random.Range(-weaponInfo.sprayIndicator, weaponInfo.sprayIndicator),0);
+        Vector3 sprayIndicator = new Vector3(
+            Random.Range(-weaponInfo.sprayIndicator, weaponInfo.sprayIndicator),
+            Random.Range(-weaponInfo.sprayIndicator, weaponInfo.sprayIndicator),
+            0);
+
         if (!srpay)
         {
-            sprayIndicator = Vector2.zero;
+            sprayIndicator = Vector3.zero;
         }
 
-        Vector3 dir = (Camera.main.transform.forward * 160) + sprayIndicator;
-        if (Physics.Raycast(Camera.main.transform.position, dir, out hit, weaponInfo.maxDistance))
-        {
-            //Debug.DrawRay(Camera.main.transform.position, dir, Color.red, 834485f);
-            try
-            {
-                if (weaponInfo.weaponType == WeaponType.Principal)
-                {
-                    TrailRenderer trail = Instantiate(bulletTrail, primarySpawnPos.position, Quaternion.identity);
-                    TrailRenderer trailOnline = Instantiate(bulletTrail, primarySpawnPosOnlnie.position, Quaternion.identity);
-                    NetworkServer.Spawn(trailOnline.gameObject);
-                    StartCoroutine(SpawnTrail(trail, hit));
-                    StartCoroutine(SpawnTrail(trailOnline, hit));
-                }
-                else if (weaponInfo.weaponType == WeaponType.Secundaria)
-                {
-                    TrailRenderer trail = Instantiate(bulletTrail, secondarySpawnPos.position, Quaternion.identity);
-                    TrailRenderer trailOnline = Instantiate(bulletTrail, secondarySpawnPosOnline.position, Quaternion.identity);
-                    NetworkServer.Spawn(trailOnline.gameObject);
-                    StartCoroutine(SpawnTrail(trail, hit));
-                    StartCoroutine(SpawnTrail(trailOnline, hit));
-                }
+        Vector3 direction = (Camera.main.transform.forward * 160) + sprayIndicator;
+        Vector3 origin = Camera.main.transform.position;
+        Vector3 targetPoint;
 
-                if (hit.collider.TryGetComponent<NetworkIdentity>(out var identity))
+        // Si hay impacto, usar el punto de impacto
+        if (Physics.Raycast(origin, direction, out hit, weaponInfo.maxDistance))
+        {
+            targetPoint = hit.point;
+
+            // Lógica de daño si golpea enemigo
+            if (hit.collider.TryGetComponent<NetworkIdentity>(out var identity))
+            {
+                if (identity.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
                 {
-                    if (identity.TryGetComponent<IEnemyHealth>(out IEnemyHealth r))
-                    {
-                        CmdDamageEnemy(identity, weaponInfo.damage);
-                        r.FlashOnHit();
-                    }
+                    CmdDamageEnemy(identity, weaponInfo.damage);
+                    r.FlashOnHit();
                 }
             }
-            catch { }
+        }
+        else
+        {
+            // Si no golpea nada, proyectar un punto lejano en la dirección del disparo
+            targetPoint = origin + direction.normalized * weaponInfo.maxDistance;
+        }
+
+        // Instanciar y mover el TrailRenderer siempre, haya hit o no
+        if (weaponInfo.weaponType == WeaponType.Principal)
+        {
+            TrailRenderer trail = Instantiate(bulletTrail, primarySpawnPos.position, Quaternion.identity);
+            TrailRenderer trailOnline = Instantiate(bulletTrail, primarySpawnPosOnlnie.position, Quaternion.identity);
+            NetworkServer.Spawn(trailOnline.gameObject);
+            trailOnline.gameObject.SetActive(false);
+            StartCoroutine(SpawnTrail(trail, targetPoint));
+            StartCoroutine(SpawnTrail(trailOnline, targetPoint));
+        }
+        else if (weaponInfo.weaponType == WeaponType.Secundaria)
+        {
+            TrailRenderer trail = Instantiate(bulletTrail, secondarySpawnPos.position, Quaternion.identity);
+            TrailRenderer trailOnline = Instantiate(bulletTrail, secondarySpawnPosOnline.position, Quaternion.identity);
+            NetworkServer.Spawn(trailOnline.gameObject);
+            trailOnline.gameObject.SetActive(false);
+            StartCoroutine(SpawnTrail(trail, targetPoint));
+            StartCoroutine(SpawnTrail(trailOnline, targetPoint));
         }
     }
 
-    private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)
+
+    IEnumerator SpawnTrail(TrailRenderer trail, Vector3 targetPoint)
     {
-        float time = 0;
-        Vector3 startPos = Trail.transform.position;
+        Vector3 startPosition = trail.transform.position;
+        float distance = Vector3.Distance(startPosition, targetPoint);
+        float remainingDistance = distance;
+        float speed = trail.time > 0 ? distance / trail.time : 0f;
 
-        while(time < 0.1f)
+        while (remainingDistance > 0)
         {
-            time += Time.deltaTime;
-            Trail.transform.position = Vector3.Lerp(startPos, hit.point, time);
-
+            trail.transform.position = Vector3.MoveTowards(trail.transform.position, targetPoint, speed * Time.deltaTime);
+            remainingDistance = Vector3.Distance(trail.transform.position, targetPoint);
             yield return null;
         }
 
-        Trail.transform.position = hit.point;
-        //Instantiate(ImpactParticleSystem, hit.point, Quaternion.LookRotation(hit.normal));
-
-        Destroy(Trail.gameObject, Trail.time);
+        trail.transform.position = targetPoint;
+        Destroy(trail.gameObject, trail.time);
     }
+
 
     void ChangeGunWeapon()
     {
