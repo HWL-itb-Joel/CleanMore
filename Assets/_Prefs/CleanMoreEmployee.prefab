@@ -1606,6 +1606,8 @@ MonoBehaviour:
   graneat: {fileID: 848334785860146632}
   motofregona: {fileID: 7034499676552889386}
   tiepodgun: {fileID: 7485096637669530714}
+  Camera: {fileID: 8755748879101294329}
+  gunCam: {fileID: 3166171114851116045}
 --- !u!114 &3907260981699159535
 MonoBehaviour:
   m_ObjectHideFlags: 0

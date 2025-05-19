@@ -7,6 +7,7 @@ public class NetworkStuff : NetworkBehaviour
 {
     [SerializeField] private GameObject FPSCam = null, TPFullEmployee, EmployeeOnline;
     [SerializeField] private SkinnedMeshRenderer mochila, brazos3p, cabeza, cuerpo, flusflus, graneat, motofregona, tiepodgun;
+    [SerializeField] private Camera Camera, gunCam;
 
     void Start()
     {
@@ -23,6 +24,8 @@ public class NetworkStuff : NetworkBehaviour
             graneat.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
             motofregona.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
             tiepodgun.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            Camera.enabled = true;
+            gunCam.enabled = true;
         }
         else
         {
@@ -37,6 +40,8 @@ public class NetworkStuff : NetworkBehaviour
             graneat.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             motofregona.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             tiepodgun.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            Camera.enabled = false;
+            gunCam.enabled = false;
         }
     }
 }
