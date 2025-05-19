@@ -5,9 +5,9 @@ using Mirror;
 
 public class NetworkStuff : NetworkBehaviour
 {
-    [SerializeField] private GameObject FPSCam = null, TPFullEmployee, EmployeeOnline;
+    [SerializeField] private GameObject FPSCam = null, TPFullEmployee, EmployeeOnline, UI, Canvas, gunCam;
     [SerializeField] private SkinnedMeshRenderer mochila, brazos3p, cabeza, cuerpo, flusflus, graneat, motofregona, tiepodgun;
-    [SerializeField] private Camera Camera, gunCam;
+    [SerializeField] private Camera Camera;
 
     void Start()
     {
@@ -25,7 +25,9 @@ public class NetworkStuff : NetworkBehaviour
             motofregona.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
             tiepodgun.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
             Camera.enabled = true;
-            gunCam.enabled = true;
+            gunCam.SetActive(true);
+            UI.SetActive(true);
+            Canvas.SetActive(true);
         }
         else
         {
@@ -41,7 +43,9 @@ public class NetworkStuff : NetworkBehaviour
             motofregona.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             tiepodgun.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             Camera.enabled = false;
-            gunCam.enabled = false;
+            gunCam.SetActive(false);
+            UI.SetActive(false);
+            Canvas.SetActive(false);
         }
     }
 }

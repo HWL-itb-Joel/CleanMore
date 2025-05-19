@@ -1598,6 +1598,9 @@ MonoBehaviour:
   FPSCam: {fileID: 7263853415787385859}
   TPFullEmployee: {fileID: 3819355645646129107}
   EmployeeOnline: {fileID: 1082466697476105040}
+  UI: {fileID: 7625481919112008450}
+  Canvas: {fileID: 500870716892535407}
+  gunCam: {fileID: 6375935660094912103}
   mochila: {fileID: 3722606151200395579}
   brazos3p: {fileID: 4873063005151910633}
   cabeza: {fileID: 1147482669476880455}
@@ -1607,7 +1610,6 @@ MonoBehaviour:
   motofregona: {fileID: 7034499676552889386}
   tiepodgun: {fileID: 7485096637669530714}
   Camera: {fileID: 8755748879101294329}
-  gunCam: {fileID: 3166171114851116045}
 --- !u!114 &3907260981699159535
 MonoBehaviour:
   m_ObjectHideFlags: 0
