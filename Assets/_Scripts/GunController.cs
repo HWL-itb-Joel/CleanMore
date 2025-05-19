@@ -329,6 +329,7 @@ public class GunController : NetworkBehaviour, IGun
 
     void DetermineRotation()
     {
+        if (!isLocalPlayer) return;
         Vector2 mouseAxis = new Vector2(lookInput.x, -lookInput.y);
 
         mouseAxis *= mouseSensitiity;
