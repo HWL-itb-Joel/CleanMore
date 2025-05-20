@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using Mirror;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GunController : NetworkBehaviour, IGun
 {
@@ -777,5 +778,13 @@ public class GunController : NetworkBehaviour, IGun
             float throwForce = 15f; // ajusta esto a tu gusto
             rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
         }
+    }
+
+    public void GoToMenu()
+    {
+        CleanMoreNetworkManager.singleton.StopClient();
+        SceneManager.LoadScene(1);
+        if (!isServer) return;
+        CleanMoreNetworkManager.singleton.StopServer();
     }
 }

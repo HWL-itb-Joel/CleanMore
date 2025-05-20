@@ -2576,7 +2576,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2164933894871493581}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5701391459416027884}
+        m_TargetAssemblyTypeName: GunController, Assembly-CSharp
+        m_MethodName: GoToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2720217676037543838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,9 +3603,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1086356622183491925}
   - component: {fileID: 8755748879101294329}
-  - component: {fileID: 2506047026310281266}
   - component: {fileID: 8518193287680784333}
   - component: {fileID: 4555158653365693183}
+  - component: {fileID: 9201429375577318117}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -3671,14 +3683,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2506047026310281266
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3975355666369395501}
-  m_Enabled: 1
 --- !u!114 &8518193287680784333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3738,6 +3742,14 @@ MonoBehaviour:
   viewDirection: {fileID: 1086356622183491925}
   compassElement: {fileID: 775670583221717098}
   compassSize: 122.4118
+--- !u!81 &9201429375577318117
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3975355666369395501}
+  m_Enabled: 1
 --- !u!1 &4019156150195047173
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,7 +4113,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4606959367152640082}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5701391459416027884}
+        m_TargetAssemblyTypeName: GunController, Assembly-CSharp
+        m_MethodName: GoToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4320342147208944548
 GameObject:
   m_ObjectHideFlags: 0
@@ -7227,6 +7251,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5701391459416027884}
+        m_TargetAssemblyTypeName: GunController, Assembly-CSharp
+        m_MethodName: ActiveGamePlay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

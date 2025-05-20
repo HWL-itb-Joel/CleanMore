@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Mirror;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : NetworkBehaviour
 {
@@ -28,8 +29,6 @@ public class PlayerHealth : NetworkBehaviour
         if (healthValue <= 0)
         {
             fpsScript.enabled = false;
-            player.SetActive(false);
-            print("die");
         }
     }
 
